@@ -5,8 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      colors:{
+        spotifyGreen: '#1ed760',
+    },
+    },
+  }, 
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 }
 
