@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router";
 
 export default function NavigationBar(){
+    const [isActive, setIsActive] = useState(window.location.hash);
 
+    const HandleClick = (id)=>{
+        setIsActive(id);
+    };
     
     return(
         <>
@@ -13,36 +18,48 @@ export default function NavigationBar(){
                 </div>
 
                 <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#home" className="relative inline-block">
+                    <a href="#home" onClick={()=> HandleClick('#home')} className="relative inline-block">
                         Home
                         <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                       {isActive === '#home' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                     </a>
                     </div>
 
 
                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#about" className="relative inline-block">About</a>
+                    <a href="#about" onClick={()=> HandleClick('#about')} className="relative inline-block">About</a>
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                    {isActive === '#about' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                </div>
 
                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#services" className="relative inline-block">Services</a>
+                    <a href="#services" onClick={()=> HandleClick('#services')} className="relative inline-block">Services</a>
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                    {isActive === '#services' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                </div>
 
                 <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                  <a href="#skills" className="relative inline-block">Skills</a>
+                  <a href="#skills" onClick={()=> HandleClick('#skills')} className="relative inline-block">Skills</a>
                   <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                  {isActive === '#skills' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                 </div>
 
                 <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#projects" className="relative inline-block">Projects</a>
+                    <a href="#projects" onClick={()=> HandleClick('#projects')} className="relative inline-block">Projects</a>
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                    {isActive === '#projects' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                 </div>
                    
                    <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                      <a href="#contact" className="relative inline-block">Contact</a>
+                      <a href="#contact" onClick={()=> HandleClick('#contact')} className="relative inline-block">Contact</a>
                       <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                      {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                    </div>
                </div>
         </>
