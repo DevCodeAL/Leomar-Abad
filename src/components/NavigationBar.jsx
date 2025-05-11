@@ -4,10 +4,11 @@ import { Link } from "react-router";
 export default function NavigationBar(){
     const [isActive, setIsActive] = useState(window.location.hash);
 
+    // Set Active Link
     const HandleClick = (id)=>{
         setIsActive(id);
     };
-    
+
     return(
         <>
             <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
