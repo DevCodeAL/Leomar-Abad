@@ -13,22 +13,19 @@ export default function CursorFollower(){
 
     window.addEventListener('mousemove', createCoordinates);
 
-    return ()=> {
-        window.removeEventListener('mousemove', createCoordinates);
-    }
+    return ()=>  window.removeEventListener('mousemove', createCoordinates);
 
     }, []);
 
 
     return(
-        <>
-            <div style={{
+        <div
+        style={{
             top: `${position.y}px`,
             left: `${position.x}px`,
-            transform: 'translate(-50%, -50%)'
-            }}
-            className={`absolute top-${position.x} left-${position.y}  w-36 h-36 inset-36 bg-[#1ed760] opacity-45 blur-3xl z-0`}>
-            </div>
-        </>
+            transform: "translate(-50%, -50%)",
+        }}
+      className="fixed w-36 h-36 bg-[#1ed760] opacity-45 blur-3xl z-0 pointer-events-none"
+    />
     );
 };

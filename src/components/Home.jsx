@@ -2,13 +2,11 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import CursorFollower from "./StyleComponents/CursorFollower";
 
 export default function Home(){
 
     return(
-        <>
-            <CursorFollower/>
+        <> 
            <section className="flex justify-center items-center w-full bg-[#121212] z-10 h-screen" id="home">
                     <div className="flex flex-row flex-wrap gap-40">
                         <div className="relative left-20 w-1/2 h-96 p-6 pt-12 text-white animate-fade-right animate-delay-300">

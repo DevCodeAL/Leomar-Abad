@@ -3,7 +3,7 @@ import { FaUserCog, FaTools } from "react-icons/fa";
 export default function Skills(){
     return(
         <>
-           <section className="flex justify-center w-full bg-[#121212] z-10" id="skills">
+           <section className="flex justify-center w-full bg-[#121212] z-10 min-h-screen" id="skills">
            <div className="max-w-6xl mx-auto mt-32 text-center">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">
@@ -148,11 +148,37 @@ export default function Skills(){
                                      <span className="absolute -left-4 text-white text-nowrap" >Tailwind CSS</span>
                                 </div>
                              </div>
+
+
+                                  {/* Bootstrap */}
+                                 {/* Horizontal Line */}
+                            <div className="absolute top-[600px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
+                               <div className="absolute top-[578px] right-[340px] flex flex-col justify-center">
+                                <div className="w-12">
+                                  <img src="/image/bootstrap.png" alt="" />
+                                </div>
+                                <div>
+                                     <span className="absolute -left-4 text-white text-nowrap" >Bootstrap</span>
+                                </div>
+                             </div>
+
+
+                                 {/* Supabase */}
+                                 {/* Horizontal Line */}
+                             <div className="absolute top-[650px] border-t-2 w-80 border-[#1ed760]"></div>
+                            <div className="absolute top-[620px] left-[340px] flex flex-col justify-center">
+                                <div className="w-20">
+                                  <img src="/image/supabase.png" alt="Logo" />
+                                </div>
+                                <div>
+                                     <span className="text-white text-nowrap" >Supabase</span>
+                                </div>
+                             </div>
                             
 
                             
                             {/* Vertical Line */}
-                             <div className="border-l-2 border-[#1ed760] min-h-screen"></div>
+                             <div className="border-l-2 border-[#1ed760] h-[740px]"></div>
                         </div>
 
                          <div>
@@ -163,19 +189,49 @@ export default function Skills(){
 
                     {/* Another Divider for Other Tools */}
                     <div>
-                        <div className="flex flex-row justify-center gap-5 mt-12">
+                        <div className="flex flex-row justify-center gap-5 mt-14">
                             <div className="text-[#1ed760] text-5xl">
                             <FaTools/>
                             </div>
                             <div>
-                                <h1 className="text-3xl font-bold text-white">Other Tools</h1>
+                                <h1 className="text-3xl font-bold text-white">Other Tools & Technologies</h1>
                             </div>
                             </div>
                             
                             <div>
                                 <p className="text-[#b3b3b3] mb-12">Tools I use to support development, design, testing, and deployment processes.</p>
                             </div>
+
+                            <div className="flex justify-evenly">
+
+                                <div className="p-2">
+                                      <img src="/image/VSC.png" className="ml-auto mr-auto w-10"  alt="Logo" />
+                                         <span className="text-white text-nowrap" >Visual Studio Code</span>
+                                </div>
+
+                                <div className="p-2">
+                                      <img src="/image/git_github.png" className="ml-auto mr-auto w-12" alt="Logo" />
+                                        <span className="text-white text-nowrap" >Git & Github</span>
+                                </div>
+
+                                <div className="p-2">
+                                       <img src="/image/Npm-logo.svg.png" className="ml-auto mr-auto w-16" alt="Logo" />
+                                        <span className="text-white text-nowrap" >NPM</span>
+                                </div>
+
+                                <div className="p-2">
+                                     <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
+                                        <span className="text-white text-nowrap" >Postman</span>
+                                </div>
+
+                                 <div className="p-2">
+                                     <img src="/image/crome-dev.png" className="ml-auto mr-auto w-14" alt="Logo" />
+                                        <span className="text-white text-nowrap" >Crome DevTools</span>
+                                </div>
+
+
                             </div>
+                        </div>
                     </div>
 
            </section>
