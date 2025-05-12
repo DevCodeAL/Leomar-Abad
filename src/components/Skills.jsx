@@ -174,9 +174,7 @@ export default function Skills(){
                                      <span className="text-white text-nowrap" >Supabase</span>
                                 </div>
                              </div>
-                            
 
-                            
                             {/* Vertical Line */}
                              <div className="border-l-2 border-[#1ed760] h-[740px]"></div>
                         </div>
@@ -194,7 +192,7 @@ export default function Skills(){
                             <FaTools/>
                             </div>
                             <div>
-                                <h1 className="text-3xl font-bold text-white">Other Tools & Technologies</h1>
+                                <h1 className="text-3xl font-bold text-white">Other Tools</h1>
                             </div>
                             </div>
                             
@@ -205,28 +203,48 @@ export default function Skills(){
                             <div className="flex justify-evenly">
 
                                 <div className="p-2">
-                                      <img src="/image/VSC.png" className="ml-auto mr-auto w-10"  alt="Logo" />
-                                         <span className="text-white text-nowrap" >Visual Studio Code</span>
+                                      <div>
+                                        <img src="/image/VSC.png" className="ml-auto mr-auto w-10"  alt="Logo" />
+                                      </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >Visual Studio Code</span>
+                                        </div>
                                 </div>
 
                                 <div className="p-2">
-                                      <img src="/image/git_github.png" className="ml-auto mr-auto w-12" alt="Logo" />
-                                        <span className="text-white text-nowrap" >Git & Github</span>
+                                     <div>
+                                         <img src="/image/git_github.png" className="ml-auto mr-auto w-12" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >Git & Github</span>
+                                        </div>
                                 </div>
 
                                 <div className="p-2">
-                                       <img src="/image/Npm-logo.svg.png" className="ml-auto mr-auto w-16" alt="Logo" />
-                                        <span className="text-white text-nowrap" >NPM</span>
+                                      <div>
+                                           <img src="/image/Npm-logo.svg.png" className="ml-auto mr-auto w-16" alt="Logo" />
+                                      </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >NPM</span>
+                                        </div>
                                 </div>
 
                                 <div className="p-2">
-                                     <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
-                                        <span className="text-white text-nowrap" >Postman</span>
+                                     <div>
+                                          <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >Postman</span>
+                                        </div>
                                 </div>
 
                                  <div className="p-2">
-                                     <img src="/image/crome-dev.png" className="ml-auto mr-auto w-14" alt="Logo" />
-                                        <span className="text-white text-nowrap" >Crome DevTools</span>
+                                    <div>
+                                           <img src="/image/crome-dev.png" className="ml-auto mr-auto w-14" alt="Logo" />
+                                    </div>
+                                      <div>
+                                           <span className="text-white text-nowrap" >Crome DevTools</span>
+                                      </div>
                                 </div>
 
 

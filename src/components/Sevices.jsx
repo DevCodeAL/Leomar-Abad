@@ -6,17 +6,17 @@ export default function Services(){
 const services = [
     {
       title: "Fullstack Web App Development",
-      emoji: "💻",
+      emoji: "🖥️⚙️",
       description: "End-to-end development of robust, scalable web applications using MERN stack or PHP/MySQL.",
     },
     {
       title: "Custom Business Systems",
       emoji: "🏢",
-      description: "Tailored systems like Barangay Info, Enrollment, and Legislative Tracking platforms for organizations.",
+      description: "Tailored systems like E-commerce, Learning Resources and Management System, and Legislative Tracking platforms for organizations and many more.",
     },
     {
       title: "Responsive Frontend Design",
-      emoji: "🎨",
+      emoji: "💻📱",
       description: "Modern, mobile-first UI designs using React, Tailwind CSS, and best UX practices.",
     },
     {
@@ -29,11 +29,12 @@ const services = [
       emoji: "🛠️",
       description: "Improve performance, fix bugs, and keep websites fast, secure, and updated regularly.",
     },
-    {
-      title: "Academic & Capstone Platform Support",
-      emoji: "🎓",
-      description: "Build platforms for showcasing and managing student projects with feedback and code sharing features.",
-    },
+     {
+    title: "Integrating AI",
+    emoji: "🤖",
+    description: "Building intelligent features by integrating AI tools and APIs to enhance functionality and user experience.",
+  },
+
   ];
 
 
