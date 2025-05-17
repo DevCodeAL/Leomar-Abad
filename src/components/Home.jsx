@@ -14,16 +14,16 @@ export default function Home(){
                         <h1 className="text-5xl font-bold text-[#1ed760] text-nowrap">Fullstack Web Developer</h1>
                         <p className="pt-5 leading-6">I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.</p>
                         <div className="flex justify-start gap-4 pt-4">
-                            <div className="text-2xl">
+                            <div className="text-2xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                                 <a href="https://www.facebook.com/abad.leomar/" target="_blank"><FaFacebook/></a>
                                 </div>
-                            <div className="text-2xl">
+                            <div className="text-2xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                                 <a href="https://www.instagram.com/abadleomar875/" target="_blank"><FaInstagramSquare/></a>
                                 </div>
-                            <div className="text-2xl">
+                            <div className="text-2xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                                 <a href="https://www.linkedin.com/in/leomar-abad-52381327b/" target="_blank"><FaLinkedin/></a>
                             </div>
-                            <div className="text-2xl">
+                            <div className="text-2xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                                 <a href="https://github.com/DevCodeAL" target="_blank"><FaGithub/></a>
                             </div>
                         </div>
