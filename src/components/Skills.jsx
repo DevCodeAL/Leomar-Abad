@@ -21,15 +21,15 @@ export default function Skills(){
                     {/* Skills Container */}
                     <div className="flex justify-center gap-28">
                         <div>
-                            <h1 className="text-white font-bold text-3xl">FRONT END</h1>
-                            <div className="relative border-t-2 w-80 mt-1 border-[#1ed760]"></div>
+                            <h1 className="text-white font-bold md:text-2xl lg:text-3xl">FRONT END</h1>
+                            <div className="relative border-t-2 md:w-full lg:w-80 mt-1 border-[#1ed760]"></div>
                         </div>
 
                         <div className="relative">
                                  {/* Html */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[100px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-20 right-[340px] flex flex-col justify-center">
+                             <div className="absolute top-[100px] right-0 border-t-2  md:w-28 lg:w-80 border-[#1ed760]"></div>
+                               <div className="absolute top-20 md:right-[120px] lg:right-[340px] flex flex-col justify-center">
                                 <div className="w-10">
                                   <img src="/image/html.png" alt="Logo" />
                                 </div>
@@ -180,8 +180,8 @@ export default function Skills(){
                         </div>
 
                          <div>
-                            <h1 className="text-white font-bold text-3xl">BACKEND</h1>
-                            <div className="relative border-t-2 w-80 mt-1 border-[#1ed760]"></div>
+                            <h1 className="text-white font-bold md:text-2xl lg:text-3xl">BACKEND</h1>
+                            <div className="relative border-t-2 md:w-full lg:w-80 mt-1 border-[#1ed760]"></div>
                         </div>
                     </div>
 

@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 export default function NavigationBar(){
     const [isActive, setIsActive] = useState(window.location.hash);
+    const [isShow, setShow] = useState(window.innerWidth);
+
 
     // Set Active Link
     const HandleClick = (id)=>{
         setIsActive(id);
     };
 
+    // Function to Handle width size
+    function HandleResize(){
+        setShow(window.innerWidth);
+    };
+
+    // Monitor Width
+    useEffect(()=> {
+       window.addEventListener('resize', HandleResize);
+
+       return ()=> window.removeEventListener('resize', HandleResize);
+    },[]);
+
     return(
         <>
-            <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
+            {isShow >= 562 ? (
+                <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
                 <div className="absolute left-6">
                    <Link to='/'>
                      <img src="/image/logo.png" className="w-16 h-auto" alt="Logo" />
@@ -63,6 +78,7 @@ export default function NavigationBar(){
                       {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                    </div>
                </div>
+            ) : null}
         </>
     );
 };

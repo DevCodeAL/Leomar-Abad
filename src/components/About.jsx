@@ -4,7 +4,7 @@ export default function About(){
     return(
         <>
            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="about">
-             <div className="flex flex-col gap-6">
+             <div className="flex flex-col gap-6 pt-6 pb-6">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-4xl">
                         <FaInfoCircle/>
@@ -15,11 +15,9 @@ export default function About(){
                 </div>
 
                 <div className="pr-32 pl-32">
-                    <p className="text-white text-center text-wrap">Hello! I’m a passionate Fullstack Web Developer with a strong foundation in building real-world web applications from the ground up. I specialize in the MERN stack (MongoDB, Express, React, Node.js), crafting responsive, scalable, and user-friendly solutions that solve real problems.
+                    <p className="text-white text-center text-wrap">I’m a passionate Fullstack Web Developer with solid experience in building responsive, scalable web applications using the MERN stack (MongoDB, Express, React, Node.js and Tailwind Css). I specialize in crafting clean, user-friendly solutions that deliver real value to users and businesses alike.
 
-                    Throughout my journey, I’ve built and deployed a variety of systems — from Barangay Information Systems to Enrollment and Legislative Tracking Platforms — using technologies like PHP, MySQL, JavaScript, and Bootstrap. I’ve also led and collaborated on capstone projects, including a social platform for student project sharing and feedback.
-
-                    As a former Web Design Champion, I combine clean code with great UI/UX design, always striving to deliver high-performance apps that users love. Whether it’s a personal website, business system, or a full-fledged web app — I take pride in turning ideas into interactive experiences.</p>
+                    My professional goal is to design and develop digital products that solve real-world problems and address complex business logic. I’m driven by continuous learning, and I strive to create high-performance applications that are both functional and visually engaging through strong UI/UX practices.</p>
                 </div>
              </div>
            </section>

@@ -3,9 +3,9 @@
 export default function Contact(){
     return(
         <>
-            <section className="flex justify-center w-full border-2 border-red-600 h-screen" id="contact">
+            <section className="flex justify-center items-center w-full bg-[#121212] z-10 h-screen" id="contact">
                 <div>
-                    <h1 className="text-3xl">Contact</h1>
+                    <h1 className="text-3xl text-white">Contact</h1>
                 </div>
             </section>
         </>

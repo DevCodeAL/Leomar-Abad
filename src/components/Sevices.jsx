@@ -41,7 +41,7 @@ const services = [
     return(
         <>
             <section className="flex justify-center items-center w-full  bg-[#121212] z-10" id="services">
-            <div className="max-w-6xl mx-auto mt-32 text-center">
+            <div className="max-w-6xl mx-auto mt-32 text-center mb-12">
                 <div className="flex flex-row justify-center text-center gap-5">
                     <div className="inline-block text-[#1ed760] text-5xl">
                         <MdMiscellaneousServices/>
@@ -56,7 +56,7 @@ const services = [
                     <p className="text-[#b3b3b3] mb-12">What I offer based on my skills and experience.</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">
                 {services.map((service, index) => (
                     <div
                     key={index}
