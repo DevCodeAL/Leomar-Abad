@@ -59,7 +59,7 @@ export default function Home(){
                 {/* Image */}
                 <div className="w-full lg:w-1/3 flex justify-center relative animate-fade-left animate-delay-500">
                 {/* Light effect */}
-                <div className="absolute inset-24 bg-white opacity-30 blur-3xl z-0 rounded-full"></div>
+                <div className="absolute inset-24 bg-white opacity-20 blur-3xl z-0 rounded-full animate-pulse"></div>
                     {/* Border */}
                     <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)]  w-80 h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
                             {/* Image */}
