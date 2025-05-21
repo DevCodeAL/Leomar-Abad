@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
 export default function NavigationBar(){
     const [isActive, setIsActive] = useState(window.location.hash);
     const [isShow, setShow] = useState(window.innerWidth);
+    const [isSideBarShow, setSideBarShow] = useState(false);
+
+    // Handle Sidebar Show
+    const HandleSideBarEvent = ()=>{
+          if(!isSideBarShow){
+            setSideBarShow(true);
+          } else {
+            setSideBarShow(false);
+          };
+    };
 
 
     // Set Active Link
@@ -78,7 +90,26 @@ export default function NavigationBar(){
                       {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                    </div>
                </div>
-            ) : null}
+            ) : (<div className="absolute right-0 top-0 z-10">
+                    <div>
+                        {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4"><GiHamburgerMenu/></button>}
+                    </div>
+
+                    {isSideBarShow && (
+                        <div className={`text-white w-60 p-4 bg-[#121212] animate-fade-left min-h-screen`}>
+                            <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
+                            <IoClose/></button>
+                        <ul className="text-white font-bold">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Services</li>
+                            <li>Skills</li>
+                            <li>Project</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                    )}
+               </div>)}
         </>
     );
 };
