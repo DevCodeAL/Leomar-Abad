@@ -7,6 +7,7 @@ export default function NavigationBar(){
     const [isActive, setIsActive] = useState(window.location.hash);
     const [isShow, setShow] = useState(window.innerWidth);
     const [isSideBarShow, setSideBarShow] = useState(false);
+    const [isScroll, setIsScroll] = useState(false);
 
     // Handle Sidebar Show
     const HandleSideBarEvent = ()=>{
@@ -34,6 +35,24 @@ export default function NavigationBar(){
 
        return ()=> window.removeEventListener('resize', HandleResize);
     },[]);
+
+    // Monitor Burger Toggle
+    useEffect(()=>{
+        const HandleScrollShow = ()=>{
+            let currentPosition = window.scrollY;
+               if(currentPosition > 0){
+                  setIsScroll(true);
+               } else if(currentPosition < window.innerHeight){
+                    setIsScroll(false);
+               };     
+        };
+
+        window.addEventListener("scroll", HandleScrollShow);
+
+        return ()=> window.removeEventListener("scroll", HandleScrollShow);
+
+    },[]);
+
 
     return(
         <>
@@ -90,23 +109,81 @@ export default function NavigationBar(){
                       {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                    </div>
                </div>
-            ) : (<div className="absolute right-0 top-0 z-10">
-                    <div>
+                    // SideBar Container
+            ) : (<div className="fixed w-full right-0 top-0 z-10">
+                    {/* Burger Toggle  */}
+                    <div className={`text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`} w-full`}>
                         {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4"><GiHamburgerMenu/></button>}
                     </div>
 
                     {isSideBarShow && (
-                        <div className={`text-white w-60 p-4 bg-[#121212] animate-fade-left min-h-screen`}>
-                            <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
-                            <IoClose/></button>
-                        <ul className="text-white font-bold">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Services</li>
-                            <li>Skills</li>
-                            <li>Project</li>
-                            <li>Contact</li>
+                        <div className={`text-white h-auto p-4 bg-[rgba(0,0,0,0.8)] animate-fade-down`}>
+                            {/* Close Button */}
+                           <div className="text-right">
+                                 <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
+                                <IoClose/></button>
+                           </div>
+                        <div>
+                            {/* SideBar Links */}
+                            <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
+                                {/* Home */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                <a href="#home" onClick={()=> HandleClick('#home')} className="relative inline-block">
+                                    Home
+                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                {isActive === '#home' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                </a>
+                                </div>
+                            </li>
+                            {/* About */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                        <a href="#about" onClick={()=> HandleClick('#about')} className="relative inline-block">About</a>
+                                        <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                        {isActive === '#about' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                </div>
+                            </li>
+                            {/* Services */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                    <a href="#services" onClick={()=> HandleClick('#services')} className="relative inline-block">Services</a>
+                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                    {isActive === '#services' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                            </div>
+                            </li>
+                            {/* Skills */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                <a href="#skills" onClick={()=> HandleClick('#skills')} className="relative inline-block">Skills</a>
+                                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                {isActive === '#skills' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                </div>
+                            </li>
+                            {/* Projects */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                    <a href="#projects" onClick={()=> HandleClick('#projects')} className="relative inline-block">Projects</a>
+                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                    {isActive === '#projects' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                </div>
+                            </li>
+                            {/* Contact */}
+                            <li>
+                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                    <a href="#contact" onClick={()=> HandleClick('#contact')} className="relative inline-block">Contact</a>
+                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+
+                                    {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                </div>
+                            </li>
                         </ul>
+                        </div>
                     </div>
                     )}
                </div>)}
