@@ -57,8 +57,9 @@ export default function Home(){
                 </div>
 
                 <div className="mt-6">
-                    <a href="/file/Leomar-Abad-CV.docx" className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1
-                    pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] transition duration-200 ease-in hover:scale-105 font-semibold" download>Download CV</a>
+                    <button className="transition duration-200 ease-in hover:scale-105">
+                        <a href="/file/Leomar-Abad-CV.docx" className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1 pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" download>Download CV</a>
+                    </button>
                 </div>
 
                 </div>
@@ -68,7 +69,7 @@ export default function Home(){
                 {/* Light effect */}
                 <div className="absolute inset-24 bg-white opacity-20 blur-3xl z-0 rounded-full animate-pulse"></div>
                     {/* Border */}
-                    <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)]  w-80 h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
+                    <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)] w-60 h-60 sm:w-52 sm:h-52  md:w-60 md:h-60 lg:w-80 lg:h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
                             {/* Image */}
                         <img
                         src="/image/Leomar-Abad.png"

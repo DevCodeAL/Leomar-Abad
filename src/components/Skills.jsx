@@ -237,17 +237,6 @@ export default function Skills(){
                                             <span className="text-white text-nowrap" >Postman</span>
                                         </div>
                                 </div>
-
-                                 <div className="p-2">
-                                    <div>
-                                           <img src="/image/crome-dev.png" className="ml-auto mr-auto w-14" alt="Logo" />
-                                    </div>
-                                      <div>
-                                           <span className="text-white text-nowrap" >Crome DevTools</span>
-                                      </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </div>
