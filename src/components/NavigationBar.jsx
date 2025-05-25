@@ -24,13 +24,17 @@ export default function NavigationBar(){
         setIsActive(id);
     };
 
-    // Function to Handle width size
+    // Monitor
+    useEffect(()=> {
+     // Function to Handle width size
     function HandleResize(){
+        if(isShow <= 562){
+            setSideBarShow(false);
+        };
+
         setShow(window.innerWidth);
     };
 
-    // Monitor Width
-    useEffect(()=> {
        window.addEventListener('resize', HandleResize);
 
        return ()=> window.removeEventListener('resize', HandleResize);
@@ -109,7 +113,7 @@ export default function NavigationBar(){
                       {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                    </div>
                </div>
-                    // SideBar Container
+                    // Top-navigationbar container
             ) : (<div className="fixed w-full right-0 top-0 z-10">
                     {/* Burger Toggle  */}
                     <div className={`text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`} w-full`}>
@@ -123,7 +127,7 @@ export default function NavigationBar(){
                                  <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
                                 <IoClose/></button>
                            </div>
-                        <div>
+                        <div className="p-9">
                             {/* SideBar Links */}
                             <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
                                 {/* Home */}

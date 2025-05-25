@@ -54,6 +54,12 @@ export default function Home(){
                     <FaGithub />
                     </a>
                 </div>
+
+                <div className="mt-6">
+                    <button className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1
+                    pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] transition duration-200 ease-in hover:scale-105 font-semibold">Download CV</button>
+                </div>
+
                 </div>
 
                 {/* Image */}
