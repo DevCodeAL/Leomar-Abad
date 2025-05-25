@@ -2,6 +2,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+// import { FaDownload } from "react-icons/fa";
 
 export default function Home(){
 
@@ -56,8 +57,8 @@ export default function Home(){
                 </div>
 
                 <div className="mt-6">
-                    <button className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1
-                    pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] transition duration-200 ease-in hover:scale-105 font-semibold">Download CV</button>
+                    <a href="/file/Leomar-Abad-CV.docx" className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1
+                    pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] transition duration-200 ease-in hover:scale-105 font-semibold" download>Download CV</a>
                 </div>
 
                 </div>
