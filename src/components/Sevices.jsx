@@ -6,13 +6,14 @@ export default function Services(){
 const services = [
     {
       title: "Fullstack Web App Development",
-      emoji: "🖥️⚙️",
-      description: "End-to-end development of robust, scalable web applications using MERN stack or PHP/MySQL.",
+      emoji: "🖥️",
+      description: "I can code my own designs or use the customer's design as a base. My focus is on writing clean, well-structured code for reliability. I specialize in end-to-end development of robust, scalable web applications using the MERN stack.",
     },
+
     {
-      title: "Custom Business Systems",
-      emoji: "🏢",
-      description: "Tailored systems like E-commerce, Learning Resources and Management System, and Legislative Tracking platforms for organizations and many more.",
+      title: "Basic SEO",
+      emoji: "🔍",
+      description: "I can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money.",
     },
     {
       title: "Responsive Frontend Design",
@@ -30,9 +31,9 @@ const services = [
       description: "Improve performance, fix bugs, and keep websites fast, secure, and updated regularly.",
     },
      {
-    title: "Integrating AI",
-    emoji: "🤖",
-    description: "Building intelligent features by integrating AI tools and APIs to enhance functionality and user experience.",
+    title: "Design",
+    emoji: "🎨",
+    description: "Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth.",
   },
 
   ];

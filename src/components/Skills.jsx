@@ -28,10 +28,10 @@ export default function Skills(){
                         <div className="relative">
                                  {/* Html */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[100px] right-0 border-t-2  md:w-28 lg:w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[100px] right-0 border opacity-40 md:w-28 lg:w-80 border-[#1ed760]"></div>
                                <div className="absolute top-20 md:right-[120px] lg:right-[340px] flex flex-col justify-center">
                                 <div className="w-10">
-                                  <img src="/image/html.png" alt="Logo" />
+                                  <img src="/image/html.png" alt="Logo"/>
                                 </div>
                                 <div>
                                      <span className="text-white text-nowrap" >HTML</span>
@@ -40,7 +40,7 @@ export default function Skills(){
 
                               {/* Css */}
                                  {/* Horizontal Line */}
-                            <div className="absolute top-[200px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
+                            <div className="absolute top-[200px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
                                <div className="absolute top-[160px] right-[340px] flex flex-col justify-center">
                                 <div className="w-10">
                                   <img src="/image/CSS3.png" alt="Logo" />
@@ -52,7 +52,7 @@ export default function Skills(){
 
                                   {/* Node Js */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[150px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[150px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-32 left-[340px] flex flex-col justify-center">
                                 <div className="w-20">
                                   <img src="/image/node-js-736399_1280.png" alt="Logo" />
@@ -64,7 +64,7 @@ export default function Skills(){
 
                              {/* Express Js */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[250px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[250px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-[220px] left-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/express-js.png" alt="Logo" />
@@ -76,7 +76,7 @@ export default function Skills(){
 
                                {/* Javascript */}
                              {/* Horizontal Line */}
-                             <div className="absolute top-[300px] right-0 border-t-2 w-80 border-[#1ed760]"> </div>
+                             <div className="absolute top-[300px] right-0 border opacity-40 w-80 border-[#1ed760]"> </div>
                                     <div className="absolute top-[270px] right-[318px] flex flex-col justify-center">
                                         <div className="w-12">
                                               <img src="/image/javascript.png" alt="Logo" />
@@ -88,7 +88,7 @@ export default function Skills(){
 
                                       {/* PHP */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[350px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[350px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-[322px] left-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/PHP.png" alt="Logo" />
@@ -101,7 +101,7 @@ export default function Skills(){
 
                                {/* React */}
                                  {/* Horizontal Line */}
-                            <div className="absolute top-[400px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
+                            <div className="absolute top-[400px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
                                <div className="absolute top-[370px] right-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/React.png" alt="Logo" />
@@ -113,7 +113,7 @@ export default function Skills(){
 
                                  {/* MongoDb */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[450px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[450px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-[420px] left-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/MongoDb.png" alt="Logo" />
@@ -125,7 +125,7 @@ export default function Skills(){
 
                                    {/* MySQL */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[550px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[550px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-[520px] left-[340px] flex flex-col justify-center">
                                 <div className="w-14">
                                   <img src="/image/Mysql_logo.png" alt="Logo" />
@@ -139,7 +139,7 @@ export default function Skills(){
 
                               {/* Tailwind Css */}
                                  {/* Horizontal Line */}
-                            <div className="absolute top-[500px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
+                            <div className="absolute top-[500px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
                                <div className="absolute top-[478px] right-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/Tailwind_CSS.png" alt="" />
@@ -152,7 +152,7 @@ export default function Skills(){
 
                                   {/* Bootstrap */}
                                  {/* Horizontal Line */}
-                            <div className="absolute top-[600px] right-0 border-t-2 w-80 border-[#1ed760]"></div>
+                            <div className="absolute top-[600px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
                                <div className="absolute top-[578px] right-[340px] flex flex-col justify-center">
                                 <div className="w-12">
                                   <img src="/image/bootstrap.png" alt="" />
@@ -165,7 +165,7 @@ export default function Skills(){
 
                                  {/* Supabase */}
                                  {/* Horizontal Line */}
-                             <div className="absolute top-[650px] border-t-2 w-80 border-[#1ed760]"></div>
+                             <div className="absolute top-[650px] border opacity-40 w-80 border-[#1ed760]"></div>
                             <div className="absolute top-[620px] left-[340px] flex flex-col justify-center">
                                 <div className="w-20">
                                   <img src="/image/supabase.png" alt="Logo" />
@@ -175,8 +175,10 @@ export default function Skills(){
                                 </div>
                              </div>
 
+                            {/* Bullets */}
+                            <span className="absolute p-1 bg-[#1ed760] rounded-full"></span>
                             {/* Vertical Line */}
-                             <div className="border-l-2 border-[#1ed760] h-[740px]"></div>
+                             <div className="border-[#1ed760] border opacity-40 h-[740px]"></div>
                         </div>
 
                          <div>
