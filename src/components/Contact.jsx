@@ -30,8 +30,10 @@ export default function Contact(){
                     </div>
                 </div>
 
+                    <h1 className="text-center text-[#1ed760] text-4xl font-bold">Get In Touch</h1>
+
                     {/* Contact Section */}
-                <div className="flex justify-center flex-wrap gap-8 z-10">
+                <div className="flex justify-center flex-wrap gap-8 mt-10 z-10">
                     
                     {/* Contact Form */}
                      <div className="text-white bg-[#212121] p-10 w-[350px] 
@@ -71,7 +73,7 @@ export default function Contact(){
                 </div>
 
                     {/* Contact Details */}
-                    <div className="flex flex-col items-center border gap-10 w-[500px] text-white">
+                    <div className="flex flex-col items-center gap-10 w-[500px] text-white">
                         <div>
                             <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
                             <ul className="text-base/10">
@@ -133,6 +135,11 @@ export default function Contact(){
                                 </a>
                             </li>
                         </ul>
+
+                        <div className="absolute whitespace-normal">
+                            <h1 className="text-base font-medium mb-3 mt-11 text-white" >Lorem ipsum dolor sit amet.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quod sapiente illo reprehenderit, numquam eius vero eum? Quas, earum nesciunt?</p>
+                        </div>
                     </div>     
                 </div>
             </div>
