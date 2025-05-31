@@ -237,6 +237,15 @@ export default function Skills(){
 
                                 <div className="p-2">
                                      <div>
+                                          <img src="/image/vite-js-logo.png" className="ml-auto mr-auto w-20" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >Vite</span>
+                                        </div>
+                                </div>
+
+                                <div className="p-2">
+                                     <div>
                                           <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
                                      </div>
                                         <div>

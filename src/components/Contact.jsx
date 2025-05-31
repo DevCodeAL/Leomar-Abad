@@ -1,10 +1,17 @@
 import { MdContactPhone } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 export default function Contact(){
     return(
         <>
-            <section className="flex justify-center items-center w-full bg-[#121212] z-10 h-screen" id="contact">
-             <div className="flex flex-col gap-6 pt-6 pb-6">
+            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="contact">
+             <div className="flex flex-col gap-6 pt-6 pb-6 w-full m-8">
                <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">
                         <MdContactPhone/>
@@ -14,34 +21,92 @@ export default function Contact(){
                     </div>
                 </div>
 
-                    {/* Contact Form Section */}
-                <div className="flex justify-center flex-col sm:flex-col md:flex-col lg:flex-row gap-4 z-10">
-                    <div className="bg-[#212121] w-full p-10 text-white">
-                        <h1 className="text-2xl font-bold text-nowrap">Contact Info</h1>
-                        <ul>
-                            <li>abadleomar875@gmail.com</li>
-                            <li>+639169232342</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <div className="text-white bg-[#212121] p-10 w-full rounded-md">
-                        <form className="flex flex-col gap-4 font-semibold">
+                    {/* Contact Section */}
+                <div className="flex justify-center flex-wrap gap-8 z-10">
+                    
+                    {/* Contact Form */}
+                     <div className="text-white bg-[#212121] p-10 w-[350px] 
+                     sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
+                        <form className="flex flex-col gap-3 font-semibold">
                         <label htmlFor="">Your Name</label>
                         <input type="text" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
                         <label htmlFor="">Your Email</label>
                         <input type="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
                         <label htmlFor="">Your Message</label>
-                        <textarea name="message" id="message" className="w-80 h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....."></textarea>
-                        <button type="submit" className="bg-[#1ed760] hover:bg-[#1db954] p-2 rounded-md"      >Send</button>
+                        <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....."></textarea>
+                        <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">Send</button>
                     </form>
                 </div>
+
+                    {/* Contact Details */}
+                    <div className="flex flex-col items-center gap-10 w-[500px] text-white">
+                        <div>
+                            <ul className="text-base/10">
+                         <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
+                            <li className="flex items-center gap-1">
+                                <div className="text-[#1ed760] text-xl">
+                                    <MdEmail/>
+                                </div>
+                                <div>
+                                    <p>abadleomar875@gmail.com</p>
+                                </div>
+                            </li>
+                            <li className="flex items-center gap-1">
+                                <div className="text-[#1ed760] text-xl">
+                                    <BsFillTelephoneFill/>
+                                </div>
+                                <div>
+                                    <p>+639169232342</p>
+                                </div>
+                            </li>
+                            <li className="flex items-center gap-1">
+                                <div className="text-[#1ed760] text-xl">
+                                    <FaLocationDot/>
+                                </div>
+                                <div>
+                                    <p>Cuyapo, Nueva Ecija, Philippines</p>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                            {/* Social */}
+                        <div>
+                            <h1 className="text-xl font-medium mb-3">Social</h1>
+                            <ul className="flex gap-3 text-[#1ed760] text-xl">
+                            <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
+                                <a
+                                href="https://www.facebook.com/abad.leomar/"
+                                target="_blank">
+                                <FaFacebook />
+                                </a>
+                            </li>
+                            <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
+                                <a
+                                href="https://www.instagram.com/abadleomar875/"
+                                target="_blank">
+                                <FaInstagramSquare />
+                                </a>
+                            </li>
+                            <li  className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
+                                <a
+                                href="https://www.linkedin.com/in/leomar-abad-52381327b/"
+                                target="_blank">
+                                <FaLinkedin />
+                                </a>
+                            </li>
+                            <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
+                                <a
+                                href="https://github.com/DevCodeAL"
+                                target="_blank">
+                                <FaGithub />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                
-                </div>
-            </section>
-        </>
+            </div>
+        </div>
+    </section>
+ </>
     );
 };
