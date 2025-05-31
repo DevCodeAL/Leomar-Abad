@@ -1,4 +1,6 @@
 import { FaUserCog, FaTools } from "react-icons/fa";
+import { CiCircleCheck } from "react-icons/ci";
+import { FaCircle } from "react-icons/fa";
   
 export default function Skills(){
     return(
@@ -176,7 +178,9 @@ export default function Skills(){
                              </div>
 
                             {/* Bullets */}
-                            <span className="absolute p-1 bg-[#1ed760] rounded-full"></span>
+                            <span className="absolute top-0 -left-[7px] text-[#1ed760] rounded-full">
+                               <FaCircle/>
+                            </span>
                             {/* Vertical Line */}
                              <div className="border-[#1ed760] border opacity-40 h-[740px]"></div>
                         </div>

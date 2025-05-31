@@ -24,7 +24,7 @@ export default function NavigationBar(){
         setIsActive(id);
     };
 
-    // Monitor
+    // Monitor width
     useEffect(()=> {
      // Function to Handle width size
     function HandleResize(){
@@ -114,7 +114,7 @@ export default function NavigationBar(){
                    </div>
                </div>
                     // Top-navigationbar container
-            ) : (<div className="fixed w-full right-0 top-0 z-10">
+            ) : (<div className="fixed w-full right-0 top-0 z-20">
                     {/* Burger Toggle  */}
                     <div className={`text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`} w-full`}>
                         {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4"><GiHamburgerMenu/></button>}
