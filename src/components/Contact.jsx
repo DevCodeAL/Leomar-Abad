@@ -6,8 +6,17 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact(){
+    const [state, HandleSubmit] = useForm("mdkznpqe");
+
+    if(state.succeeded){
+        return <h1>Thanks for message!</h1>
+    };
+
+    
+
     return(
         <>
             <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="contact">
@@ -27,22 +36,45 @@ export default function Contact(){
                     {/* Contact Form */}
                      <div className="text-white bg-[#212121] p-10 w-[350px] 
                      sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
-                        <form className="flex flex-col gap-3 font-semibold">
-                        <label htmlFor="">Your Name</label>
-                        <input type="text" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
-                        <label htmlFor="">Your Email</label>
-                        <input type="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
-                        <label htmlFor="">Your Message</label>
+                        <form onSubmit={HandleSubmit} className="flex flex-col gap-3 font-semibold">
+
+                        <label htmlFor="name">Your Name</label>
+                        <input type="text" name="name" id="name" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
+
+                        <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
+                        />
+
+                        <label htmlFor="email">Your Email</label>
+                        <input type="email" name="email" id="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
+
+                        <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                        />
+
+                        <label htmlFor="message">Your Message</label>
                         <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....."></textarea>
-                        <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">Send</button>
+
+                        <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                        />
+
+                        <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">
+                            Send</button>
                     </form>
                 </div>
 
                     {/* Contact Details */}
-                    <div className="flex flex-col items-center gap-10 w-[500px] text-white">
+                    <div className="flex flex-col items-center border gap-10 w-[500px] text-white">
                         <div>
+                            <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
                             <ul className="text-base/10">
-                         <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
                             <li className="flex items-center gap-1">
                                 <div className="text-[#1ed760] text-xl">
                                     <MdEmail/>
@@ -68,10 +100,9 @@ export default function Contact(){
                                 </div>
                             </li>
                         </ul>
-                        </div>
-                            {/* Social */}
-                        <div>
-                            <h1 className="text-xl font-medium mb-3">Social</h1>
+
+                         {/* Social */}
+                            <h1 className="text-xl font-medium mb-3 mt-11">Social</h1>
                             <ul className="flex gap-3 text-[#1ed760] text-xl">
                             <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
                                 <a
@@ -102,7 +133,7 @@ export default function Contact(){
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div>     
                 </div>
             </div>
         </div>
