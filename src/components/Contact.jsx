@@ -7,13 +7,32 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { useForm, ValidationError } from '@formspree/react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 
 export default function Contact(){
-    const [state, HandleSubmit] = useForm("mdkznpqe");
-    const [isSuccess, setIsSuccess] = useState(true);
-    
+    const [isSuccess, setIsSuccess] = useState(false);
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+        .sendForm('service_98lua9w', 'template_upbyyi5', form.current, {
+            publicKey: 'vYF_5cRgYohCu5AgW',
+        })
+        .then(
+            () => {
+            console.log('SUCCESS!');
+            },
+            (error) => {
+            console.log('FAILED...', error.text);
+            },
+        );
+    };
+
+   
 
     return(
         <>
@@ -37,35 +56,19 @@ export default function Contact(){
                     {/* Contact Form */}
                      <div className="text-white bg-[#212121] p-10 w-[350px] 
                      sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
-                        <form onSubmit={HandleSubmit}  className="flex flex-col gap-3">
+                        <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
 
                         <label className="font-semibold" htmlFor="name">Your Name</label>
                         <input type="text" name="name" id="name" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
-                        <ValidationError
-                        prefix="Name"
-                        field="name"
-                        errors={state.errors}
-                        />
 
                         <label  className="font-semibold" htmlFor="email">Your Email</label>
                         <input type="email" name="email" id="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
-                        <ValidationError
-                        className="text-red-500 text-sm"
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                        />
 
                         <label className="font-semibold" htmlFor="message">Your Message</label>
                         <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....." required></textarea>
 
-                        <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                        />
 
                         <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">
                             Send</button>
@@ -73,7 +76,7 @@ export default function Contact(){
                 </div>
 
                 {/* Successfully Modal Alert */}
-                {state.succeeded === !isSuccess && (
+                {isSuccess && (
                     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
                     <div className="bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center">
                         <div className="flex flex-col items-center">
