@@ -12,19 +12,37 @@ import emailjs from '@emailjs/browser';
 import { useState } from "react";
 
 export default function Contact(){
+    const [formData, setFormData] = useState({name: "", email: "", message: ""});
     const [isSuccess, setIsSuccess] = useState(false);
+
+    // Function handle to input change
+    const HandleChange = (e)=>{
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+
+    // Function to sending email in form data
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-        .sendForm('service_98lua9w', 'template_upbyyi5', form.current, {
-            publicKey: 'vYF_5cRgYohCu5AgW',
+        .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID,
+             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+             form.current, {
+            publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         })
         .then(
             () => {
-            console.log('SUCCESS!');
+            setFormData({
+                name: "", email: "", message: "",
+            });
+            setIsSuccess(true);
             },
             (error) => {
             console.log('FAILED...', error.text);
@@ -59,15 +77,18 @@ export default function Contact(){
                         <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
 
                         <label className="font-semibold" htmlFor="name">Your Name</label>
-                        <input type="text" name="name" id="name" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
+                        <input type="text" name="name" id="name" value={formData.name} 
+                        onChange={HandleChange} className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
 
                         <label  className="font-semibold" htmlFor="email">Your Email</label>
-                        <input type="email" name="email" id="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
+                        <input type="email" name="email" id="email" value={formData.email} 
+                        onChange={HandleChange} className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
 
                         <label className="font-semibold" htmlFor="message">Your Message</label>
-                        <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....." required></textarea>
+                        <textarea name="message" id="message" value={formData.message}
+                        onChange={HandleChange} className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....." required></textarea>
 
 
                         <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">
