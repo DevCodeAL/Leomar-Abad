@@ -6,15 +6,13 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import { useForm, ValidationError } from '@formspree/react';
+import { useState } from "react";
 
 export default function Contact(){
     const [state, HandleSubmit] = useForm("mdkznpqe");
-
-    if(state.succeeded){
-        return <h1>Thanks for message!</h1>
-    };
-
+    const [isSuccess, setIsSuccess] = useState(true);
     
 
     return(
@@ -30,18 +28,19 @@ export default function Contact(){
                     </div>
                 </div>
 
-                    <h1 className="text-center text-[#1ed760] text-4xl font-bold">Get In Touch</h1>
+                    <h1 className="text-center text-[#1ed760] text-2xl font-bold">Get In Touch</h1>
+                    <p className="text-xl text-white text-center font-bold">Let’s Build Something Great Together.</p>
 
                     {/* Contact Section */}
-                <div className="flex justify-center flex-wrap gap-8 mt-10 z-10">
+                <div className="flex justify-center flex-wrap gap-20 mt-10 z-10">
                     
                     {/* Contact Form */}
                      <div className="text-white bg-[#212121] p-10 w-[350px] 
                      sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
-                        <form onSubmit={HandleSubmit} className="flex flex-col gap-3 font-semibold">
+                        <form onSubmit={HandleSubmit}  className="flex flex-col gap-3">
 
-                        <label htmlFor="name">Your Name</label>
-                        <input type="text" name="name" id="name" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
+                        <label className="font-semibold" htmlFor="name">Your Name</label>
+                        <input type="text" name="name" id="name" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
                         <ValidationError
                         prefix="Name"
@@ -49,17 +48,18 @@ export default function Contact(){
                         errors={state.errors}
                         />
 
-                        <label htmlFor="email">Your Email</label>
-                        <input type="email" name="email" id="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg"/>
+                        <label  className="font-semibold" htmlFor="email">Your Email</label>
+                        <input type="email" name="email" id="email" className="h-10 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" required/>
 
                         <ValidationError
+                        className="text-red-500 text-sm"
                         prefix="Email"
                         field="email"
                         errors={state.errors}
                         />
 
-                        <label htmlFor="message">Your Message</label>
-                        <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....."></textarea>
+                        <label className="font-semibold" htmlFor="message">Your Message</label>
+                        <textarea name="message" id="message" className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....." required></textarea>
 
                         <ValidationError
                         prefix="Message"
@@ -72,9 +72,30 @@ export default function Contact(){
                     </form>
                 </div>
 
+                {/* Successfully Modal Alert */}
+                {state.succeeded === !isSuccess && (
+                    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                    <div className="bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center">
+                        <div className="flex flex-col items-center">
+                        <FaCheckCircle className="text-[#1DB954] text-6xl mb-4" />
+                        <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
+                        <p className="text-sm mb-6">
+                            Thank you for reaching out. I'll get back to you as soon as possible.
+                        </p>
+                        <button
+                            onClick={()=> setIsSuccess(false)}
+                            className="bg-[#1DB954] hover:bg-[#1ed760] text-black px-6 py-2 rounded-md transition duration-300"
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                )}
+
                     {/* Contact Details */}
-                    <div className="flex flex-col items-center gap-10 w-[500px] text-white">
-                        <div>
+                    <div className="flex flex-col items-center w-[500px] text-white">
+                        
                             <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
                             <ul className="text-base/10">
                             <li className="flex items-center gap-1">
@@ -135,12 +156,14 @@ export default function Contact(){
                                 </a>
                             </li>
                         </ul>
-
-                        <div className="absolute whitespace-normal">
-                            <h1 className="text-base font-medium mb-3 mt-11 text-white" >Lorem ipsum dolor sit amet.</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quod sapiente illo reprehenderit, numquam eius vero eum? Quas, earum nesciunt?</p>
-                        </div>
-                    </div>     
+                        <div className="text-center px-10">
+                            <h1 className="text-base font-medium mb-3 mt-11 text-white">
+                            Turn Your Ideas Into Reality!
+                            </h1>
+                            <p className="whitespace-normal text-wrap text-sm text-white">
+                                Whether you have a project in mind, need help bringing your vision to life, or just want to connect — feel free to reach out. Let’s create something meaningful together.
+                          </p>
+                    </div>    
                 </div>
             </div>
         </div>
