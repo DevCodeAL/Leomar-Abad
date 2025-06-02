@@ -20,7 +20,7 @@ export default function Skills(){
                     </div>
 
                     {/* Skills Container */}
-                    <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2">
                         {/* Frontend Skills SubParent Container */}
                         <div>
                           {/* Title Container */}
@@ -29,7 +29,7 @@ export default function Skills(){
                            <div className="absolute bottom-0 border-t-2 w-[40%]  sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                             {/* Skills Logo Containers */}
-                            <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-6 m-6">
+                            <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6">
                                <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/html.png" alt="Logo"/>
@@ -47,28 +47,28 @@ export default function Skills(){
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/javascript.png" alt="Logo"/>
-                                  <span className="text-white text-base">Javascript ES6+</span>
+                                  <span className="text-white text-base text-nowrap">Javascript ES6+</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/React.png" alt="Logo"/>
-                                  <span className="text-white text-base">React Js</span>
+                                  <span className="text-white text-base text-nowrap">React Js</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/Tailwind_CSS.png" alt="Logo"/>
-                                  <span className="text-white text-base">Tailwind CSS</span>
+                                  <span className="text-white text-base text-nowrap">Tailwind CSS</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/bootstrap.png" alt="Logo"/>
-                                  <span className="text-white">Bootstrap 5</span>
+                                  <span className="text-white text-nowrap">Bootstrap 5</span>
                                 </div>
                              </div>
                             </div>
@@ -82,7 +82,7 @@ export default function Skills(){
                             <div className="absolute bottom-0 border-t-2 w-[40%]   sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                               {/* Skills Logo Container */}
-                              <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-8">
+                               <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6">
                                 <div className="flex flex-col justify-center">
                                 <div className="relative w-16">
                                   <img src="/image/nodejs.png" alt="Logo"/>
@@ -99,7 +99,7 @@ export default function Skills(){
                              </div>
 
                               <div className="flex flex-col justify-center">
-                                <div className="relative w-12">
+                                <div className="relative w-16">
                                   <img src="/image/PHP.png" alt="Logo"/>
                                   <span className="text-white">PHP</span>
                                 </div>
@@ -113,7 +113,7 @@ export default function Skills(){
                              </div>
 
                               <div className="flex flex-col justify-center">
-                                <div className="relative w-12">
+                                <div className="relative w-14">
                                   <img src="/image/Mysql_logo.png" alt="Logo"/>
                                   <span className="text-white">MySql</span>
                                 </div>
