@@ -54,7 +54,7 @@ const services = [
             </div>
 
                  <div>
-                    <p className="text-[#b3b3b3] mt-4 mb-12">What I offer based on my skills and experience.</p>
+                    <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12">What I offer based on my skills and experience.</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">

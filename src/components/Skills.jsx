@@ -5,7 +5,7 @@ export default function Skills(){
     return(
         <>
            <section className="flex justify-center w-full bg-[#121212] z-10" id="skills">
-           <div className="w-full mt-32 text-center">
+           <div className="max-w-full mt-32 text-center">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">
                     <FaUserCog/>
@@ -16,11 +16,11 @@ export default function Skills(){
                     </div>
                     
                     <div>
-                        <p className="text-[#b3b3b3] mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
+                        <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
                     </div>
 
                     {/* Skills Container */}
-                    <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2">
+                    <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Frontend Skills SubParent Container */}
                         <div>
                           {/* Title Container */}
@@ -144,7 +144,7 @@ export default function Skills(){
                     </div>
                             
                     <div>
-                        <p className="text-base text-[#b3b3b3] mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
+                        <p className="text-[#b3b3b3] text-sm md:text-base mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
                     </div>
 
                             <div className="flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6">
