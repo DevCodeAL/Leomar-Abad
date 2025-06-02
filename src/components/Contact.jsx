@@ -66,13 +66,13 @@ export default function Contact(){
                 </div>
 
                     <h1 className="text-center text-[#1ed760] text-2xl font-bold">Get In Touch</h1>
-                    <p className="text-xl text-white text-center font-bold">Let’s Build Something Great Together.</p>
+                    <p className="text-xl text-white text-center font-bold px-2">Let’s Build Something Great Together.</p>
 
                     {/* Contact Section */}
                 <div className="flex justify-center flex-wrap gap-20 mt-10 z-10">
                     
                     {/* Contact Form */}
-                     <div className="text-white bg-[#212121] p-10 w-[350px] 
+                     <div className="text-white bg-[#212121] p-10 w-[330px] 
                      sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
                         <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
 

@@ -26,7 +26,7 @@ export default function Projects(){
 
     return(
         <>
-            <section className="flex justify-center w-full bg-[#121212] z-10 min-h-screen" id="projects">
+            <section className="flex justify-center w-full bg-[#121212] z-10" id="projects">
            <div className="max-w-6xl mx-auto mt-32 text-center">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">

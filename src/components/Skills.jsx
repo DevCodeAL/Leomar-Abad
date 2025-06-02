@@ -82,7 +82,7 @@ export default function Skills(){
                             <div className="absolute bottom-0 border-t-2 w-[40%]   sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                               {/* Skills Logo Container */}
-                              <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-6 m-6">
+                              <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-8">
                                 <div className="flex flex-col justify-center">
                                 <div className="relative w-16">
                                   <img src="/image/nodejs.png" alt="Logo"/>
