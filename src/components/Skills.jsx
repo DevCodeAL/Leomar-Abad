@@ -33,42 +33,42 @@ export default function Skills(){
                                <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/html.png" alt="Logo"/>
-                                  <span className="text-white text-base">HTML</span>
+                                  <span className="text-white text-sm md:text-base">HTML5</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/CSS3.png" alt="Logo"/>
-                                  <span className="text-white text-base">CSS3</span>
+                                  <span className="text-white text-sm md:text-base">CSS3</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/javascript.png" alt="Logo"/>
-                                  <span className="text-white text-base text-nowrap">Javascript ES6+</span>
+                                  <span className="text-white text-sm md:text-base">Javascript ES6+</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/React.png" alt="Logo"/>
-                                  <span className="text-white text-base text-nowrap">React Js</span>
+                                  <span className="text-white text-sm md:text-base">React Js</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-12">
                                   <img src="/image/Tailwind_CSS.png" alt="Logo"/>
-                                  <span className="text-white text-base text-nowrap">Tailwind CSS</span>
+                                  <span className="text-white text-sm md:text-base">Tailwind CSS</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/bootstrap.png" alt="Logo"/>
-                                  <span className="text-white text-nowrap">Bootstrap 5</span>
+                                  <span className="text-white text-sm md:text-base">Bootstrap 5</span>
                                 </div>
                              </div>
                             </div>
@@ -86,14 +86,14 @@ export default function Skills(){
                                 <div className="flex flex-col justify-center">
                                 <div className="relative w-16">
                                   <img src="/image/nodejs.png" alt="Logo"/>
-                                  <span className="text-white text-nowrap">Node Js</span>
+                                  <span className="text-white text-sm md:text-base">Node Js</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/express-js.png" alt="Logo"/>
-                                  <span className="text-white text-nowrap">Express Js</span>
+                                  <span className="text-white text-sm md:text-base">Express Js</span>
 
                                 </div>
                              </div>
@@ -101,28 +101,28 @@ export default function Skills(){
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-16">
                                   <img src="/image/PHP.png" alt="Logo"/>
-                                  <span className="text-white">PHP</span>
+                                  <span className="text-white text-sm md:text-base">PHP</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/MongoDb.png" alt="Logo"/>
-                                  <span className="text-white text-nowrap">MongoDB</span>
+                                  <span className="text-white text-sm md:text-base">MongoDB</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-14">
                                   <img src="/image/Mysql_logo.png" alt="Logo"/>
-                                  <span className="text-white">MySql</span>
+                                  <span className="text-white text-sm md:text-base">MySQL</span>
                                 </div>
                              </div>
 
                               <div className="flex flex-col justify-center">
                                 <div className="relative w-14">
                                   <img src="/image/supabase.png" alt="Logo"/>
-                                  <span className="text-white">Supabase</span>
+                                  <span className="text-white text-sm md:text-base">Supabase</span>
                                 </div>
                              </div>
                             </div>
@@ -154,7 +154,7 @@ export default function Skills(){
                                         <img src="/image/VSC.png" className="ml-auto mr-auto w-10"  alt="Logo" />
                                       </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >Visual Studio Code</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >Visual Studio Code</span>
                                         </div>
                                 </div>
 
@@ -163,7 +163,7 @@ export default function Skills(){
                                          <img src="/image/git_github.png" className="ml-auto mr-auto w-12" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >Git & Github</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >Git & Github</span>
                                         </div>
                                 </div>
 
@@ -172,7 +172,7 @@ export default function Skills(){
                                            <img src="/image/Npm-logo.svg.png" className="ml-auto mr-auto w-16" alt="Logo" />
                                       </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >NPM</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >NPM</span>
                                         </div>
                                 </div>
 
@@ -181,7 +181,7 @@ export default function Skills(){
                                           <img src="/image/vite-js-logo.png" className="ml-auto mr-auto w-20" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >Vite</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >Vite</span>
                                         </div>
                                 </div>
 
@@ -190,7 +190,7 @@ export default function Skills(){
                                           <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >Postman</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >Postman</span>
                                         </div>
                                 </div>
 
@@ -199,7 +199,7 @@ export default function Skills(){
                                           <img src="/image/xammp.png" className="ml-auto mr-auto w-12" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap" >Xammp</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap" >Xammp</span>
                                         </div>
                                 </div>
 
@@ -208,7 +208,7 @@ export default function Skills(){
                                           <img src="/image/render.jpg" className="ml-auto mr-auto w-12" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap">Render</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap">Render</span>
                                         </div>
                                 </div>
 
@@ -217,7 +217,7 @@ export default function Skills(){
                                           <img src="/image/vercel.jpg" className="ml-auto mr-auto w-12" alt="Logo" />
                                      </div>
                                         <div>
-                                            <span className="text-white text-nowrap">Vercel</span>
+                                            <span className="text-white text-sm md:text-base text-nowrap">Vercel</span>
                                         </div>
                                 </div>
                             </div>
