@@ -15,7 +15,7 @@ export default function Skills(){
                     </div>
                     
                     <div>
-                        <p className="text-[#b3b3b3] mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
+                        <p className="text-[#b3b3b3] mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
                     </div>
 
                     {/* Skills Container */}
@@ -25,7 +25,7 @@ export default function Skills(){
                           {/* Title Container */}
                            <div className="relative flex justify-center items-center">
                              <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
-                            <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
+                           <div className="absolute bottom-0 border-t-2 w-[40%]  sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                             {/* Skills Logo Containers */}
                             <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
@@ -54,7 +54,6 @@ export default function Skills(){
                                 <div className="relative w-12">
                                   <img src="/image/React.png" alt="Logo"/>
                                   <span className="text-white text-base">React Js</span>
-
                                 </div>
                              </div>
 
@@ -62,7 +61,6 @@ export default function Skills(){
                                 <div className="relative w-12">
                                   <img src="/image/Tailwind_CSS.png" alt="Logo"/>
                                   <span className="text-white text-base">Tailwind CSS</span>
-
                                 </div>
                              </div>
 
@@ -70,10 +68,8 @@ export default function Skills(){
                                 <div className="relative w-10">
                                   <img src="/image/bootstrap.png" alt="Logo"/>
                                   <span className="text-white">Bootstrap 5</span>
-
                                 </div>
                              </div>
-
                             </div>
                         </div>
 
@@ -82,7 +78,7 @@ export default function Skills(){
                            {/* Title Container */}
                            <div className="relative flex justify-center items-center">
                              <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
-                            <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
+                            <div className="absolute bottom-0 border-t-2 w-[40%]   sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                               {/* Skills Logo Container */}
                               <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
@@ -105,7 +101,6 @@ export default function Skills(){
                                 <div className="relative w-12">
                                   <img src="/image/PHP.png" alt="Logo"/>
                                   <span className="text-white">PHP</span>
-
                                 </div>
                              </div>
 
@@ -120,7 +115,6 @@ export default function Skills(){
                                 <div className="relative w-12">
                                   <img src="/image/Mysql_logo.png" alt="Logo"/>
                                   <span className="text-white">MySql</span>
-
                                 </div>
                              </div>
 
@@ -128,7 +122,6 @@ export default function Skills(){
                                 <div className="relative w-14">
                                   <img src="/image/supabase.png" alt="Logo"/>
                                   <span className="text-white">Supabase</span>
-
                                 </div>
                              </div>
                             </div>
@@ -137,25 +130,25 @@ export default function Skills(){
 
                     {/* Another Divider for Other Tools */}
                     <div>
-                        <div className="flex flex-row justify-center gap-5 mt-14">
+                        <div className="flex flex-row justify-center gap-5 mt-10">
                             <div className="text-[#1ed760] text-2xl">
                                 <FaTools/>
                               </div>
                             <div>
                                 <div className="relative flex justify-center items-center">
                                   <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
-                                  <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
+                                  <div className="absolute bottom-0 border-t-2 w-full  sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                             </div>
                         </div>
                     </div>
                             
                     <div>
-                        <p className="text-[#b3b3b3] mb-12">Tools I use to support development, design, testing, and deployment processes.</p>
+                        <p className="text-base text-[#b3b3b3] mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
                     </div>
 
-                            <div className="flex justify-evenly">
+                            <div className="flex justify-center items-center flex-wrap gap-6 p-6">
 
-                                <div className="p-2">
+                                <div>
                                       <div>
                                         <img src="/image/VSC.png" className="ml-auto mr-auto w-10"  alt="Logo" />
                                       </div>
@@ -164,7 +157,7 @@ export default function Skills(){
                                         </div>
                                 </div>
 
-                                <div className="p-2">
+                                <div>
                                      <div>
                                          <img src="/image/git_github.png" className="ml-auto mr-auto w-12" alt="Logo" />
                                      </div>
@@ -173,7 +166,7 @@ export default function Skills(){
                                         </div>
                                 </div>
 
-                                <div className="p-2">
+                                <div>
                                       <div>
                                            <img src="/image/Npm-logo.svg.png" className="ml-auto mr-auto w-16" alt="Logo" />
                                       </div>
@@ -182,7 +175,7 @@ export default function Skills(){
                                         </div>
                                 </div>
 
-                                <div className="p-2">
+                                <div>
                                      <div>
                                           <img src="/image/vite-js-logo.png" className="ml-auto mr-auto w-20" alt="Logo" />
                                      </div>
@@ -191,7 +184,7 @@ export default function Skills(){
                                         </div>
                                 </div>
 
-                                <div className="p-2">
+                                <div>
                                      <div>
                                           <img src="/image/postman.png" className="ml-auto mr-auto w-16" alt="Logo" />
                                      </div>
