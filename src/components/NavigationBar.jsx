@@ -114,14 +114,14 @@ export default function NavigationBar(){
                    </div>
                </div>
                     // Top-navigationbar container
-            ) : (<div className="fixed w-full right-0 top-0 z-20">
+            ) : (<div>
                     {/* Burger Toggle  */}
-                    <div className={`text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`} w-full`}>
-                        {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4 m-3"><GiHamburgerMenu/></button>}
+                    <div className={`fixed w-full z-20 text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`}`}>
+                        {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4"><GiHamburgerMenu/></button>}
                     </div>
 
                     {isSideBarShow && (
-                        <div className={`text-white h-auto p-4 bg-[rgba(0,0,0,0.8)] animate-fade-down`}>
+                        <div className={`fixed w-full right-0 top-0 text-white h-auto z-20 p-4 bg-[rgba(0,0,0,0.8)] animate-fade-down`}>
                             {/* Close Button */}
                            <div className="text-right">
                                  <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
