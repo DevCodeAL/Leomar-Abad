@@ -1,12 +1,10 @@
 import { FaUserCog, FaTools } from "react-icons/fa";
-import { CiCircleCheck } from "react-icons/ci";
-import { FaCircle } from "react-icons/fa";
   
 export default function Skills(){
     return(
         <>
-           <section className="flex justify-center w-full bg-[#121212] z-10 min-h-screen" id="skills">
-           <div className="max-w-6xl mx-auto mt-32 text-center">
+           <section className="flex justify-center w-full bg-[#121212] z-10" id="skills">
+           <div className="w-full mt-32 text-center">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">
                     <FaUserCog/>
@@ -21,190 +19,139 @@ export default function Skills(){
                     </div>
 
                     {/* Skills Container */}
-                    <div className="flex justify-center gap-28">
+                    <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-3">
+                        {/* Frontend Skills SubParent Container */}
                         <div>
-                            <h1 className="text-white font-bold md:text-2xl lg:text-3xl">FRONT END</h1>
-                            <div className="relative border-t-2 md:w-full lg:w-80 mt-1 border-[#1ed760]"></div>
-                        </div>
-
-                        <div className="relative">
-                                 {/* Html */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[100px] right-0 border opacity-40 md:w-28 lg:w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-20 md:right-[120px] lg:right-[340px] flex flex-col justify-center">
-                                <div className="w-10">
+                          {/* Title Container */}
+                           <div className="relative flex justify-center items-center">
+                             <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
+                            <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
+                           </div>
+                            {/* Skills Logo Containers */}
+                            <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
+                               <div className="flex flex-col justify-center">
+                                <div className="relative w-10">
                                   <img src="/image/html.png" alt="Logo"/>
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >HTML</span>
+                                  <span className="text-white text-base">HTML</span>
                                 </div>
                              </div>
 
-                              {/* Css */}
-                                 {/* Horizontal Line */}
-                            <div className="absolute top-[200px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-[160px] right-[340px] flex flex-col justify-center">
-                                <div className="w-10">
-                                  <img src="/image/CSS3.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >CSS</span>
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-10">
+                                  <img src="/image/CSS3.png" alt="Logo"/>
+                                  <span className="text-white text-base">CSS3</span>
                                 </div>
                              </div>
 
-                                  {/* Node Js */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[150px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-32 left-[340px] flex flex-col justify-center">
-                                <div className="w-20">
-                                  <img src="/image/node-js-736399_1280.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >Node Js</span>
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-12">
+                                  <img src="/image/javascript.png" alt="Logo"/>
+                                  <span className="text-white text-base">Javascript ES6+</span>
                                 </div>
                              </div>
 
-                             {/* Express Js */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[250px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-[220px] left-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/express-js.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >Express Js</span>
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-12">
+                                  <img src="/image/React.png" alt="Logo"/>
+                                  <span className="text-white text-base">React Js</span>
+
                                 </div>
                              </div>
 
-                               {/* Javascript */}
-                             {/* Horizontal Line */}
-                             <div className="absolute top-[300px] right-0 border opacity-40 w-80 border-[#1ed760]"> </div>
-                                    <div className="absolute top-[270px] right-[318px] flex flex-col justify-center">
-                                        <div className="w-12">
-                                              <img src="/image/javascript.png" alt="Logo" />
-                                        </div>
-                                        <div>
-                                            <span className="text-white text-nowrap" >Javascript</span>
-                                        </div>
-                                    </div>
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-12">
+                                  <img src="/image/Tailwind_CSS.png" alt="Logo"/>
+                                  <span className="text-white text-base">Tailwind CSS</span>
 
-                                      {/* PHP */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[350px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-[322px] left-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/PHP.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >PHP</span>
                                 </div>
                              </div>
 
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-10">
+                                  <img src="/image/bootstrap.png" alt="Logo"/>
+                                  <span className="text-white">Bootstrap 5</span>
 
-                               {/* React */}
-                                 {/* Horizontal Line */}
-                            <div className="absolute top-[400px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-[370px] right-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/React.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >React</span>
                                 </div>
                              </div>
 
-                                 {/* MongoDb */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[450px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-[420px] left-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/MongoDb.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >MongoDB</span>
-                                </div>
-                             </div>
-
-                                   {/* MySQL */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[550px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-[520px] left-[340px] flex flex-col justify-center">
-                                <div className="w-14">
-                                  <img src="/image/Mysql_logo.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >MySQL</span>
-                                </div>
-                             </div>
-
-
-
-                              {/* Tailwind Css */}
-                                 {/* Horizontal Line */}
-                            <div className="absolute top-[500px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-[478px] right-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/Tailwind_CSS.png" alt="" />
-                                </div>
-                                <div>
-                                     <span className="absolute -left-4 text-white text-nowrap" >Tailwind CSS</span>
-                                </div>
-                             </div>
-
-
-                                  {/* Bootstrap */}
-                                 {/* Horizontal Line */}
-                            <div className="absolute top-[600px] right-0 border opacity-40 w-80 border-[#1ed760]"></div>
-                               <div className="absolute top-[578px] right-[340px] flex flex-col justify-center">
-                                <div className="w-12">
-                                  <img src="/image/bootstrap.png" alt="" />
-                                </div>
-                                <div>
-                                     <span className="absolute -left-4 text-white text-nowrap" >Bootstrap</span>
-                                </div>
-                             </div>
-
-
-                                 {/* Supabase */}
-                                 {/* Horizontal Line */}
-                             <div className="absolute top-[650px] border opacity-40 w-80 border-[#1ed760]"></div>
-                            <div className="absolute top-[620px] left-[340px] flex flex-col justify-center">
-                                <div className="w-20">
-                                  <img src="/image/supabase.png" alt="Logo" />
-                                </div>
-                                <div>
-                                     <span className="text-white text-nowrap" >Supabase</span>
-                                </div>
-                             </div>
-
-                            {/* Bullets */}
-                            <span className="absolute top-0 -left-[7px] text-[#1ed760] rounded-full">
-                               <FaCircle/>
-                            </span>
-                            {/* Vertical Line */}
-                             <div className="border-[#1ed760] border opacity-40 h-[740px]"></div>
+                            </div>
                         </div>
 
+                            {/* Backend Skills SubParent Container */}
                          <div>
-                            <h1 className="text-white font-bold md:text-2xl lg:text-3xl">BACKEND</h1>
-                            <div className="relative border-t-2 md:w-full lg:w-80 mt-1 border-[#1ed760]"></div>
+                           {/* Title Container */}
+                           <div className="relative flex justify-center items-center">
+                             <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
+                            <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
+                           </div>
+                              {/* Skills Logo Container */}
+                              <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
+                                <div className="flex flex-col justify-center">
+                                <div className="relative w-16">
+                                  <img src="/image/nodejs.png" alt="Logo"/>
+                                  <span className="text-white text-nowrap">Node Js</span>
+                                </div>
+                             </div>
+
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-10">
+                                  <img src="/image/express-js.png" alt="Logo"/>
+                                  <span className="text-white text-nowrap">Express Js</span>
+
+                                </div>
+                             </div>
+
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-12">
+                                  <img src="/image/PHP.png" alt="Logo"/>
+                                  <span className="text-white">PHP</span>
+
+                                </div>
+                             </div>
+
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-10">
+                                  <img src="/image/MongoDb.png" alt="Logo"/>
+                                  <span className="text-white text-nowrap">MongoDB</span>
+                                </div>
+                             </div>
+
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-12">
+                                  <img src="/image/Mysql_logo.png" alt="Logo"/>
+                                  <span className="text-white">MySql</span>
+
+                                </div>
+                             </div>
+
+                              <div className="flex flex-col justify-center">
+                                <div className="relative w-14">
+                                  <img src="/image/supabase.png" alt="Logo"/>
+                                  <span className="text-white">Supabase</span>
+
+                                </div>
+                             </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Another Divider for Other Tools */}
                     <div>
                         <div className="flex flex-row justify-center gap-5 mt-14">
-                            <div className="text-[#1ed760] text-5xl">
-                            <FaTools/>
-                            </div>
+                            <div className="text-[#1ed760] text-2xl">
+                                <FaTools/>
+                              </div>
                             <div>
-                                <h1 className="text-3xl font-bold text-white">Other Tools</h1>
+                                <div className="relative flex justify-center items-center">
+                                  <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
+                                  <div className="absolute bottom-0 border-t-2 w-60 border-[#1ed760]"></div>
                             </div>
-                            </div>
+                        </div>
+                    </div>
                             
-                            <div>
-                                <p className="text-[#b3b3b3] mb-12">Tools I use to support development, design, testing, and deployment processes.</p>
-                            </div>
+                    <div>
+                        <p className="text-[#b3b3b3] mb-12">Tools I use to support development, design, testing, and deployment processes.</p>
+                    </div>
 
                             <div className="flex justify-evenly">
 
@@ -255,7 +202,6 @@ export default function Skills(){
                             </div>
                         </div>
                     </div>
-
            </section>
         </>
     );
