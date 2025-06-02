@@ -114,7 +114,7 @@ export default function NavigationBar(){
                    </div>
                </div>
                     // Top-navigationbar container
-            ) : (<div>
+            ) : (<>
                     {/* Burger Toggle  */}
                     <div className={`fixed w-full z-20 text-right ${isScroll && `bg-[rgba(0,0,0,0.8)]`}`}>
                         {!isSideBarShow && <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl p-4"><GiHamburgerMenu/></button>}
@@ -190,7 +190,7 @@ export default function NavigationBar(){
                         </div>
                     </div>
                     )}
-               </div>)}
+               </>)}
         </>
     );
 };
