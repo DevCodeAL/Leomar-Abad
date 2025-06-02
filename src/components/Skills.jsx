@@ -1,6 +1,7 @@
-import { FaUserCog, FaTools } from "react-icons/fa";
+import { FaUserCog, FaTools, FaLanguage } from "react-icons/fa";
   
 export default function Skills(){
+
     return(
         <>
            <section className="flex justify-center w-full bg-[#121212] z-10" id="skills">
@@ -28,7 +29,7 @@ export default function Skills(){
                            <div className="absolute bottom-0 border-t-2 w-[40%]  sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                             {/* Skills Logo Containers */}
-                            <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
+                            <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-6 m-6">
                                <div className="flex flex-col justify-center">
                                 <div className="relative w-10">
                                   <img src="/image/html.png" alt="Logo"/>
@@ -81,7 +82,7 @@ export default function Skills(){
                             <div className="absolute bottom-0 border-t-2 w-[40%]   sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
                            </div>
                               {/* Skills Logo Container */}
-                              <div className="flex justify-center items-center flex-wrap gap-10 p-6 m-6">
+                              <div className="flex justify-center items-center flex-wrap max-w-sm mx-auto gap-10 p-6 m-6">
                                 <div className="flex flex-col justify-center">
                                 <div className="relative w-16">
                                   <img src="/image/nodejs.png" alt="Logo"/>
@@ -146,7 +147,7 @@ export default function Skills(){
                         <p className="text-base text-[#b3b3b3] mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
                     </div>
 
-                            <div className="flex justify-center items-center flex-wrap gap-6 p-6">
+                            <div className="flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6">
 
                                 <div>
                                       <div>
@@ -190,6 +191,33 @@ export default function Skills(){
                                      </div>
                                         <div>
                                             <span className="text-white text-nowrap" >Postman</span>
+                                        </div>
+                                </div>
+
+                                <div>
+                                     <div>
+                                          <img src="/image/xammp.png" className="ml-auto mr-auto w-12" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap" >Xammp</span>
+                                        </div>
+                                </div>
+
+                                <div>
+                                     <div>
+                                          <img src="/image/render.jpg" className="ml-auto mr-auto w-12" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap">Render</span>
+                                        </div>
+                                </div>
+
+                                <div>
+                                     <div>
+                                          <img src="/image/vercel.jpg" className="ml-auto mr-auto w-12" alt="Logo" />
+                                     </div>
+                                        <div>
+                                            <span className="text-white text-nowrap">Vercel</span>
                                         </div>
                                 </div>
                             </div>

@@ -55,7 +55,7 @@ export default function Contact(){
     return(
         <>
             <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="contact">
-             <div className="flex flex-col gap-6 pt-6 pb-6 w-full m-8">
+             <div className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
                <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-5xl">
                         <MdContactPhone/>
@@ -149,8 +149,8 @@ export default function Contact(){
                         </ul>
 
                          {/* Social */}
-                            <h1 className="text-xl font-medium mb-3 mt-11">Social</h1>
-                            <ul className="flex gap-3 text-[#1ed760] text-xl">
+                            <h1 className="text-xl font-medium mb-4 py-2 mt-11">Social</h1>
+                            <ul className="flex gap-3 text-[#1ed760]  text-xl">
                             <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
                                 <a
                                 href="https://www.facebook.com/abad.leomar/"
@@ -180,7 +180,7 @@ export default function Contact(){
                                 </a>
                             </li>
                         </ul>
-                        <div className="text-center px-10">
+                        <div className="text-center py-2 px-10">
                             <h1 className="text-base font-medium mb-3 mt-11 text-white">
                             Turn Your Ideas Into Reality!
                             </h1>
