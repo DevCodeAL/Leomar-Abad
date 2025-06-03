@@ -130,7 +130,7 @@ export default function Skills(){
                     </div>
 
                     {/* Another Divider for Other Tools */}
-                    <div>
+                    <div className="max-w-md mx-auto">
                         <div className="flex flex-row justify-center gap-5 mt-10">
                             <div className="text-[#1ed760] text-2xl">
                                 <FaTools/>

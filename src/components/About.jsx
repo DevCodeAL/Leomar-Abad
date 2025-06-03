@@ -4,7 +4,7 @@ export default function About(){
     return(
         <>
            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="about">
-             <div className="flex flex-col gap-6 mt-28 pb-6">
+             <div className="flex flex-col gap-6 mt-24 pb-6">
                 <div className="flex flex-row justify-center gap-5">
                     <div className="text-[#1ed760] text-4xl">
                         <FaInfoCircle/>
