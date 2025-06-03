@@ -16,7 +16,7 @@ export default function Skills(){
                     </div>
                     
                     <div>
-                        <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
+                        <p className="text-[#b3b3b3] text-sm md:text-base mx-3 mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
                     </div>
 
                     {/* Skills Container */}
@@ -144,7 +144,7 @@ export default function Skills(){
                     </div>
                             
                     <div>
-                        <p className="text-[#b3b3b3] text-sm md:text-base mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
+                        <p className="text-[#b3b3b3] text-sm md:text-base mx-3 mt-6 mb-1">Tools I use to support development, design, testing, and deployment processes.</p>
                     </div>
 
                             <div className="flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6">
