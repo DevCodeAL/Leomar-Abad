@@ -120,7 +120,7 @@ export default function Contact(){
                     {/* Contact Details */}
                     <div className="flex flex-col items-center w-[500px] text-white">
                         
-                            <h1 className="text-xl font-medium text-nowrap mb-2">Contact Details</h1>
+                            <h1 className="text-xl font-medium text-nowrap mb-2">Contact Information</h1>
                             <ul className="text-base/10">
                             <li className="flex items-center gap-1">
                                 <div className="text-[#1ed760] text-xl">
@@ -149,7 +149,7 @@ export default function Contact(){
                         </ul>
 
                          {/* Social */}
-                            <h1 className="text-xl font-medium mb-4 py-2 mt-11">Social</h1>
+                            <h1 className="text-xl font-medium mb-4 py-2 mt-11">Social Links</h1>
                             <ul className="flex gap-3 text-[#1ed760]  text-xl">
                             <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
                                 <a
