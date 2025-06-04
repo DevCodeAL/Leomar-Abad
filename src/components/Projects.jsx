@@ -1,5 +1,6 @@
-import { FaFolderOpen, FaGithub, FaReact } from "react-icons/fa";
+import { FaFolderOpen, FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Container from "./sub-components/ProjectContainer";
 
 export default function Projects(){
 
@@ -82,37 +83,15 @@ export default function Projects(){
                  {/* Grid Containers for all my Projects */}
                  <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
-                         <div key={index} className="bg-[#212121] rounded-lg transition duration-300 hover:scale-110">
-                            {/* This area are for projects */}
-                            <img src={item.image} className="object-cover w-full h-48 rounded-t-lg" alt="Projects" />
-                                <ul className="flex justify-center items-center flex-col gap-3 p-3 text-sm">
-                                    <li className="text-[#b3b3b3] text-sm">
-                                        <span className="font-semibold text-[#1ed760]">
-                                            Description: </span>
-                                        {item.description.slice(0, 100)}
-                                    </li>
-
-                                    <li className="text-[#b3b3b3]">
-                                         <span className="text-[#1ed760] font-semibold">Technologies: </span>
-                                         <ul>
-                                            <li className="flex justify-evenly text-xs font-bold">{item.technologies.join(" - ").toUpperCase()}</li>
-                                         </ul>
-                                    </li>
-
-                                    <li className="flex gap-4 mt-2">
-                                        <div>
-                                            <a href={item.links_demos} target="_blank" className="text-[#1ed760] text-xl">
-                                             {item.external_links}
-                                           </a>
-                                        </div>
-                                        <div>
-                                            <a href={item.github_links} target="_blank" className="text-[#1ed760] text-xl">
-                                                {item.githubLinks}
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                        </div>
+                         <Container key={index}
+                          image={item.image}
+                          description={item.description}
+                          tech={item.technologies}
+                          external_link={item.links_demos}
+                          github_link={item.github_links}
+                          external_link_icon={item.external_links}
+                          github_link_icon={item.githubLinks}
+                          />
                        ))}
                  </div>
              </div>
