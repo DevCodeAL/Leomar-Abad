@@ -7,28 +7,62 @@ export default function Projects(){
         {
             image: "/projects-images/guimba-east.png",
             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
-            logo: [<FaReact/>],
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
+            external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "guimbaeastedulink.com",
+            links_demos: "https://www.guimbaeastedulink.com/",
+            github_links: "https://github.com/DevCodeAL/EduFile-School-File-Management-and-Notification-Hub.git",
+        },
+
+         {
+            image: "/projects-images/SB_Cuyapo.png",
+            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "#",
+            github_links: "#",
+        },
+
+           {
+            image: "/projects-images/Armandos.png",
+            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "#",
+            github_links: "#",
         },
 
         {
-             image: "/projects-images/sample1.png",
+            image: "/projects-images/sample1.png",
             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
-            logo: [<FaReact/>],
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
+            external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "guimbaeastedulink.com",
+            links_demos: "#",
+            github_links: "#",
         },
 
         {
             image: "/projects-images/sample2.png",
-             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
-            logo: [<FaReact/>],
+            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
+            external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "guimbaeastedulink.com",
+            links_demos: "#",
+            github_links: "#",
+        },
+
+        
+        {
+            image: "/projects-images/inventory-system.png",
+            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "#",
+            github_links: "#",
         },
     ];
 
@@ -51,7 +85,7 @@ export default function Projects(){
                          <div key={index} className="bg-[#212121] rounded-lg transition duration-300 hover:scale-110">
                             {/* This area are for projects */}
                             <img src={item.image} className="object-cover w-full h-48 rounded-t-lg" alt="Projects" />
-                                <ul className="flex flex-col gap-3 p-3 text-sm">
+                                <ul className="flex justify-center items-center flex-col gap-3 p-3 text-sm">
                                     <li className="text-[#b3b3b3] text-sm">
                                         <span className="font-semibold text-[#1ed760]">
                                             Description: </span>
@@ -67,13 +101,13 @@ export default function Projects(){
 
                                     <li className="flex gap-4 mt-2">
                                         <div>
-                                            <a href="#" className="text-[#1ed760]">
-                                             <FaExternalLinkAlt className="text-[#1ed760] text-xl"/>
+                                            <a href={item.links_demos} target="_blank" className="text-[#1ed760] text-xl">
+                                             {item.external_links}
                                            </a>
                                         </div>
                                         <div>
-                                            <a href="#" className="text-[#1ed760]">
-                                                <FaGithub className="text-[#1ed760] text-xl"/>
+                                            <a href={item.github_links} target="_blank" className="text-[#1ed760] text-xl">
+                                                {item.githubLinks}
                                             </a>
                                         </div>
                                     </li>
