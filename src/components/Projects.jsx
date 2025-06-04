@@ -6,7 +6,7 @@ export default function Projects(){
     const projects = [
         {
             image: "/projects-images/guimba-east.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            description: "Guimba EastEdulink is a web-based system for the Guimba East District that streamlines school management and learning resources for school heads, teachers, and administrators. As my first major client project, it strengthened my skills in full-stack development, client communication, and real-world deployment.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -16,7 +16,7 @@ export default function Projects(){
 
          {
             image: "/projects-images/SB_Cuyapo.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            description: "Created as part of my personal development and hobby projects, this system was reimagined with a cleaner interface and improved usability. It aims to provide a more organized and accessible way for local government units to track legislative activities and maintain transparency.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -26,7 +26,7 @@ export default function Projects(){
 
            {
             image: "/projects-images/Armandos.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            description: "Cuyapo Armandos Resort Management System is a custom web application developed as a commissioned project for student clients. The system helps manage resort reservations, customer inquiries, room availability, and booking schedules, streamlining daily operations and improving customer service.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -89,7 +89,7 @@ export default function Projects(){
                                     <li className="text-[#b3b3b3] text-sm">
                                         <span className="font-semibold text-[#1ed760]">
                                             Description: </span>
-                                        {item.description}
+                                        {item.description.slice(0, 100)}
                                     </li>
 
                                     <li className="text-[#b3b3b3]">
