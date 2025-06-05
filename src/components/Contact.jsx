@@ -7,29 +7,39 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 
 export default function Contact(){
     const [formData, setFormData] = useState({name: "", email: "", message: ""});
     const [isSuccess, setIsSuccess] = useState(false);
+    const [count, setCount] = useState('0');
 
-    // Function handle to input change
-    const HandleChange = (e)=>{
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
+        // Loading Animation
+        function LoadingAnimate(){
+            setCount('full');
+            setTimeout(()=>{
+                setCount('0');
+            }, 1000);
+        };
+
+        // Function handle to input change
+        const HandleChange = (e)=>{
+            const { name, value } = e.target;
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
+        };
 
 
     // Function to sending email in form data
     const form = useRef();
 
     const sendEmail = (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
         emailjs
         .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -42,7 +52,10 @@ export default function Contact(){
             setFormData({
                 name: "", email: "", message: "",
             });
-            setIsSuccess(true);
+             setIsSuccess(true);
+             setTimeout(()=>{
+                LoadingAnimate();
+             }, 1000);
             },
             (error) => {
             console.log('FAILED...', error.text);
@@ -92,26 +105,33 @@ export default function Contact(){
 
 
                         <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">
-                            Send</button>
+                            Send</button> 
                     </form>
                 </div>
 
                 {/* Successfully Modal Alert */}
                 {isSuccess && (
-                    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                    <div className="bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center">
+                    <div className="fixed inset-0 mx-3 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                    <div className="relative bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center">
+                         {/* Close */}
+                    <button
+                        onClick={()=> setIsSuccess(false)}
+                        className="absolute top-0 right-0 m-3 text-[#1DB954] text-2xl hover:text-[#212121] hover:bg-[#1ed760] 
+                         rounded-md transition duration-300"
+                    >
+                       <IoClose/>
+                    </button>
                         <div className="flex flex-col items-center">
                         <FaCheckCircle className="text-[#1DB954] text-6xl mb-4" />
                         <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
                         <p className="text-sm mb-6">
                             Thank you for reaching out. I'll get back to you as soon as possible.
                         </p>
-                        <button
-                            onClick={()=> setIsSuccess(false)}
-                            className="bg-[#1DB954] hover:bg-[#1ed760] text-black px-6 py-2 rounded-md transition duration-300"
-                        >
-                            Close
-                        </button>
+                        
+                        {/* Loading animation */}
+                         <span className={`absolute my-7 left-0  bottom-0 
+                          ${count === 'full' ? 'bg-[#1ed760]' : ''} p-1
+                         transition-all duration-1000 ease-in w-${count}`}></span>
                         </div>
                     </div>
                     </div>
