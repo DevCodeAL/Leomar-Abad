@@ -7,7 +7,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function Container({ image, description,
    external_link, github_link, external_link_icon,
-    github_link_icon, tech}){
+    github_link_icon, tech, animation}){
       
       const [seeMore, setSeeMore] = useState(true);
       
@@ -16,7 +16,7 @@ export default function Container({ image, description,
 
   return( 
     <>
-        <div className="bg-[#212121] rounded-lg transition duration-300 hover:scale-110">
+        <div className={animation}>
         {/* This area are for projects */}
         <img src={image} className="object-cover w-full h-48 rounded-t-lg" alt="Projects" />
             <ul className="flex justify-center items-center flex-col gap-3 p-3 text-sm">

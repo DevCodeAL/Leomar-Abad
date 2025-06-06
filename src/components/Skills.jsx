@@ -1,28 +1,39 @@
-import { FaUserCog, FaTools, FaLanguage } from "react-icons/fa";
-  
+import { FaUserCog, FaTools } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+
+
 export default function Skills(){
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    // triggerOnce: true,
+    threshold: 0,
+  });
 
     return(
         <>
            <section className="flex justify-center w-full bg-[#121212] z-10" id="skills">
-           <div className="mt-32 text-center">
-                <div className="flex flex-row justify-center gap-5">
+           <div ref={ref} className="mt-32 text-center">
+                {inView && (
+                  <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">
                     <FaUserCog/>
                     </div>
                     <div>
                         <h1 className="text-3xl font-bold text-white">My Skills</h1>
                     </div>
-                    </div>
+                </div>
+                )}
                     
-                    <div>
-                        <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12">Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
+                   {inView && (
+                     <div>
+                        <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 ${inView && 'animate-fade-down animate-delay-300'}`}>Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.</p>
                     </div>
-
+                   )}
                     {/* Skills Container */}
                     <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Frontend Skills SubParent Container */}
-                        <div>
+                        {inView && (
+                          <div className={`${inView && 'animate-fade-right animate-delay-700'}`}>
                           {/* Title Container */}
                            <div className="relative flex justify-center items-center">
                              <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
@@ -73,9 +84,10 @@ export default function Skills(){
                              </div>
                             </div>
                         </div>
-
+                        )}
                             {/* Backend Skills SubParent Container */}
-                         <div>
+                         {inView && (
+                          <div className={`${inView && 'animate-fade-left animate-delay-700'}`}>
                            {/* Title Container */}
                            <div className="relative flex justify-center items-center">
                              <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
@@ -127,10 +139,12 @@ export default function Skills(){
                              </div>
                             </div>
                         </div>
+                         )}
                     </div>
 
                     {/* Another Divider for Other Tools */}
-                    <div className="max-w-md mx-auto">
+                    {inView && (
+                      <div className={`max-w-md mx-auto ${inView && 'animate-fade-up animate-delay-1000'}`}>
                         <div className="flex flex-row justify-center gap-5 mt-10">
                             <div className="text-[#1ed760] text-2xl">
                                 <FaTools/>
@@ -222,6 +236,7 @@ export default function Skills(){
                                 </div>
                             </div>
                         </div>
+                    )}
                     </div>
            </section>
         </>

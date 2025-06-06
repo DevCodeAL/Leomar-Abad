@@ -1,8 +1,14 @@
 import { FaFolderOpen, FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Container from "./sub-components/ProjectContainer";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects(){
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    // triggerOnce: true,
+    threshold: 0,
+  });
 
     const projects = [
         {
@@ -13,6 +19,7 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "https://www.guimbaeastedulink.com/",
             github_links: "https://github.com/DevCodeAL/EduFile-School-File-Management-and-Notification-Hub.git",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
          {
@@ -23,6 +30,7 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
            {
@@ -33,6 +41,7 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
         {
@@ -43,6 +52,7 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
         {
@@ -53,6 +63,7 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
         
@@ -64,14 +75,16 @@ export default function Projects(){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
+            style: 'animate-fade-down animate-delay-[150ms]',
         },
     ];
 
     return(
         <>
             <section className="flex justify-center w-full bg-[#121212] z-10" id="projects">
-           <div className="max-w-5xl mx-auto mt-32 text-center">
-                <div className="flex flex-row justify-center gap-5">
+           <div ref={ref} className="max-w-5xl mx-auto mt-32 text-center">
+               {inView && (
+                 <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">
                        <FaFolderOpen/>
                     </div>
@@ -79,11 +92,15 @@ export default function Projects(){
                         <h1 className="text-3xl font-bold text-white">My Projects</h1>
                     </div>
                  </div>
+               )}
 
                  {/* Grid Containers for all my Projects */}
-                 <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
+                 <div ref={ref} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
-                         <Container key={index}
+                        inView && 
+                         <Container
+                          animation={`bg-[#212121] rounded-lg transition duration-300 hover:scale-110 ${item.style}`}
+                          key={index}
                           image={item.image}
                           description={item.description}
                           tech={item.technologies}
