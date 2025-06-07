@@ -11,27 +11,23 @@ export default function Skills() {
     <section  className="flex justify-center w-full bg-[#121212] h-auto z-10" id="skills">
       <div ref={ref} className="mt-32 text-center">
         {/* Section Title */}
-        {inView && (
-          <div className={`flex flex-row justify-center gap-5 animate-fade-down animate-delay-200`}>
+          <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
           <div className="text-[#1ed760] text-5xl">
             <FaUserCog />
           </div>
           <h1 className="text-3xl font-bold text-white">My Skills</h1>
         </div>
 
-        )}
         {/* Section Description */}
-        {inView && (
-          <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 animate-fade-down animate-delay-300">
+          <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 ${inView && 'animate-fade-down animate-delay-300'}`}>
             Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.
           </p>
-        )}
 
         {/* Skills Container */}
         <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-6">
           {/* FRONT END */}
           <div>
-            <div className="relative flex justify-center items-center">
+            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
@@ -58,12 +54,12 @@ export default function Skills() {
 
           {/* BACKEND */}
           <div>
-            <div className="relative flex justify-center items-center">
+            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
          
-               <div className={`flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6 
+              <div className={`flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6 
               ${inView && 'animate-fade-right animate-delay-700'}`}>
                 {[
                   { src: "/image/nodejs.png", label: "Node Js", w: "w-16" },
@@ -85,12 +81,12 @@ export default function Skills() {
         </div>
 
         {/* OTHER TOOLS */}
-          <div className={`max-w-md mx-auto ${inView && 'animate-fade-up animate-delay-1000'}`}>
+          <div className={`max-w-md mx-auto`}>
             <div className="flex flex-row justify-center gap-5 mt-10">
               <div className="text-[#1ed760] text-2xl">
                 <FaTools />
               </div>
-              <div className="relative flex justify-center items-center">
+              <div className={`relative flex justify-center items-center ${inView && 'animate-fade-down animate-delay-200'}`}>
                 <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
                 <div className="absolute bottom-0 border-t-2 w-full sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
               </div>
@@ -100,7 +96,7 @@ export default function Skills() {
               Tools I use to support development, design, testing, and deployment processes.
             </p>
 
-            <div className="flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6">
+              <div className={`flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6 ${inView && 'animate-fade-up animate-delay-700'}`}>
               {[
                 { src: "/image/VSC.png", label: "Visual Studio Code", w: "w-10" },
                 { src: "/image/git_github.png", label: "Git & Github", w: "w-12" },

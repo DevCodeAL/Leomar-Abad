@@ -22,7 +22,6 @@ export default function Contact(){
     // triggerOnce: true,
         threshold: 0,
     });
-    
 
         // Loading Animation
         function LoadingAnimate(){
@@ -76,7 +75,7 @@ export default function Contact(){
              <div ref={ref} className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
                {inView && (
                 <div className={`flex flex-row justify-center gap-5
-                 ${inView && 'animate-fade-down animate-delay-200'}`}>
+                 animate-fade-down animate-delay-200`}>
                     <div className="text-[#1ed760] text-5xl">
                         <MdContactPhone/>
                     </div>
@@ -87,7 +86,7 @@ export default function Contact(){
                )}
 
                     {inView && (
-                    <div className={`${inView && 'animate-fade-down animate-delay-300'}`}>
+                    <div className={`animate-fade-down animate-delay-300`}>
                         <h1 className="text-center text-[#1ed760] text-2xl font-bold">Get In Touch</h1>
                         <p className="text-xl text-white text-center font-bold px-2">Let’s Build Something Great Together.</p>
                     </div>
@@ -98,7 +97,7 @@ export default function Contact(){
                     {/* Contact Form */}
                      {inView && (
                         <div className={`text-white bg-[#212121] p-10 w-[330px] 
-                     sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md ${inView && 'animate-fade-right animate-delay-500'}`}>
+                     sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md animate-fade-right animate-delay-500`}>
                         <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
 
                         <label className="font-semibold" htmlFor="name">Your Name</label>
@@ -152,7 +151,7 @@ export default function Contact(){
                     {/* Contact Details */}
                     <div className="flex flex-col items-center w-[500px] text-white">
                             {inView && (
-                                <div className={`${inView && 'animate-fade-down animate-delay-500'}`}>
+                                <div className={`animate-fade-down animate-delay-500`}>
                                 <h1 className="text-xl font-medium text-nowrap mb-2">Contact Information</h1>
                             <ul className="text-base/10">
                             <li className="flex items-center gap-1">
@@ -219,7 +218,7 @@ export default function Contact(){
                     </div>
                         )}
                         {inView && (
-                         <div className={`text-center py-2 px-10 ${inView && 'animate-fade-up animate-delay-1000'}`}>
+                         <div className={`text-center py-2 px-10 animate-fade-up animate-delay-1000`}>
                             <h1 className="text-base font-medium mb-3 mt-11 text-white">
                             Turn Your Ideas Into Reality!
                             </h1>

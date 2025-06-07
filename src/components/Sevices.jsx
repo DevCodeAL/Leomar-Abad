@@ -8,6 +8,7 @@ export default function Services(){
     threshold: 0,
   });
 
+
     
 const services = [
   {
@@ -54,10 +55,8 @@ const services = [
            <section  className="flex justify-center items-center w-full bg-[#121212] z-10" id="services">
             <div ref={ref}  className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
               <div>
-                {inView && (
-                  <div className={`flex flex-row justify-center text-center gap-5
-                    ${inView && 'animate-fade-down animate-delay-200'}
-                  `}>
+                  {inView && (
+                    <div className={`flex flex-row justify-center text-center gap-5 animate-fade-down animate-delay-200`}>
                     <div className="inline-block text-[#1ed760] text-5xl">
                         <MdMiscellaneousServices/>
                     </div>
@@ -66,27 +65,26 @@ const services = [
                     <h1 className="text-3xl font-bold text-white">My Services</h1>
                 </div>
              </div>
-                )}
-
-                 {inView && (
-                  <div>
-                    <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12
-                      ${inView && 'animate-fade-down animate-delay-300'}
-                      `}>What I offer based on my skills and experience.</p>
+                  )}
+                  {inView && (
+                    <div>
+                    <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 
+                     animate-fade-down animate-delay-300`}>
+                        What I offer based on my skills and experience.</p>
                 </div>
-                 )}
+                  )}
               </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">
                 {services.map((service, index) => (
-                <div key={index}
+                    <div key={index}
                     className={`bg-[#212121] relative rounded-2xl shadow p-6 text-left hover:shadow-md transition group ${inView && service.style }`}
                     >
                     <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
                     <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
                     <p className="text-[#b3b3b3] text-sm">{service.description}</p>
                     <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-                    </div>
+                  </div>
                 ))}
                 </div>
             </div>
