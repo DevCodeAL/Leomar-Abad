@@ -11,13 +11,15 @@ export default function Skills() {
     <section  className="flex justify-center w-full bg-[#121212] h-auto z-10" id="skills">
       <div ref={ref} className="mt-32 text-center">
         {/* Section Title */}
-        <div className={`flex flex-row justify-center gap-5 ${inView ? 'animate-fade-down animate-delay-200' : ''}`}>
+        {inView && (
+          <div className={`flex flex-row justify-center gap-5 animate-fade-down animate-delay-200`}>
           <div className="text-[#1ed760] text-5xl">
             <FaUserCog />
           </div>
           <h1 className="text-3xl font-bold text-white">My Skills</h1>
         </div>
 
+        )}
         {/* Section Description */}
         {inView && (
           <p className="text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 animate-fade-down animate-delay-300">

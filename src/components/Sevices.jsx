@@ -51,8 +51,8 @@ const services = [
 
     return(
         <>
-           <section ref={ref} className="flex justify-center items-center w-full bg-[#121212] z-10" id="services">
-            <div  className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
+           <section  className="flex justify-center items-center w-full bg-[#121212] z-10" id="services">
+            <div ref={ref}  className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
               <div>
                 {inView && (
                   <div className={`flex flex-row justify-center text-center gap-5

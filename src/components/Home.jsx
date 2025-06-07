@@ -14,14 +14,15 @@ export default function Home(){
 
     return(
         <> 
-          <section ref={ref}
+          <section 
             className="flex justify-center items-center w-full bg-[#121212] z-10 min-h-screen px-4 py-10"
             id="home"
             >
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
+            <div ref={ref} className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
                 
                 {/* Text Content */}
-                <div className={`w-full lg:w-1/2 text-white ${inView && 'animate-fade-right animate-delay-300'} text-center lg:text-left`}>
+               {inView && (
+                 <div className={`w-full lg:w-1/2 text-white ${inView && 'animate-fade-right animate-delay-300'} text-center lg:text-left`}>
                 <h1 className="text-3xl sm:text-4xl font-bold leading-snug">I'm, Leomar Abad,</h1>
                 <h1 className="text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760]">
                     Fullstack Web Developer
@@ -69,9 +70,11 @@ export default function Home(){
                 </div>
 
                 </div>
+               )}
 
                 {/* Image */}
-                <div className={`w-full lg:w-1/3 flex justify-center relative 
+                {inView && (
+                    <div className={`w-full lg:w-1/3 flex justify-center relative 
                     ${inView && 'animate-fade-left animate-delay-500'}`}>
                 {/* Light effect */}
                 <div className="absolute inset-24 bg-white opacity-20 blur-3xl z-0 rounded-full animate-pulse"></div>
@@ -85,6 +88,7 @@ export default function Home(){
                     />
                     </div>
                 </div>
+                )}
             </div>
             </section>
         </>
