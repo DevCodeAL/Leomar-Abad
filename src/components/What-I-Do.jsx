@@ -13,8 +13,8 @@ export default function WhatIdo(){
 
     return(
         <>
-            <section className={`flex justify-center items-center w-full bg-[#121212] z-10 h-screen`}>
-                <div  ref={ref}>
+            <section  className={`flex justify-center items-center w-full bg-[#121212] h-screen z-10`}>
+                <div ref={ref}>
                     <div>
                         {inView && (
                             <div className={`flex flex-row justify-center gap-5 mt-32

@@ -10,9 +10,9 @@ export default function About(){
 
     return(
         <>
-           <section className="flex justify-center items-center w-full bg-[#121212] z-10 h-screen" id="about">
-             <div className="flex flex-col gap-6 pb-6">
-                <div ref={ref} className={`flex flex-row justify-center gap-5 
+           <section className="flex justify-center items-center w-full bg-[#121212] h-screen z-10" id="about">
+             <div ref={ref}  className="flex flex-col gap-6">
+                <div className={`flex flex-row justify-center gap-5 
                     ${inView && 'animate-fade-down animate-delay-200'}`}>
                        {inView && ( <div className="text-[#1ed760] text-4xl">
                         <FaInfoCircle/>
@@ -22,7 +22,7 @@ export default function About(){
                     </div>)}
                 </div>
 
-             <div ref={ref} className={`w-[320px] sm:w-[480px] md:w-[640px] lg:w-[800px] px-4
+             <div className={`w-[320px] sm:w-[480px] md:w-[640px] lg:w-[800px] px-4
                 ${inView && 'animate-fade-down animate-delay-500'}
                 `}>
                {inView && (

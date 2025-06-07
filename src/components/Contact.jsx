@@ -11,11 +11,18 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function Contact(){
     const [formData, setFormData] = useState({name: "", email: "", message: ""});
     const [isSuccess, setIsSuccess] = useState(false);
     const [count, setCount] = useState('0');
+    const { ref, inView, entry } = useInView({
+    /* Optional options */
+    // triggerOnce: true,
+        threshold: 0,
+    });
+    
 
         // Loading Animation
         function LoadingAnimate(){
@@ -63,13 +70,13 @@ export default function Contact(){
         );
     };
 
-   
-
     return(
         <>
             <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="contact">
-             <div className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
-               <div className="flex flex-row justify-center gap-5">
+             <div ref={ref} className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
+               {inView && (
+                <div className={`flex flex-row justify-center gap-5
+                 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">
                         <MdContactPhone/>
                     </div>
@@ -77,16 +84,21 @@ export default function Contact(){
                         <h1 className="text-3xl font-bold text-white text-center">Contact</h1>
                     </div>
                 </div>
+               )}
 
-                    <h1 className="text-center text-[#1ed760] text-2xl font-bold">Get In Touch</h1>
-                    <p className="text-xl text-white text-center font-bold px-2">Let’s Build Something Great Together.</p>
+                    {inView && (
+                    <div className={`${inView && 'animate-fade-down animate-delay-300'}`}>
+                        <h1 className="text-center text-[#1ed760] text-2xl font-bold">Get In Touch</h1>
+                        <p className="text-xl text-white text-center font-bold px-2">Let’s Build Something Great Together.</p>
+                    </div>
+                    )}
 
                     {/* Contact Section */}
-                <div className="flex justify-center flex-wrap gap-20 mt-10 z-10">
-                    
+                    <div className="flex justify-center flex-wrap gap-20 mt-10 z-10">
                     {/* Contact Form */}
-                     <div className="text-white bg-[#212121] p-10 w-[330px] 
-                     sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md">
+                     {inView && (
+                        <div className={`text-white bg-[#212121] p-10 w-[330px] 
+                     sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md ${inView && 'animate-fade-right animate-delay-500'}`}>
                         <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
 
                         <label className="font-semibold" htmlFor="name">Your Name</label>
@@ -108,7 +120,7 @@ export default function Contact(){
                             Send</button> 
                     </form>
                 </div>
-
+                     )}
                 {/* Successfully Modal Alert */}
                 {isSuccess && (
                     <div className="fixed inset-0 mx-3 bg-black bg-opacity-70 flex items-center justify-center z-50">
@@ -139,8 +151,9 @@ export default function Contact(){
 
                     {/* Contact Details */}
                     <div className="flex flex-col items-center w-[500px] text-white">
-                        
-                            <h1 className="text-xl font-medium text-nowrap mb-2">Contact Information</h1>
+                            {inView && (
+                                <div className={`${inView && 'animate-fade-down animate-delay-500'}`}>
+                                <h1 className="text-xl font-medium text-nowrap mb-2">Contact Information</h1>
                             <ul className="text-base/10">
                             <li className="flex items-center gap-1">
                                 <div className="text-[#1ed760] text-xl">
@@ -167,9 +180,12 @@ export default function Contact(){
                                 </div>
                             </li>
                         </ul>
-
+                    </div>
+                            )}
                          {/* Social */}
-                            <h1 className="text-xl font-medium mb-4 py-2 mt-11">Social Links</h1>
+                        {inView && (
+                            <div className={`animate-fade-left animate-delay-500`}>
+                                <h1 className="text-xl font-medium mb-4 py-2 mt-11">Social Links</h1>
                             <ul className="flex gap-3 text-[#1ed760]  text-xl">
                             <li className="text-xl hover:text-[#1ed760] transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border-2 border-[#1ed760] rounded-full p-1">
                                 <a
@@ -200,7 +216,10 @@ export default function Contact(){
                                 </a>
                             </li>
                         </ul>
-                        <div className="text-center py-2 px-10">
+                    </div>
+                        )}
+                        {inView && (
+                         <div className={`text-center py-2 px-10 ${inView && 'animate-fade-up animate-delay-1000'}`}>
                             <h1 className="text-base font-medium mb-3 mt-11 text-white">
                             Turn Your Ideas Into Reality!
                             </h1>
@@ -208,6 +227,7 @@ export default function Contact(){
                                 Whether you have a project in mind, need help bringing your vision to life, or just want to connect — feel free to reach out. Let’s create something meaningful together.
                           </p>
                     </div>    
+                        )}
                 </div>
             </div>
         </div>
