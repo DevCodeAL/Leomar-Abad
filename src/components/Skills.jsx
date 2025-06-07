@@ -60,7 +60,7 @@ export default function Skills() {
             </div>
          
               <div className={`flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6 
-              ${inView && 'animate-fade-right animate-delay-700'}`}>
+              ${inView && 'animate-fade-left animate-delay-700'}`}>
                 {[
                   { src: "/image/nodejs.png", label: "Node Js", w: "w-16" },
                   { src: "/image/express-js.png", label: "Express Js", w: "w-10" },
