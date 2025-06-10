@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -6,7 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
 export default function Home({id, setActiveSection}){
-     const { ref, inView, entry } = useInView({
+    const [isNext, setIsNext] = useState(['Fullstack Web Developer']);
+    const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
         threshold: 0.6,
@@ -17,7 +18,27 @@ export default function Home({id, setActiveSection}){
             setActiveSection(id);
         }
     },[inView, id, setActiveSection]);
-    
+
+// Array of Text for Carousel 
+const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Developer'];
+
+// Create a every 2 seconds change the text
+    useEffect(()=>{
+        let index = 0;
+        index++;
+       const interval = setInterval(()=>{
+        if(index >= items.length){
+            index = 0;
+            changeText(index = 0);
+        } else{
+            setIsNext(items[index++]);
+        };
+       }, 2000);
+
+    //    Clean-up function for Interval
+       return ()=> clearInterval(interval); 
+
+    },[]);
 
     return(
         <> 
@@ -31,9 +52,11 @@ export default function Home({id, setActiveSection}){
                {inView && (
                  <div className="w-full lg:w-1/2 text-white animate-fade-right animate-delay-300'} text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl font-bold leading-snug">I'm, Leomar Abad,</h1>
-                <h1 className="text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760]">
-                    Fullstack Web Developer
+               
+              <h1 className={`text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760]`}>
+                {isNext}
                 </h1>
+
                 <p className="pt-5 leading-6 max-w-lg mx-auto lg:mx-0">
                     I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.
                 </p>

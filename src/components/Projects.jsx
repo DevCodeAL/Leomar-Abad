@@ -103,10 +103,9 @@ export default function Projects({id , setActiveSection}){
                  {/* Grid Containers for all my Projects */}
                  <div ref={ref} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
-                         <div className="transform transition-all ease-in-out delay-150 duration-300 hover:scale-110">
+                         <div key={index} className="transform transition-all ease-in-out delay-150 duration-300 hover:scale-110">
                             <Container
                             animation={inView && item.style}
-                            key={index}
                             image={item.image}
                             description={item.description}
                             tech={item.technologies}
