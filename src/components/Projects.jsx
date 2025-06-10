@@ -89,8 +89,8 @@ export default function Projects({id , setActiveSection}){
 
     return(
         <>
-            <section className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
-           <div ref={ref} className="max-w-5xl mx-auto mt-32 text-center">
+            <section ref={ref} className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
+           <div  className="max-w-5xl mx-auto mt-32 text-center">
                  <div className={`flex flex-row justify-center mb-6 gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">
                        <FaFolderOpen/>
@@ -103,17 +103,19 @@ export default function Projects({id , setActiveSection}){
                  {/* Grid Containers for all my Projects */}
                  <div ref={ref} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
-                         <Container
-                          animation={inView && item.style}
-                          key={index}
-                          image={item.image}
-                          description={item.description}
-                          tech={item.technologies}
-                          external_link={item.links_demos}
-                          github_link={item.github_links}
-                          external_link_icon={item.external_links}
-                          github_link_icon={item.githubLinks}
-                          />
+                         <div className="transform transition-all ease-in-out delay-150 duration-300 hover:scale-110">
+                            <Container
+                            animation={inView && item.style}
+                            key={index}
+                            image={item.image}
+                            description={item.description}
+                            tech={item.technologies}
+                            external_link={item.links_demos}
+                            github_link={item.github_links}
+                            external_link_icon={item.external_links}
+                            github_link_icon={item.githubLinks}
+                            />
+                         </div>
                        ))}
                  </div>
              </div>

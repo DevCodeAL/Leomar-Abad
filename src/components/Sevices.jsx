@@ -58,11 +58,10 @@ const services = [
 
     return(
         <>
-           <section  className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
-            <div ref={ref}  className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
+           <section  ref={ref}   className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
+            <div className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
               <div>
-                  {inView && (
-                    <div className={`flex flex-row justify-center text-center gap-5 animate-fade-down animate-delay-200`}>
+                    <div className={`flex flex-row justify-center text-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="inline-block text-[#1ed760] text-5xl">
                         <MdMiscellaneousServices/>
                     </div>
@@ -71,14 +70,11 @@ const services = [
                     <h1 className="text-3xl font-bold text-white">My Services</h1>
                 </div>
              </div>
-                  )}
-                  {inView && (
                     <div>
                     <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 
-                     animate-fade-down animate-delay-300`}>
+                     ${inView && 'animate-fade-down animate-delay-300'}`}>
                         What I offer based on my skills and experience.</p>
                 </div>
-                  )}
               </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">

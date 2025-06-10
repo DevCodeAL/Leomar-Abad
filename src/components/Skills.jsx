@@ -15,8 +15,8 @@ export default function Skills({id , setActiveSection}) {
         },[inView, id, setActiveSection]);
 
   return (
-    <section  className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
-      <div ref={ref} className="mt-32 text-center">
+    <section ref={ref}  className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
+      <div  className="mt-32 text-center">
         {/* Section Title */}
           <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
           <div className="text-[#1ed760] text-5xl">

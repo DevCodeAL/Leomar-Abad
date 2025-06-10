@@ -55,11 +55,13 @@ export default function NavigationBar({activeSection, sections}){
         <>
             {isShow >= 562 ? (
                 <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
-                <div className="absolute left-6">
+                {isShow >= 700 && (
+                    <div className="absolute left-6">
                    <Link to='/'>
                      <img src="/image/logo.png" className="w-16 h-auto" alt="Logo" />
                    </Link>
                 </div>
+                )}
 
                 {sections.map((sec)=> (
                  <div key={sec.id} className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
@@ -103,8 +105,7 @@ export default function NavigationBar({activeSection, sections}){
                             </li>
                         </ul>
                      </div>
-                            ))}
-                        
+                        ))}
                     </div>
                     )}
                </>)}
