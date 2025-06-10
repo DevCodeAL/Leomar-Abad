@@ -1,14 +1,21 @@
 import { FaUserCog, FaTools } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function Skills() {
+export default function Skills({id , setActiveSection}) {
   const { ref, inView } = useInView({
     
-    threshold: 0,
+     threshold: 0,
   });
 
+    useEffect(()=>{
+            if(inView){
+                setActiveSection(id);
+            }
+        },[inView, id, setActiveSection]);
+
   return (
-    <section  className="flex justify-center w-full bg-[#121212] h-auto z-10" id="skills">
+    <section  className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
       <div ref={ref} className="mt-32 text-center">
         {/* Section Title */}
           <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>

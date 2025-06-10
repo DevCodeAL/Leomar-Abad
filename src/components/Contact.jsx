@@ -12,16 +12,23 @@ import emailjs from '@emailjs/browser';
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function Contact(){
+export default function Contact({id, setActiveSection}){
     const [formData, setFormData] = useState({name: "", email: "", message: ""});
     const [isSuccess, setIsSuccess] = useState(false);
     const [count, setCount] = useState('0');
     const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
-        threshold: 0,
+         threshold: 0,
     });
+
+     useEffect(()=>{
+            if(inView){
+                setActiveSection(id);
+            }
+        },[inView, id, setActiveSection]);
 
         // Loading Animation
         function LoadingAnimate(){
@@ -71,7 +78,7 @@ export default function Contact(){
 
     return(
         <>
-            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id="contact">
+            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
              <div ref={ref} className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
                {inView && (
                 <div className={`flex flex-row justify-center gap-5

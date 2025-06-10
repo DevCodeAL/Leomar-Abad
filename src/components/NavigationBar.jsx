@@ -3,8 +3,7 @@ import { Link } from "react-router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 
-export default function NavigationBar(){
-    const [isActive, setIsActive] = useState(window.location.hash);
+export default function NavigationBar({activeSection, sections}){
     const [isShow, setShow] = useState(window.innerWidth);
     const [isSideBarShow, setSideBarShow] = useState(false);
     const [isScroll, setIsScroll] = useState(false);
@@ -16,12 +15,6 @@ export default function NavigationBar(){
           } else {
             setSideBarShow(false);
           };
-    };
-
-
-    // Set Active Link
-    const HandleClick = (id)=>{
-        setIsActive(id);
     };
 
     // Monitor width
@@ -68,50 +61,16 @@ export default function NavigationBar(){
                    </Link>
                 </div>
 
-                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#home" onClick={()=> HandleClick('#home')} className="relative inline-block">
-                        Home
+                {sections.map((sec)=> (
+                 <div key={sec.id} className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                    <a href={`#${sec.id}`} className="relative inline-block">
+                        {sec.label}
                         <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
 
-                       {isActive === '#home' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                       {activeSection === sec.id && (<span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760] animate-fade-right"></span>)}
                     </a>
                     </div>
-
-
-               <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#about" onClick={()=> HandleClick('#about')} className="relative inline-block">About</a>
-                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                    {isActive === '#about' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-               </div>
-
-               <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#services" onClick={()=> HandleClick('#services')} className="relative inline-block">Services</a>
-                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                    {isActive === '#services' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-               </div>
-
-                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                  <a href="#skills" onClick={()=> HandleClick('#skills')} className="relative inline-block">Skills</a>
-                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                  {isActive === '#skills' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                </div>
-
-                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                    <a href="#projects" onClick={()=> HandleClick('#projects')} className="relative inline-block">Projects</a>
-                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                    {isActive === '#projects' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                </div>
-                   
-                   <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                      <a href="#contact" onClick={()=> HandleClick('#contact')} className="relative inline-block">Contact</a>
-                      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                      {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                   </div>
+                ))}
                </div>
                     // Top-navigationbar container
             ) : (<>
@@ -127,67 +86,25 @@ export default function NavigationBar(){
                                  <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
                                 <IoClose/></button>
                            </div>
-                        <div className="p-9">
+                
                             {/* SideBar Links */}
-                            <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
-                                {/* Home */}
+                     {sections.map((sec)=> (
+                    <div key={sec.id} className="p-6">
+                         <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
                             <li>
                                 <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                <a href="#home" onClick={()=> HandleClick('#home')} className="relative inline-block">
-                                    Home
+                                <a href={`#${sec.id}`} className="relative inline-block">
+                                    {sec.label}
                                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
 
-                                {isActive === '#home' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                {activeSection === sec.id && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
                                 </a>
                                 </div>
                             </li>
-                            {/* About */}
-                            <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                        <a href="#about" onClick={()=> HandleClick('#about')} className="relative inline-block">About</a>
-                                        <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                        {isActive === '#about' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                                </div>
-                            </li>
-                            {/* Services */}
-                            <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                    <a href="#services" onClick={()=> HandleClick('#services')} className="relative inline-block">Services</a>
-                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                    {isActive === '#services' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                            </div>
-                            </li>
-                            {/* Skills */}
-                            <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                <a href="#skills" onClick={()=> HandleClick('#skills')} className="relative inline-block">Skills</a>
-                                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                {isActive === '#skills' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                                </div>
-                            </li>
-                            {/* Projects */}
-                            <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                    <a href="#projects" onClick={()=> HandleClick('#projects')} className="relative inline-block">Projects</a>
-                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                    {isActive === '#projects' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                                </div>
-                            </li>
-                            {/* Contact */}
-                            <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
-                                    <a href="#contact" onClick={()=> HandleClick('#contact')} className="relative inline-block">Contact</a>
-                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                    {isActive === '#contact' && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
-                                </div>
-                            </li>
                         </ul>
-                        </div>
+                     </div>
+                            ))}
+                        
                     </div>
                     )}
                </>)}

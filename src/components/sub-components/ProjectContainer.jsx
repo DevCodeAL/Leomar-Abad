@@ -39,12 +39,12 @@ export default function Container({ image, description,
                 </li>
 
                 <li className="flex gap-4 mt-2">
-                    <div>
+                    <div className="transition-all duration-300 ease-in-out hover:scale-125">
                         <a href={external_link} target="_blank" className="text-[#1ed760] text-xl">
                           {external_link_icon}
                         </a>
                     </div>
-                    <div>
+                    <div className="transition-all duration-300 ease-in-out hover:scale-125">
                         <a href={github_link} target="_blank" className="text-[#1ed760] text-xl">
                             {github_link_icon}
                         </a>

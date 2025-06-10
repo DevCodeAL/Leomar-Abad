@@ -1,24 +1,31 @@
+import { useEffect } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
-export default function Home(){
+export default function Home({id, setActiveSection}){
      const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
-        threshold: 0,
+        threshold: 0.6,
     });
+
+    useEffect(()=>{
+        if(inView){
+            setActiveSection(id);
+        }
+    },[inView, id, setActiveSection]);
     
 
     return(
         <> 
-          <section 
+          <section ref={ref}
             className="flex justify-center items-center w-full bg-[#121212] z-10 min-h-screen px-4 py-10"
-            id="home"
+            id={id}
             >
-            <div ref={ref} className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
                 
                 {/* Text Content */}
                {inView && (

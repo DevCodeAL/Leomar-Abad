@@ -8,7 +8,7 @@ export default function WhatIdo(){
     const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
-    threshold: 0,
+    threshold: 0.6,
   });
 
     return(

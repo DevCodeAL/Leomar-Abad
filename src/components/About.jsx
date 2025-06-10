@@ -1,16 +1,24 @@
 import { FaInfoCircle } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function About(){
+export default function About({id , setActiveSection}){
     const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
-    threshold: 0,
+     threshold: 0.6,
   });
+
+    useEffect(()=>{
+          if(inView){
+              setActiveSection(id);
+          }
+      },[inView, id, setActiveSection]);
 
     return(
         <>
-           <section className="flex justify-center items-center w-full bg-[#121212] h-screen z-10" id="about">
+           <section className="flex justify-center items-center w-full bg-[#121212] h-screen z-10" 
+           id={id}>
              <div ref={ref}  className="flex flex-col gap-6">
                 {inView && (
                   <div className="flex flex-row justify-center gap-5 animate-fade-down animate-delay-200">

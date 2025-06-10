@@ -2,14 +2,20 @@ import { FaFolderOpen, FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Container from "./sub-components/ProjectContainer";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-export default function Projects(){
+export default function Projects({id , setActiveSection}){
   const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
     threshold: 0,
   });
 
+   useEffect(()=>{
+              if(inView){
+                  setActiveSection(id);
+              }
+          },[inView, id, setActiveSection]);
  
 
     const projects = [
@@ -83,7 +89,7 @@ export default function Projects(){
 
     return(
         <>
-            <section className="flex justify-center w-full bg-[#121212] h-auto z-10" id="projects">
+            <section className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
            <div ref={ref} className="max-w-5xl mx-auto mt-32 text-center">
                  <div className={`flex flex-row justify-center mb-6 gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">

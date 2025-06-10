@@ -1,13 +1,19 @@
 import { MdMiscellaneousServices } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
   
-export default function Services(){
+export default function Services({id , setActiveSection}){
   const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
-    threshold: 0,
+     threshold: 0,
   });
 
+    useEffect(()=>{
+            if(inView){
+                setActiveSection(id);
+            }
+        },[inView, id, setActiveSection]);
 
     
 const services = [
@@ -52,7 +58,7 @@ const services = [
 
     return(
         <>
-           <section  className="flex justify-center items-center w-full bg-[#121212] z-10" id="services">
+           <section  className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
             <div ref={ref}  className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
               <div>
                   {inView && (
