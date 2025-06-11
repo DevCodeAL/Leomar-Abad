@@ -56,7 +56,7 @@ export default function NavigationBar({activeSection, sections}){
             {isShow >= 562 ? (
                 <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
                 {isShow >= 700 && (
-                    <div className="absolute left-6">
+                    <div className="absolute left-6 animate-pulse">
                       <a href="#home" className="text-3xl text-[#1ed760]">
                          <ul className="flex items-center gap-2">
                             <li><FaCode/></li>
