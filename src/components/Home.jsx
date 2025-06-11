@@ -68,7 +68,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                             ? 'opacity-95' 
                             : 'animate-flip-down opacity-100'
                     }`}>
-                        {currentText}
+                        {`<${currentText}/>`}
                 </h1>
 
                 <p className="pt-5 leading-6 max-w-lg mx-auto lg:mx-0">
