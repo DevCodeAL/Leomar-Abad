@@ -6,37 +6,47 @@ import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
 export default function Home({id, setActiveSection}){
-    const [isNext, setIsNext] = useState(['Fullstack Web Developer']);
+    const [currentText, setCurrentText] = useState('Fullstack Web Developer');
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     const { ref, inView, entry } = useInView({
     /* Optional options */
     // triggerOnce: true,
         threshold: 0.6,
     });
 
+// Track Section
     useEffect(()=>{
         if(inView){
             setActiveSection(id);
         }
     },[inView, id, setActiveSection]);
 
-// Array of Text for Carousel 
+
+// Array of String for Carousel 
 const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Developer'];
 
-// Create a every 2 seconds change the text
+// Create every 2 seconds change the text
     useEffect(()=>{
-        let index = 0;
-        index++;
-       const interval = setInterval(()=>{
-        if(index >= items.length){
-            index = 0;
-            changeText(index = 0);
-        } else{
-            setIsNext(items[index++]);
-        };
-       }, 2000);
+
+        const Interval = setInterval(()=>{
+             setIsAnimating(true);
+             
+             setTimeout(()=>{
+                setCurrentIndex((prevIndex)=> {
+                const nextIndex = (prevIndex + 1) % items.length;
+                setCurrentText(items[nextIndex]);
+                return nextIndex;
+             });
+
+             setIsAnimating(false);
+             }, 300);
+
+        }, 3000);
 
     //    Clean-up function for Interval
-       return ()=> clearInterval(interval); 
+       return ()=> clearInterval(Interval); 
 
     },[]);
 
@@ -53,8 +63,12 @@ const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Develo
                  <div className="w-full lg:w-1/2 text-white animate-fade-right animate-delay-300'} text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl font-bold leading-snug">I'm, Leomar Abad,</h1>
                
-              <h1 className={`text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760]`}>
-                {isNext}
+               <h1 className={`text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760] transition-all duration-600 ease-in-out transform ${
+                           isAnimating 
+                            ? 'opacity-0 translate-y-2 scale-95' 
+                            : 'opacity-100 translate-y-0 scale-100'
+                    }`}>
+                        {currentText}
                 </h1>
 
                 <p className="pt-5 leading-6 max-w-lg mx-auto lg:mx-0">
@@ -106,7 +120,7 @@ const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Develo
                 {inView && (
                     <div className="w-full lg:w-1/3 flex justify-center relative animate-fade-left animate-delay-500">
                 {/* Light effect */}
-                <div className="absolute inset-24 bg-white opacity-20 blur-3xl z-0 rounded-full animate-pulse"></div>
+                <div className="absolute inset-24 bg-white opacity-25 blur-3xl z-0 rounded-full animate-pulse"></div>
                     {/* Border */}
                     <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)] w-60 h-60 sm:w-52 sm:h-52  md:w-60 md:h-60 lg:w-80 lg:h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
                             {/* Image */}
