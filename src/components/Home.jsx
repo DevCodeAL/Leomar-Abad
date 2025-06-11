@@ -37,6 +37,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                 setCurrentIndex((prevIndex)=> {
                 const nextIndex = (prevIndex + 1) % items.length;
                 setCurrentText(items[nextIndex]);
+                
                 return nextIndex;
              });
 
@@ -50,14 +51,14 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
 
     },[]);
 
+    //  bg-[#121212]
+
     return(
         <> 
           <section ref={ref}
             className="flex justify-center items-center w-full bg-[#121212] z-10 min-h-screen px-4 py-10"
-            id={id}
-            >
+            id={id}> 
             <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
-                
                 {/* Text Content */}
                {inView && (
                  <div className="w-full lg:w-1/2 text-white animate-fade-right animate-delay-300'} text-center lg:text-left">
@@ -72,7 +73,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                 </h1>
 
                 <p className="pt-5 leading-6 max-w-lg mx-auto lg:mx-0">
-                    I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.
+                    <span className="text-[#1ed760]">{`<p>`}</span>I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.<span className="text-[#1ed760]">{`</p>`}</span>
                 </p>
                 
                 {/* Social Icons */}

@@ -30,7 +30,7 @@ export default function About({ id, setActiveSection }) {
 
         {/* About Paragraph */}
         {inView && (
-          <div className="animate-fade-down animate-delay-200 text-center">
+          <div className="animate-fade-down animate-delay-300 text-center">
             <p className="text-white text-sm sm:text-base lg:text-base max-w-4xl mx-auto leading-relaxed">
               I’m a passionate Fullstack Web Developer with solid experience in building responsive, scalable web applications using the MERN stack (MongoDB, Express, React, Node.js, and Tailwind CSS). I specialize in crafting clean, user-friendly solutions that deliver real value to users and businesses alike.
               <br /><br />

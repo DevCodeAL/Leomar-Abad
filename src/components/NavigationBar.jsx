@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+import { FaCode } from "react-icons/fa";
 
 export default function NavigationBar({activeSection, sections}){
     const [isShow, setShow] = useState(window.innerWidth);
@@ -56,8 +57,11 @@ export default function NavigationBar({activeSection, sections}){
                 <div className="flex justify-end items-center fixed z-20 w-full bg-[#121212] font-bold p-3 gap-10 pr-10 border-b-2 border-[#1ed760]">
                 {isShow >= 700 && (
                     <div className="absolute left-6">
-                      <a href="#home">
-                         <img src="/image/logo.png" className="w-16 h-auto" alt="Logo" />
+                      <a href="#home" className="text-3xl text-[#1ed760]">
+                         <ul className="flex items-center gap-2">
+                            <li><FaCode/></li>
+                            <li className="text-lg">DevCode</li>
+                         </ul>
                       </a>
                 </div>
                 )}

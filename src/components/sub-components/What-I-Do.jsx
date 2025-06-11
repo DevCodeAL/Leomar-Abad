@@ -13,7 +13,7 @@ export default function WhatIDo(){
             <div ref={ref} className="w-full max-w-6xl flex flex-col justify-center items-center gap-10">
              {/* What I Do Header */}
                 {inView && (
-                <div className="flex flex-row justify-center items-center gap-3 animate-fade-down animate-delay-300">
+                <div className="flex flex-row justify-center items-center gap-3 animate-fade-down animate-delay-100">
                     <FaGlobe className="text-[#1ed760] text-4xl" />
                     <h1 className="text-3xl font-bold text-white">What I Do</h1>
                 </div>
@@ -51,7 +51,7 @@ export default function WhatIDo(){
 function ServiceCard({ icon, title, subtitle, animation }) {
   return (
     <div
-      className={`animate-${animation} animate-delay-500`}
+      className={`animate-${animation} animate-delay-300`}
     >
       <div className="group relative font-bold text-2xl bg-[#212121] text-[#a0a0a0] p-12 sm:p-16 rounded-lg text-center shadow-md">
         <div className="text-[#1ed760] text-5xl mb-4">{icon}</div>
