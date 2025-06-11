@@ -38,7 +38,7 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[300ms]',
+            style: 'animate-fade-down animate-delay-[350ms]',
         },
 
            {
@@ -49,7 +49,7 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[700ms]',
+            style: 'animate-fade-down animate-delay-[450ms]',
         },
 
         {
@@ -60,7 +60,7 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[1000ms]',
+            style: 'animate-fade-down animate-delay-[550ms]',
         },
 
         {
@@ -71,7 +71,7 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[1500ms]',
+            style: 'animate-fade-down animate-delay-[750ms]',
         },
 
         
@@ -83,7 +83,7 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[2000ms]',
+            style: 'animate-fade-down animate-delay-[850ms]',
         },
     ];
 

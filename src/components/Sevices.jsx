@@ -27,31 +27,31 @@ const services = [
     title: "Basic SEO",
     emoji: "🔍",
     description: "I can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money.",
-    style: 'animate-fade-down animate-delay-[300ms]',
+    style: 'animate-fade-down animate-delay-[350ms]',
   },
   {
     title: "Responsive Frontend Design",
     emoji: "💻📱",
     description: "Modern, mobile-first UI designs using React, Tailwind CSS, and best UX practices.",
-    style: 'animate-fade-down animate-delay-[700ms]',
+    style: 'animate-fade-down animate-delay-[450ms]',
   },
   {
     title: "Backend API Integration",
     emoji: "🔗",
     description: "Secure RESTful API development with Node.js, Express, or PHP, including third-party integrations.",
-    style: 'animate-fade-down animate-delay-[1000ms]',
+    style: 'animate-fade-down animate-delay-[550ms]',
   },
   {
     title: "Website Optimization & Maintenance",
     emoji: "🛠️",
     description: "Improve performance, fix bugs, and keep websites fast, secure, and updated regularly.",
-    style: 'animate-fade-down animate-delay-[1500ms]',
+    style: 'animate-fade-down animate-delay-[750ms]',
   },
   {
     title: "Design",
     emoji: "🎨",
     description: "Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth.",
-    style: 'animate-fade-down animate-delay-[2000ms]',
+    style: 'animate-fade-down animate-delay-[850ms]',
   }
 ];
 
@@ -60,19 +60,19 @@ const services = [
         <>
            <section  ref={ref}   className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
             <div className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
-              <div>
-                    <div className={`flex flex-row justify-center text-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
-                    <div className="inline-block text-[#1ed760] text-5xl">
-                        <MdMiscellaneousServices/>
-                    </div>
-                     
-                 <div>
-                    <h1 className="text-3xl font-bold text-white">My Services</h1>
+                <div>
+                      <div className={`flex flex-row justify-center text-center gap-5 ${inView && 'animate-fade-down animate-delay-100'}`}>
+                      <div className="inline-block text-[#1ed760] text-5xl">
+                          <MdMiscellaneousServices/>
+                      </div>
+                          
+                      <div>
+                          <h1 className="text-3xl font-bold text-white">My Services</h1>
+                      </div>
                 </div>
-             </div>
                     <div>
                     <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 
-                     ${inView && 'animate-fade-down animate-delay-300'}`}>
+                     ${inView && 'animate-fade-down animate-delay-200'}`}>
                         What I offer based on my skills and experience.</p>
                 </div>
               </div>

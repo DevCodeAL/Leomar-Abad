@@ -25,7 +25,7 @@ export default function Home({id, setActiveSection}){
 
 
 // Array of String for Carousel 
-const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Developer'];
+const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Developer'];
 
 // Create every 2 seconds change the text
     useEffect(()=>{
@@ -65,8 +65,8 @@ const items = ['Fullstack Web Developer', 'Front-End Developer', 'Backend Develo
                
                <h1 className={`text-4xl sm:text-5xl sm:text-wrap lg:text-nowrap font-bold text-[#1ed760] transition-all duration-600 ease-in-out transform ${
                            isAnimating 
-                            ? 'opacity-0 translate-y-2 scale-95' 
-                            : 'opacity-100 translate-y-0 scale-100'
+                            ? 'opacity-95' 
+                            : 'animate-flip-down opacity-100'
                     }`}>
                         {currentText}
                 </h1>

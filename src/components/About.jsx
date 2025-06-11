@@ -21,7 +21,7 @@ export default function About({id , setActiveSection}){
            id={id}>
              <div ref={ref}  className="flex flex-col gap-6">
                 {inView && (
-                  <div className="flex flex-row justify-center gap-5 animate-fade-down animate-delay-200">
+                  <div className="flex flex-row justify-center gap-5 animate-fade-down animate-delay-100">
                       <div className="text-[#1ed760] text-4xl">
                         <FaInfoCircle/>
                     </div>
@@ -32,7 +32,7 @@ export default function About({id , setActiveSection}){
                 )}
 
              {inView && (
-              <div className="w-[320px] sm:w-[480px] md:w-[640px] lg:w-[800px] px-4 animate-fade-down animate-delay-500">
+              <div className="w-[320px] sm:w-[480px] md:w-[640px] lg:w-[800px] px-4 animate-fade-down animate-delay-200">
                <p className="text-white text-center text-[14px] sm:text-sm md:text-sm lg:text-base  md:whitespace-normal px-2">
                     I’m a passionate Fullstack Web Developer with solid experience in building responsive, scalable web applications using the MERN stack (MongoDB, Express, React, Node.js and Tailwind CSS). I specialize in crafting clean, user-friendly solutions that deliver real value to users and businesses alike.
 

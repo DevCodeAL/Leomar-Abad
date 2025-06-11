@@ -17,7 +17,7 @@ export default function WhatIdo(){
                 <div>
                     <div>
                         {inView && (
-                            <div className="flex flex-row justify-center gap-5 mt-32 animate-fade-down animate-delay-200">
+                            <div className="flex flex-row justify-center gap-5 mt-32 animate-fade-down animate-delay-100">
                             <div className="text-[#1ed760] text-4xl">
                             <FaGlobe/>
                             </div>
@@ -33,7 +33,7 @@ export default function WhatIdo(){
                     <div>
                         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-10`}>
                             <div className="transform transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className={`group relative font-bold text-2xl text-wrap bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-right animate-delay-500`}>
+                                <div className={`group relative font-bold text-2xl text-wrap bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-right animate-delay-300`}>
                                 <span className="relative -top-10 text-[#1ed760] text-5xl">
                                     <MdDevices/></span>
                                 <h1>Responsive</h1>
@@ -43,7 +43,7 @@ export default function WhatIdo(){
                             </div>
 
                             <div className="transform transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                              <div className={`group relative font-bold text-2xl text-wrap transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-up animate-delay-500`}>
+                              <div className={`group relative font-bold text-2xl text-wrap transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-up animate-delay-300`}>
                                 <span className="relative -top-10 text-[#1ed760] text-5xl"><FaDev/></span>
                               <h1>Web</h1>
                               <h1>Development</h1>
@@ -52,7 +52,7 @@ export default function WhatIdo(){
                             </div>
                         
                             <div className="transform transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className={`group relative font-bold text-2xl text-wrap transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-left animate-delay-500`}>
+                                <div className={`group relative font-bold text-2xl text-wrap transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 bg-[#212121] text-[#a0a0a0] p-16 rounded-lg animate-fade-left animate-delay-300`}>
                                 <span className="relative -top-10 text-[#1ed760] text-5xl"><LuCodesandbox/></span>
                                <h1>Web</h1>
                                <h1>Design</h1>

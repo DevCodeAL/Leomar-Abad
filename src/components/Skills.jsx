@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function Skills({id , setActiveSection}) {
   const { ref, inView } = useInView({
-    
+    // triggerOnce: true,
      threshold: 0,
   });
 
