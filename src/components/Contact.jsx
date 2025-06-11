@@ -78,8 +78,8 @@ export default function Contact({id, setActiveSection}){
 
     return(
         <>
-            <section className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
-             <div ref={ref} className="flex flex-col gap-6 my-32 pb-6 w-full m-8">
+            <section className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
+             <div ref={ref} className="flex flex-col gap-6 w-full">
                {inView && (
                 <div className={`flex flex-row justify-center gap-5
                  animate-fade-down animate-delay-200`}>

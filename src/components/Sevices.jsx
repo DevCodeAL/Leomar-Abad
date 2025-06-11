@@ -58,8 +58,8 @@ const services = [
 
     return(
         <>
-           <section  ref={ref}   className="flex justify-center items-center w-full bg-[#121212] z-10" id={id}>
-            <div className="max-w-6xl mx-auto mt-32 text-center mb-12 px-6">
+           <section ref={ref} className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
+             <div  className="w-full max-w-6xl flex flex-col justify-center items-center gap-10">
                 <div>
                       <div className={`flex flex-row justify-center text-center gap-5 ${inView && 'animate-fade-down animate-delay-100'}`}>
                       <div className="inline-block text-[#1ed760] text-5xl">
@@ -71,7 +71,7 @@ const services = [
                       </div>
                 </div>
                     <div>
-                    <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 
+                    <p className={`text-[#b3b3b3] text-sm md:text-base text-center mt-4 mb-4 
                      ${inView && 'animate-fade-down animate-delay-200'}`}>
                         What I offer based on my skills and experience.</p>
                 </div>

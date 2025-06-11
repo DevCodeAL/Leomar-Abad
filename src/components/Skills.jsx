@@ -15,8 +15,8 @@ export default function Skills({id , setActiveSection}) {
         },[inView, id, setActiveSection]);
 
   return (
-    <section ref={ref}  className="flex justify-center w-full bg-[#121212] h-auto z-10" id={id}>
-      <div  className="mt-32 text-center">
+    <section ref={ref} className="flex justify-center w-full  bg-[#121212] min-h-screen z-10 py-24" id={id}>
+      <div  className="text-center">
         {/* Section Title */}
           <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
           <div className="text-[#1ed760] text-5xl">
@@ -99,7 +99,7 @@ export default function Skills({id , setActiveSection}) {
               </div>
             </div>
 
-            <p className="text-[#b3b3b3] text-sm md:text-base px-2 mt-6 mb-1">
+            <p className={`text-[#b3b3b3] text-sm md:text-base px-2 mt-6 mb-1 ${inView && 'animate-fade-down animate-delay-300'}`}>
               Tools I use to support development, design, testing, and deployment processes.
             </p>
 
