@@ -11,8 +11,6 @@ export default function Home({id, setActiveSection}){
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const { ref, inView, entry } = useInView({
-    /* Optional options */
-    // triggerOnce: true,
         threshold: 0.6,
     });
 
@@ -51,13 +49,14 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
 
     },[]);
 
-    //  bg-[#121212]
+    // 
 
     return(
         <> 
           <section ref={ref}
-            className="flex justify-center items-center w-full bg-[#121212] z-10 min-h-screen px-4 py-10"
-            id={id}> 
+            className="flex justify-center items-center w-full  bg-[#121212] z-10 min-h-screen px-4 py-10"
+            id={id}>
+
             <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
                 {/* Text Content */}
                {inView && (
@@ -72,8 +71,8 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                         {`<${currentText}/>`}
                 </h1>
 
-                <p className="pt-5 leading-6 max-w-lg mx-auto lg:mx-0">
-                    <span className="text-[#1ed760]">{`<p>`}</span>I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.<span className="text-[#1ed760]">{`</p>`}</span>
+                <p className="pt-5 leading-6 max-w-lg mx-auto font-semibold lg:mx-0">
+                    <span className="text-[#1ed760] font-semibold">{`<p>`}</span>I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.<span className="text-[#1ed760] font-semibold">{`</p>`}</span>
                 </p>
                 
                 {/* Social Icons */}
@@ -126,7 +125,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                     <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)] w-60 h-60 sm:w-52 sm:h-52  md:w-60 md:h-60 lg:w-80 lg:h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
                             {/* Image */}
                         <img
-                        src="/image/Leomar-Abad.png"
+                        src="/picture/Leomar-Abad.png"
                         alt="Picture"
                         className="absolute left-0 top-0  w-72 sm:w-64 md:w-72 lg:w-full h-auto object-cover object-top z-10 rounded-full scale-125 transition duration-300 ease-in-out hover:scale-150"
                     />
