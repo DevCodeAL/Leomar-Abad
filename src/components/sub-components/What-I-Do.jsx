@@ -50,14 +50,12 @@ export default function WhatIDo(){
 
 function ServiceCard({ icon, title, subtitle, animation }) {
   return (
-    <div
-      className={`animate-${animation} animate-delay-300`}
-    >
-      <div className="group relative font-bold text-2xl bg-[#212121] text-[#a0a0a0] p-12 sm:p-16 rounded-lg text-center shadow-md">
+    <div className={`animate-${animation} animate-delay-300`}>
+      <div className="group relative font-bold text-2xl bg-gradient-to-r from-[#212121]  to-[#000000] text-[#a0a0a0] p-12 sm:p-16 rounded-lg text-center shadow-md">
         <div className="text-[#1ed760] text-5xl mb-4">{icon}</div>
         <h1>{title}</h1>
         <h1>{subtitle}</h1>
-        <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
+        <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full animate-snake"></span>
       </div>
     </div>
   );

@@ -80,7 +80,7 @@ const services = [
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">
                 {services.map((service, index) => (
                     <div key={index}
-                    className={`bg-[#212121] relative rounded-2xl shadow p-6 text-left hover:shadow-md transition group ${inView && service.style }`}
+                    className={`bg-gradient-to-r from-[#212121]  to-[#000000] relative rounded-2xl shadow p-6 text-left hover:shadow-md transition group ${inView && service.style }`}
                     >
                     <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
                     <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
