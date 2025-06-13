@@ -44,12 +44,18 @@ export default function About({ id, setActiveSection }) {
           {/* Image Container */}
            {inView && (
             <div className={`max-w-sm p-3 pt-16 mb-6 animate-fade-up text-center animate-delay-300`}>
-            <img 
-              src="/picture/leomar-photo-grad.jpg" 
-              className="w-72 h-72 object-cover object-top rounded-full" 
-              alt="Leomar Photo"
-            />
-            <div className="text-[#1ed760] text-xl font-bold p-3">"Code. Design. Deliver."</div>
+              <div className="shadow-[#1ed760] shadow-[0_0_20px_rgba(0,0,0,0.25)] rounded-full">
+                <img 
+                  src="/picture/leomar-photo-grad.jpg" 
+                  className="w-72 h-72 object-cover object-top transition-all ease-in-out duration-300 hover:scale-105 rounded-full" 
+                  alt="Leomar Photo"
+                />
+              </div>
+            <div className="text-white text-base font-bold p-6">
+               <button className="transition duration-200 ease-in hover:scale-105">
+                        <a href="#contact" className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1 pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" >Hire Me</a>
+                </button>
+            </div>
           </div>
            )}
           
