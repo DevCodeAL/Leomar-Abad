@@ -53,7 +53,7 @@ export default function About({ id, setActiveSection }) {
               </div>
             <div className="text-white text-base font-bold p-6">
                <button className="transition duration-200 ease-in hover:scale-105">
-                        <a href="#contact" className="border-2 border-[#1ed760] bg-[#212121] pl-5 pr-5 pt-1 pb-1 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" >Hire Me</a>
+                        <a href="#contact" className="border-2 border-[#1ed760] bg-[#212121] py-1 px-4 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" >Hire Me</a>
                 </button>
             </div>
           </div>

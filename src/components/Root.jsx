@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import { useState } from "react";
 import WhatIDo from "./sub-components/What-I-Do";
+import Testimonials from "./sub-components/Testimonials";
 
 export default function Root() {
   const [activeSection, setActiveSection] = useState("");
@@ -30,6 +31,7 @@ export default function Root() {
       <Services id={'services'} setActiveSection={setActiveSection} />
       <Skills id={'skills'} setActiveSection={setActiveSection} />
       <Projects id={'projects'} setActiveSection={setActiveSection} />
+      <Testimonials/>
       <Contact id={'contact'} setActiveSection={setActiveSection}/>
       <Footer />
     </>

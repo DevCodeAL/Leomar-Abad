@@ -89,7 +89,7 @@ export default function Projects({id , setActiveSection}){
 
     return(
         <>
-            <section ref={ref} className="flex justify-center w-full bg-[#121212] min-h-screen py-24  z-10" id={id}>
+            <section ref={ref} className="flex justify-center items-center w-full bg-[#121212] min-h-screen py-24  z-10" id={id}>
            <div  className="max-w-5xl mx-auto text-center">
                  <div className={`flex flex-row justify-center mb-6 gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
                     <div className="text-[#1ed760] text-5xl">
