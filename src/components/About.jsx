@@ -72,8 +72,8 @@ export default function About({ id, setActiveSection }) {
               </div>
 
               <ul className="relative space-y-6">
-                <span className="absolute border border-[#1ed760] top-4 bottom-16 left-2 "></span>
-                 <span className="absolute border border-[#1ed760] top-10 bottom-4 left-2 "></span>
+                <span className="absolute border border-[#1ed760] top-4 bottom-20 left-2 "></span>
+                 <span className="absolute border border-[#1ed760] top-14 bottom-4 left-2 "></span>
                 <li className="flex items-center gap-6">
                    <div className="text-[#1ed760]">
                       <FaCheckCircle/>
@@ -87,9 +87,9 @@ export default function About({ id, setActiveSection }) {
                       <FaCheckCircle/>
                    </div>
                    <div>
-                     College for Research and Technology
+                     College for Research and Technology<br></br>
+                     <span className="text-xs">Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines</span>
                    </div>
-                {/* <div className="text-xs pt-3 pl-3">Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines</div> */}
                 </li>
                 <li className="flex items-center gap-6">
                   <div className="text-[#1ed760]">

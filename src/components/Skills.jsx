@@ -31,15 +31,15 @@ export default function Skills({id , setActiveSection}) {
           </p>
 
         {/* Skills Container */}
-        <div className="grid grid-flow-row justify-items-center sm:grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* FRONT END */}
           <div>
-            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
+            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
          
-              <div className={`flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6 
+              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
               ${inView && 'animate-fade-right animate-delay-700'}`}>
                 {[
                   { src: "/image/html.png", label: "HTML5", w: "w-10" },
@@ -61,13 +61,13 @@ export default function Skills({id , setActiveSection}) {
 
           {/* BACKEND */}
           <div>
-            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
+            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-up animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
          
-              <div className={`flex justify-center items-center flex-wrap max-w-sm mx-auto gap-14 p-6 
-              ${inView && 'animate-fade-left animate-delay-700'}`}>
+              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
+              ${inView && 'animate-fade-up animate-delay-700'}`}>
                 {[
                   { src: "/image/nodejs.png", label: "Node Js", w: "w-16" },
                   { src: "/image/express-js.png", label: "Express Js", w: "w-10" },
@@ -85,25 +85,17 @@ export default function Skills({id , setActiveSection}) {
                 ))}
               </div>
           </div>
-        </div>
 
-        {/* OTHER TOOLS */}
-          <div className={`max-w-md mx-auto`}>
-            <div className="flex flex-row justify-center gap-5 mt-10">
-              <div className="text-[#1ed760] text-2xl">
-                <FaTools />
-              </div>
-              <div className={`relative flex justify-center items-center ${inView && 'animate-fade-down animate-delay-200'}`}>
+                 {/* OTHER TOOLS */}
+          <div className={`max-w-sm mx-auto`}>
+            <div className="flex flex-row justify-center">
+              <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
                 <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
                 <div className="absolute bottom-0 border-t-2 w-full sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
               </div>
             </div>
 
-            <p className={`text-[#b3b3b3] text-sm md:text-base px-2 mt-6 mb-1 ${inView && 'animate-fade-down animate-delay-300'}`}>
-              Tools I use to support development, design, testing, and deployment processes.
-            </p>
-
-              <div className={`flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6 ${inView && 'animate-fade-up animate-delay-700'}`}>
+              <div className={`flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6 ${inView && 'animate-fade-left animate-delay-700'}`}>
               {[
                 { src: "/image/VSC.png", label: "Visual Studio Code", w: "w-10" },
                 { src: "/image/git_github.png", label: "Git & Github", w: "w-12" },
@@ -123,6 +115,8 @@ export default function Skills({id , setActiveSection}) {
               ))}
             </div>
           </div>
+
+        </div>
       </div>
     </section>
   );
