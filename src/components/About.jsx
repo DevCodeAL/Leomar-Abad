@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function About({ id, setActiveSection }) {
   const { ref, inView } = useInView({
@@ -61,50 +62,83 @@ export default function About({ id, setActiveSection }) {
           
 
           {inView && (
-            <div className={`flex flex-col gap-6  max-w-md p-3 text-white`}>
+            <div className={`flex flex-col gap-6  max-w-lg p-3 text-white`}>
               {/* Education */}
               <div className={`animate-fade-right animate-delay-500`}>
-              <h1 className="text-[#1ed760] text-3xl font-bold pl-8">
-                <div className="flex items-center gap-2">
+
+               <div className="flex items-center text-[#1ed760] text-3xl font-bold mb-3 pl-8 gap-2">
                   <div className="text-4xl"><FaGraduationCap/></div>
                   <div>Education</div>
-                </div>
-              </h1>
-              <ul className="relative list-none space-y-6 mt-4 before:content-[''] before:absolute before:left-[6px] before:top-5 before:bottom-0 before:w-0.5 before:bg-[#1ed760]">
-                <li className="relative pl-8 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                  Bachelor of Science in Information Technology
+              </div>
+
+              <ul className="relative space-y-6">
+                <span className="absolute border border-[#1ed760] top-4 bottom-16 left-2 "></span>
+                 <span className="absolute border border-[#1ed760] top-10 bottom-4 left-2 "></span>
+                <li className="flex items-center gap-6">
+                   <div className="text-[#1ed760]">
+                      <FaCheckCircle/>
+                   </div>
+                   <div>
+                      Bachelor of Science in Information Technology
+                   </div>
                 </li>
-                <li className="relative pl-8 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                  <div>
-                    College for Research and Technology
+                <li className="flex items-center gap-6">
+                   <div className="text-[#1ed760]">
+                      <FaCheckCircle/>
+                   </div>
+                   <div>
+                     College for Research and Technology
+                   </div>
+                {/* <div className="text-xs pt-3 pl-3">Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines</div> */}
+                </li>
+                <li className="flex items-center gap-6">
+                  <div className="text-[#1ed760]">
+                    <FaCheckCircle/>
                   </div>
-                  <span className="text-xs">Burgos Ave., Cabanatuan City, Philippines</span>
-                </li>
-                <li className="relative pl-8 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                  Graduated: 2025
+                  <div>
+                     Graduated: 2025
+                  </div>
                 </li>
               </ul>
             </div>
 
               {/* Experience */}
             <div className={`animate-fade-left animate-delay-500`}>
-              <h1 className="text-[#1ed760] text-3xl font-bold pl-8">
-                  <div className="flex items-center gap-2">
-                  <div><FaBriefcase/></div>
-                  <div>Experience</div>
-                </div>
-                </h1>
-              <ul className="relative list-none space-y-6 mt-4 before:content-[''] before:absolute before:left-[6px] before:top-5 before:bottom-0 before:w-0.5 before:bg-[#1ed760]">
-              <li className="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                Developed web applications with modern technologies.
-              </li>
-              <li className="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                Collaborated with cross-functional teams.
-              </li>
-              <li className="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-[#1ed760] before:text-4xl">
-                Deployed and maintained production systems.
-              </li>
-            </ul>
+
+              <div className="flex items-center text-[#1ed760] text-3xl font-bold mt-8 mb-3 pl-8 gap-2">
+                <div><FaBriefcase/></div>
+                <div>Experience</div>
+              </div>
+
+              <ul className="relative space-y-6">
+                <span className="absolute border border-[#1ed760] top-4 bottom-16 left-2 "></span>
+                 <span className="absolute border border-[#1ed760] top-10 bottom-4 left-2 "></span>
+                <li className="flex items-center gap-6">
+                   <div className="text-[#1ed760]">
+                      <FaCheckCircle/>
+                   </div>
+                   <div>
+                      Developed web applications with modern technologies.
+                   </div>
+                </li>
+                <li className="flex items-center gap-6">
+                   <div className="text-[#1ed760]">
+                      <FaCheckCircle/>
+                   </div>
+                   <div>
+                     Collaborated with cross-functional teams.
+                   </div>
+                {/* <div className="text-xs pt-3 pl-3">Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines</div> */}
+                </li>
+                <li className="flex items-center gap-6">
+                  <div className="text-[#1ed760]">
+                    <FaCheckCircle/>
+                  </div>
+                  <div>
+                    Deployed and maintained production systems.
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
           )}

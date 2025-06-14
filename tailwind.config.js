@@ -10,12 +10,12 @@ export default {
         spotifyGreen: '#1ed760',
     },
       animation: {
-        marquee: 'marquee 60s linear infinite', // Slow enough to see all users
+        marquee: 'marquee 60s linear infinite', 
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0)' }, // Start position
-          '100%': { transform: 'translateX(-50%)' }, // Move only half, so the second list appears
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-40%)' }, 
         },
       },
     },
