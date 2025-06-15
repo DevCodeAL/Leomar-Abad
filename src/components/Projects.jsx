@@ -18,7 +18,8 @@ export default function Projects({id , setActiveSection}){
  
 
     const projects = [
-        {
+        {   
+            title: "Guimba East EduLink",
             image: "/projects-images/guimba-east.png",
             description: "Guimba EastEdulink is a web-based system for the Guimba East District that streamlines school management and learning resources for school heads, teachers, and administrators. As my first major client project, it strengthened my skills in full-stack development, client communication, and real-world deployment.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
@@ -26,10 +27,10 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "https://www.guimbaeastedulink.com/",
             github_links: "https://github.com/DevCodeAL/EduFile-School-File-Management-and-Notification-Hub.git",
-            style: 'animate-fade-down animate-delay-[150ms]',
         },
 
          {
+            title: "Cuyapo Legislative Tracking System",
             image: "/projects-images/SB_Cuyapo.png",
             description: "Created as part of my personal development and hobby projects, this system was reimagined with a cleaner interface and improved usability. It aims to provide a more organized and accessible way for local government units to track legislative activities and maintain transparency.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
@@ -37,10 +38,10 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[350ms]',
         },
 
            {
+            title: "Hotel and Resort Management System",
             image: "/projects-images/Armandos.png",
             description: "Cuyapo Armandos Resort Management System is a custom web application developed as a commissioned project for student clients. The system helps manage resort reservations, customer inquiries, room availability, and booking schedules, streamlining daily operations and improving customer service.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
@@ -48,10 +49,10 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[450ms]',
         },
 
         {
+            title: "Business",
             image: "/projects-images/sample1.png",
             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
@@ -59,10 +60,10 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[550ms]',
         },
 
         {
+            title: "Technology Modernization",
             image: "/projects-images/sample2.png",
             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
@@ -70,7 +71,6 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[750ms]',
         },
 
         
@@ -82,14 +82,13 @@ export default function Projects({id , setActiveSection}){
             githubLinks: <FaGithub/>,
             links_demos: "#",
             github_links: "#",
-            style: 'animate-fade-down animate-delay-[850ms]',
         },
     ];
 
     return(
         <>
-            <section ref={ref} className="flex justify-center items-center w-full bg-[#121212] min-h-screen py-24  z-10" id={id}>
-           <div  className="max-w-5xl mx-auto text-center">
+            <section ref={ref} className="flex  items-center w-full bg-[#121212] min-h-screen py-24  z-10" id={id}>
+           <div  className="max-w-7xl mx-auto text-center">
                  {inView && (
                     <div className={`flex flex-row justify-center mb-6 gap-5 animate-fade-down animate-delay-200`}>
                     <div className="text-[#1ed760] text-5xl">
@@ -102,11 +101,11 @@ export default function Projects({id , setActiveSection}){
                  )}
 
                  {/* Grid Containers for all my Projects */}
-                 <div ref={ref} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">
+                 <div ref={ref} className="relative grid grid-cols-1 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
-                         <div key={index} className="transform transition-all ease-in-out delay-150 duration-300 hover:scale-110">
+                         <div key={index}>
                             <Container
-                            animation={inView && item.style}
+                            title={item.title}
                             image={item.image}
                             description={item.description}
                             tech={item.technologies}
