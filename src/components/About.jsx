@@ -44,19 +44,13 @@ export default function About({ id, setActiveSection }) {
         <div className="flex justify-evenly flex-wrap">
           {/* Image Container */}
            {inView && (
-            <div className={`max-w-sm p-3 pt-16 mb-6 animate-fade-up text-center animate-delay-300`}>
-              <div className="shadow-[#1ed760] shadow-[0_0_20px_rgba(0,0,0,0.25)] rounded-full">
+            <div className={`relative max-w-lg  p-3 pt-16 mb-6 animate-fade-up text-center animate-delay-300`}>
+              <div className="absolute  bottom-0 left-16 w-72 h-72 bg-[#1ed760] opacity-45 blur-3xl"></div>
                 <img 
-                  src="/picture/leomar-photo-grad.jpg" 
-                  className="w-72 h-72 object-cover object-top transition-all ease-in-out duration-300 hover:scale-105 rounded-full" 
+                  src="/png/laptop.png" 
+                  className="relative object-cover transition-all ease-in-out duration-300 hover:scale-105 " 
                   alt="Leomar Photo"
                 />
-              </div>
-            <div className="text-white text-base font-bold p-6">
-               <button className="transition duration-200 ease-in hover:scale-105">
-                        <a href="#contact" className="border-2 border-[#1ed760] bg-[#212121] py-1 px-4 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" >Hire Me</a>
-                </button>
-            </div>
           </div>
            )}
           
