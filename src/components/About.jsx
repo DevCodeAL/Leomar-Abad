@@ -34,7 +34,7 @@ export default function About({ id, setActiveSection }) {
         {inView && (
           <div className="animate-fade-down animate-delay-300 text-center">
             <p className="text-white sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              I’m a passionate Fullstack Web Developer with solid experience in building responsive, scalable web applications using the MERN stack (MongoDB, Express, React, Node.js, and Tailwind CSS). I specialize in crafting clean, user-friendly solutions that deliver real value to users and businesses alike.
+              I am a passionate and dedicated specializing in web development with expertise in the MERN stack and Tailwind CSS. With hands-on experience building dynamic and responsive web applications, I thrive on crafting intuitive user interfaces and developing robust back-end systems. I bring creativity, attention to detail, and a strong commitment to delivering quality solutions. I am eager to contribute to innovative projects, collaborate with like-minded professionals, and continue growing in the tech industry.
               <br /><br />
               My professional goal is to design and develop digital products that solve real-world problems and address complex business logic. I’m driven by continuous learning and strive to create high-performance applications that are both functional and visually engaging through strong UI/UX practices.
             </p>
