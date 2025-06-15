@@ -19,7 +19,6 @@ export default function Contact({id, setActiveSection}){
     const [isSuccess, setIsSuccess] = useState(false);
     const [count, setCount] = useState('0');
     const { ref, inView, entry } = useInView({
-    /* Optional options */
          threshold: 0,
     });
 

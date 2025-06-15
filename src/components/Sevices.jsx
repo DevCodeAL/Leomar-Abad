@@ -4,7 +4,6 @@ import { useEffect } from "react";
   
 export default function Services({id , setActiveSection}){
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     // triggerOnce: true,
      threshold: 0,
   });
@@ -67,7 +66,7 @@ const services = [
                       </div>
                           
                       <div>
-                          <h1 className="text-3xl font-bold text-white">My Services</h1>
+                          <h1 className="text-3xl font-bold text-white">Services</h1>
                       </div>
                 </div>
                     <div>

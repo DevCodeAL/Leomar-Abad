@@ -5,8 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 export default function Projects({id , setActiveSection}){
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
+  const { ref, inView } = useInView({
     // triggerOnce: true,
     threshold: 0,
   });
@@ -91,14 +90,16 @@ export default function Projects({id , setActiveSection}){
         <>
             <section ref={ref} className="flex justify-center items-center w-full bg-[#121212] min-h-screen py-24  z-10" id={id}>
            <div  className="max-w-5xl mx-auto text-center">
-                 <div className={`flex flex-row justify-center mb-6 gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
+                 {inView && (
+                    <div className={`flex flex-row justify-center mb-6 gap-5 animate-fade-down animate-delay-200`}>
                     <div className="text-[#1ed760] text-5xl">
                        <FaFolderOpen/>
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold text-white">My Projects</h1>
+                        <h1 className="text-3xl font-bold text-white">Projects</h1>
                     </div>
                  </div>
+                 )}
 
                  {/* Grid Containers for all my Projects */}
                  <div ref={ref} className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-0 p-5">

@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function WhatIDo(){
     const { ref, inView } = useInView({
+    // triggerOnce: true,
     threshold: 0,
   });
 
@@ -51,7 +52,7 @@ export default function WhatIDo(){
 function ServiceCard({ icon, title, subtitle, animation }) {
   return (
     <div className={`animate-${animation} animate-delay-300`}>
-      <div className="group relative font-bold text-2xl bg-gradient-to-r from-[#212121]  to-[#000000] text-[#a0a0a0] p-12 sm:p-16 rounded-lg text-center shadow-md">
+      <div className="group relative font-bold text-2xl bg-gradient-to-r from-[#212121]  to-[#121212] text-[#a0a0a0] p-12 sm:p-16 rounded-lg text-center shadow-md">
         <div className="text-[#1ed760] text-5xl mb-4">{icon}</div>
         <h1>{title}</h1>
         <h1>{subtitle}</h1>

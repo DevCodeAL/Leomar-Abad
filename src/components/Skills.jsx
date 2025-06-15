@@ -18,11 +18,11 @@ export default function Skills({id , setActiveSection}) {
     <section ref={ref} className="flex justify-center items-center w-full  bg-[#121212] min-h-screen z-10 py-24" id={id}>
       <div  className="text-center">
         {/* Section Title */}
-          <div className={`flex flex-row justify-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
+          <div className={`flex justify-center items-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
           <div className="text-[#1ed760] text-5xl">
             <FaUserCog />
           </div>
-          <h1 className="text-3xl font-bold text-white">My Skills</h1>
+          <h1 className="text-3xl font-bold text-white">Skills</h1>
         </div>
 
         {/* Section Description */}

@@ -1,4 +1,5 @@
 import { IoStarSharp } from "react-icons/io5";
+import { FaCommentDots } from "react-icons/fa";
 
 export default function Testimonials(){
     
@@ -113,7 +114,15 @@ export default function Testimonials(){
 
     return(
        <section className="flex flex-col items-center w-full bg-[#121212] min-h-screen py-24 z-10 overflow-hidden">
-        <h1 className="text-3xl my-10 font-bold text-[#1ed760]">Testimonials</h1>
+        
+        <div className="flex justify-center items-center gap-3 my-12">
+          <div className="text-[#1ed760] text-4xl">
+              <FaCommentDots/>
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold text-white">Testimonials</h1>
+          </div>
+       </div>
 
   {/* Marquee Container */}
   <div className="relative overflow-hidden">
