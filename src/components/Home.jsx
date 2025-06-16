@@ -6,6 +6,16 @@ import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Particles from "./StyleComponents/Particles";
 import ScrollVelocity from "./StyleComponents/ScrollVelocity";
+import { FaReact } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { FaJs } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiPhp } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
 
 export default function Home({id, setActiveSection, velocity}){
     const [currentText, setCurrentText] = useState('Fullstack Web Developer');
@@ -149,14 +159,14 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                 )}
             </div>
             </section>
-            <section className="py-10 bg-[#121212] ">
+            <section className="py-10 bg-[#121212]">
                  <ScrollVelocity
                     texts={[
-                         ['Html', 'Css', 'Javascript', 'Tailwind Css', 'React Js'],
-                         ['- Node Js', 'Express Js', 'Php', 'MongoDb', 'MySql']
+                         [<FaHtml5/>, <FaCss3/>, <FaJs/>, <RiTailwindCssFill/>, <FaReact/>,],
+                         [<FaNodeJs/>, <SiExpress/>, <SiPhp/>, <SiMongodb/>, <SiMysql/>]
                         ]} 
                         velocity={velocity} 
-                        className="bg-[#121212] text-[#212121] text-4xl p-2"
+                        className="text-[#0c2616] text-5xl p-2"
                     />
             </section>
         </>

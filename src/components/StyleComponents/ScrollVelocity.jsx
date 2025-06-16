@@ -129,7 +129,7 @@ export const ScrollVelocity = ({
 
   return (
     <section>
-      {texts.map((text, index) => (
+      {texts.map((line, index) => (
         <VelocityText
           key={index}
           className={className}
@@ -144,7 +144,11 @@ export const ScrollVelocity = ({
           parallaxStyle={parallaxStyle}
           scrollerStyle={scrollerStyle}
         >
-          {text.join(" - ")}
+         {line.map((item, itemIndex) => (
+        <span key={itemIndex} className="inline-flex items-center gap-1">
+          {item}&nbsp;
+        </span>
+      ))}
         </VelocityText>
       ))}
     </section>
