@@ -34,9 +34,7 @@ export default function About({ id, setActiveSection }) {
         {inView && (
           <div className="animate-fade-down animate-delay-300 text-center">
             <p className="text-white sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              I am a passionate and dedicated specializing in web development with expertise in the MERN stack and Tailwind CSS. With hands-on experience building dynamic and responsive web applications, I thrive on crafting intuitive user interfaces and developing robust back-end systems. I bring creativity, attention to detail, and a strong commitment to delivering quality solutions. I am eager to contribute to innovative projects, collaborate with like-minded professionals, and continue growing in the tech industry.
-              <br /><br />
-              My professional goal is to design and develop digital products that solve real-world problems and address complex business logic. I’m driven by continuous learning and strive to create high-performance applications that are both functional and visually engaging through strong UI/UX practices.
+             I’m a passionate web developer skilled in the MERN stack and Tailwind CSS, with experience building dynamic, responsive applications and intuitive user interfaces. I’m committed to delivering high-quality, creative solutions and aim to design and develop digital products that solve real-world problems with strong UI/UX. I thrive on continuous learning and collaborating on innovative projects.
             </p>
           </div>
         )}
@@ -48,7 +46,7 @@ export default function About({ id, setActiveSection }) {
               <div className="absolute  bottom-0 left-16 w-72 h-72 bg-[#1ed760] opacity-45 blur-3xl"></div>
                 <img 
                   src="/png/laptop.png" 
-                  className="relative object-cover transition-all ease-in-out duration-300 hover:scale-105 " 
+                  className="relative object-cover transition-all ease-in-out duration-300 hover:scale-110 " 
                   alt="Leomar Photo"
                 />
           </div>

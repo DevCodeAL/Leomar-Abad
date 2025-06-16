@@ -4,8 +4,10 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import Particles from "./StyleComponents/Particles";
+import ScrollVelocity from "./StyleComponents/ScrollVelocity";
 
-export default function Home({id, setActiveSection}){
+export default function Home({id, setActiveSection, velocity}){
     const [currentText, setCurrentText] = useState('Fullstack Web Developer');
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,6 +58,19 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
           <section ref={ref}
             className="flex justify-center items-center w-full  bg-[#121212] z-10 min-h-screen px-4 py-10"
             id={id}>
+
+            <div style={{ width: '100%', height: '600px', position: 'absolute', overflow: 'hidden' }}>
+            <Particles
+                particleColors={['#1ed760']}
+                particleCount={200}
+                particleSpread={10}
+                speed={0.1}
+                particleBaseSize={100}
+                moveParticlesOnHover={true}
+                alphaParticles={false}
+                disableRotation={false}
+            />
+            </div>
 
             <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
                 {/* Text Content */}
@@ -120,19 +135,29 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                 {inView && (
                     <div className="w-full lg:w-1/3 flex justify-center relative animate-fade-left animate-delay-500">
                 {/* Light effect */}
-                <div className="absolute inset-24 bg-white opacity-25 blur-3xl z-0 rounded-full animate-pulse"></div>
+                <div className="absolute inset-24 bg-white opacity-25 blur-3xl z-10 rounded-full animate-pulse"></div>
                     {/* Border */}
                     <div className="relative border-8 border-[#1ed760] shadow-[#1ed760] shadow-[0_0_30px_rgba(0,0,0,0.25)] w-60 h-60 sm:w-52 sm:h-52  md:w-60 md:h-60 lg:w-80 lg:h-80 p-10 rounded-full z-20 overflow-hidden animate-rotate-y">
                             {/* Image */}
                         <img
                         src="/picture/Leomar-Abad.png"
                         alt="Picture"
-                        className="absolute left-0 top-0  w-72 sm:w-64 md:w-72 lg:w-full h-auto object-cover object-top z-10 rounded-full scale-125 transition duration-300 ease-in-out hover:scale-150"
+                        className="absolute left-0 top-0  w-72 sm:w-64 md:w-72 lg:w-full h-auto object-cover object-top z-20 rounded-full scale-125 transition duration-300 ease-in-out hover:scale-150"
                     />
                     </div>
                 </div>
                 )}
             </div>
+            </section>
+            <section className="py-10 bg-[#121212] ">
+                 <ScrollVelocity
+                    texts={[
+                         ['Html', 'Css', 'Javascript', 'Tailwind Css', 'React Js'],
+                         ['- Node Js', 'Express Js', 'Php', 'MongoDb', 'MySql']
+                        ]} 
+                        velocity={velocity} 
+                        className="bg-[#121212] text-[#212121] text-4xl p-2"
+                    />
             </section>
         </>
     );
