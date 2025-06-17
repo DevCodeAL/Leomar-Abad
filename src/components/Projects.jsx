@@ -75,6 +75,7 @@ export default function Projects({id , setActiveSection}){
 
         
         {
+            title: "Inventory System",
             image: "/projects-images/inventory-system.png",
             description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
@@ -105,6 +106,7 @@ export default function Projects({id , setActiveSection}){
                        {projects.map((item,  index)=> (
                          <div key={index}>
                             <Container
+                            index={index}
                             title={item.title}
                             image={item.image}
                             description={item.description}

@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 
-export default function Container({ title, image, description,
+export default function Container({ index,  title, image, description,
    external_link, github_link, external_link_icon,
     github_link_icon, tech }){
       
@@ -13,8 +13,7 @@ export default function Container({ title, image, description,
     <>
         <div ref={ref}>
         {/* This area are for projects */}
-
-          <div className="flex flex-wrap gap-6">
+          <div className={`flex flex-wrap gap-6 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 {inView && (
                   <div className="relative p-4 md:p-8 animate-fade-right animate-delay-300">
                   <div
