@@ -48,7 +48,7 @@ export default function Projects({id , setActiveSection}){
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
             links_demos: "#",
-            github_links: "#",
+            github_links: "https://github.com/DevCodeAL/Cuyapo-Armandos-Hotel-and-Resort-Management-System",
         },
 
         {
@@ -82,7 +82,7 @@ export default function Projects({id , setActiveSection}){
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
             links_demos: "#",
-            github_links: "#",
+            github_links: "https://github.com/DevCodeAL/Inventory-System",
         },
     ];
 
