@@ -78,14 +78,21 @@ const services = [
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-8">
                 {services.map((service, index) => (
-                    <div key={index}
-                    className={`bg-gradient-to-r from-[#212121]  to-[#121212] relative rounded-2xl shadow p-6 text-left hover:shadow-md transition group 
-                     ${inView && service.style }`}
-                    >
-                    <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
-                    <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
-                    <p className="text-[#b3b3b3] text-sm">{service.description}</p>
+                   <div
+                    key={index}
+                    className={`relative p-[2px] rounded-2xl overflow-hidden group h-full ${inView && service.style}`}
+                  >
+                    {/* Spinning border */}
+                    <div className="absolute inset-0 rounded-2xl animate-rotate bg-[conic-gradient(#036325_20deg,transparent_120deg)]"></div>
+
+                    {/* Actual card */}
+                    <div className="relative z-10 bg-gradient-to-r from-[#212121] to-[#121212] rounded-2xl shadow p-6 text-left hover:shadow-md transition overflow-hidden h-full">
+                      <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
+                      <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
+                      <p className="text-[#b3b3b3] text-sm mt-auto">{service.description}</p>
+                    </div>
                   </div>
+
                 ))}
                 </div>
             </div>
