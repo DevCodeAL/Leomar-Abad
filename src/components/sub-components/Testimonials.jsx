@@ -98,7 +98,7 @@ export default function Testimonials(){
            photo: '/testimonials/pic-6.jpg',
             name: ' Mr. Ryan Calso, LPT',
             position: 'Local Legislative Staff Assistant III',
-            description: '“Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nemo magni ex in nobis ipsa delectus nisi, rerum neque. Delectus!”',
+            description: '“I commend Mr. Leomar Abad, our OJT at the Office of the Sangguniang Bayan, for demonstrating excellent knowledge and skill in computer programming. His technical proficiency and willingness to contribute have been a valuable asset to our office.”',
             sub_position: '- Local Legislative Staff Assistant III',
             stars: [
                     <IoStarSharp/>,
@@ -126,7 +126,7 @@ export default function Testimonials(){
 
   {/* Marquee Container */}
   <div className="relative overflow-hidden">
-    <div className="flex w-max animate-marquee">
+    <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
       {/* First loop */}
       {person.map((item, index) => (
         <div
