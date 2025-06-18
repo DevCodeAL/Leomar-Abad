@@ -33,7 +33,7 @@ export default function Skills({id , setActiveSection}) {
         {/* Skills Container */}
         <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* FRONT END */}
-          <div>
+          <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
             <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
@@ -60,7 +60,7 @@ export default function Skills({id , setActiveSection}) {
           </div>
 
           {/* BACKEND */}
-          <div>
+          <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
             <div className={`relative flex justify-center items-center ${inView && 'animate-fade-up animate-delay-200'}`}>
               <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
@@ -87,7 +87,7 @@ export default function Skills({id , setActiveSection}) {
           </div>
 
                  {/* OTHER TOOLS */}
-          <div className={`max-w-sm mx-auto`}>
+          <div className={`max-w-sm mx-auto bg-gradient-to-r from-[#212121]  to-[#121212] p-2`}>
             <div className="flex flex-row justify-center">
               <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
                 <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>

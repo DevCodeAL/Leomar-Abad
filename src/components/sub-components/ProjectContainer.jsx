@@ -15,7 +15,7 @@ export default function Container({ index,  title, image, description,
         {/* This area are for projects */}
           <div className={`flex flex-wrap gap-6 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 {inView && (
-                  <div className="relative p-4 md:p-8 animate-fade-right animate-delay-300">
+                  <div className="relative bg-gradient-to-r from-[#212121]  to-[#121212] rounded p-4 md:p-8 animate-fade-right animate-delay-300">
                   <div
                     className="
                       absolute 
@@ -39,7 +39,6 @@ export default function Container({ index,  title, image, description,
                     alt="Projects" 
                   />
                 </div>
-
                 )}
                
                {inView && (

@@ -10,16 +10,7 @@ export default function Testimonials(){
             position: 'Teammate',
             description: 'Leomar was proactive during our Capstone project and made sure our frontend was user-friendly and responsive.”',
             sub_position: '— Teammate',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 8,
         },
 
             {
@@ -28,33 +19,16 @@ export default function Testimonials(){
             position: 'School Head, Guimba East District',
             description: '“Guimba East EduLink has made school management and access to learning resources so much easier. As a client, I appreciate how organized, user-friendly, and reliable the system is. It truly supports the needs of our district.”',
             sub_position: '- School Head, Guimba East District',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 6,
         },
 
             {
             photo: '/testimonials/p2.jpg',
             name: 'Mr. Joshua Robert Gamis', // check
-            position: 'Instructor',
-            description: '“As the adviser for Leomar’s capstone project, I witnessed his strong leadership and problem-solving abilities. He guided his team well and ensured their system was functional, user-friendly, and delivered on time.”',
+            position: 'IT Instructor',
+            description: '“As the adviser for Leomar Abad capstone project, I witnessed his strong leadership and problem-solving abilities. He guided his team well and ensured their system was functional, user-friendly, and delivered on time.”',
             sub_position: ' — Capstone Project Adviser',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 7,
         },
 
         {
@@ -63,16 +37,7 @@ export default function Testimonials(){
             position: 'Teamate',
             description: '“Leomar was very dedicated and detail-oriented in our group project. He contributed great ideas, handled coding challenges efficiently, and was always ready to help the team.”',
             sub_position: '— Teammate',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 8,
         },
 
             {
@@ -81,17 +46,7 @@ export default function Testimonials(){
             position: 'IT Student',
             description: '“Working with Leomar Abad was a great experience. He developed the Cuyapo Armandos Hotel and Resort Management System as our capstone project. He was very professional, easy to communicate with, and delivered everything on time. Highly recommended!”',
             sub_position: '— IT Student',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 7,
         },
 
         {
@@ -100,15 +55,7 @@ export default function Testimonials(){
             position: 'Local Legislative Staff Assistant III',
             description: '“I commend Mr. Leomar Abad, our OJT at the Office of the Sangguniang Bayan, for demonstrating excellent knowledge and skill in computer programming. His technical proficiency and willingness to contribute have been a valuable asset to our office.”',
             sub_position: '- Local Legislative Staff Assistant III',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
+            stars: 8,
         },
     ];
 
@@ -145,7 +92,14 @@ export default function Testimonials(){
             </div>
           </div>
           <div className="py-4">
-            <div className="flex justify-center gap-3 text-yellow-400">{item.stars}</div>
+           <div className="py-4">
+            <div className="flex justify-center gap-1 text-yellow-400">
+              {Array.from({ length: item.stars }, (_, i) => (
+                <IoStarSharp key={i} />
+              ))}
+            </div>
+          </div>
+
           </div>
         </div>
       ))}
@@ -167,13 +121,18 @@ export default function Testimonials(){
             </div>
           </div>
           <div className="py-4">
-            <div className="flex justify-center gap-3 text-yellow-400">{item.stars}</div>
+           <div className="py-4">
+            <div className="flex justify-center gap-1 text-yellow-400">
+              {Array.from({ length: item.stars }, (_, i) => (
+                <IoStarSharp key={i} />
+              ))}
+            </div>
+          </div>
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
     )
 }
