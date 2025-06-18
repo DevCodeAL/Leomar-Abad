@@ -29,15 +29,37 @@ export default function Projects({id , setActiveSection}){
             github_links: "https://github.com/DevCodeAL/EduFile-School-File-Management-and-Notification-Hub.git",
         },
 
-         {
-            title: "Cuyapo Legislative Tracking System",
-            image: "/projects-images/SB_Cuyapo.png",
-            description: "Created as part of my personal development and hobby projects, this system was reimagined with a cleaner interface and improved usability. It aims to provide a more organized and accessible way for local government units to track legislative activities and maintain transparency.",
-            technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
+        {
+            title: "Image Compressor App",
+            image: "/projects-images/image-compressor.png",
+            description: "I built this image file size adjuster for my personal use to easily resize and compress images for my projects.",
+            technologies: ["React Js", "Tailwind Css"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "#",
-            github_links: "#",
+            links_demos: "https://image-compressor-app-five.vercel.app/",
+            github_links: "https://github.com/DevCodeAL/Image-Compressor-App",
+        },
+
+        {
+            title: "QR-Code Generator",
+            image: "/projects-images/QR-Code.png",
+            description: "I created this QR Code Generator as a personal project to help me quickly generate and download QR codes for my future work and projects.",
+            technologies: ["React Js", "Tailwind Css", "Lucid React"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "https://qr-code-generator-eight-gold.vercel.app/",
+            github_links: "https://github.com/DevCodeAL/QR-Code-Generator",
+        },
+
+        {
+            title: "Simple Website Portfolio Builder",
+            image: "/projects-images/portfolio-builder.png",
+            description: "I created the Simple Website Portfolio Builder to help students, freelancers, and non-tech folks build a clean, responsive portfolio in just a few minutes — no coding needed. It’s an easy way for anyone to showcase their work and have a professional online presence without the hassle.",
+            technologies: ["React Js", "Tailwind Css", "Lucid React"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "https://simple-website-portfolio-builder.vercel.app/",
+            github_links: "https://github.com/DevCodeAL/Simple-Website-Portfolio-Builder",
         },
 
            {
@@ -47,43 +69,21 @@ export default function Projects({id , setActiveSection}){
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "#",
+            links_demos:  "Sorry not available for live demo",
             github_links: "https://github.com/DevCodeAL/Cuyapo-Armandos-Hotel-and-Resort-Management-System",
         },
 
-        {
-            title: "Business",
-            image: "/projects-images/sample1.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
-            technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
-            external_links: <FaExternalLinkAlt/>,
-            githubLinks: <FaGithub/>,
-            links_demos: "#",
-            github_links: "#",
-        },
-
-        {
-            title: "Technology Modernization",
-            image: "/projects-images/sample2.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
-            technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
-            external_links: <FaExternalLinkAlt/>,
-            githubLinks: <FaGithub/>,
-            links_demos: "#",
-            github_links: "#",
-        },
-
-        
-        {
+         {
             title: "Inventory System",
             image: "/projects-images/inventory-system.png",
-            description: "Provide detailed descriptions for each project, including the developer's role, technologies used, and project goals.",
+            description: "I created this inventory system to practice building practical business tools and to manage my products efficiently. It serves as a foundation for my future business plans.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "#",
+            links_demos: "Sorry not available for live demo",
             github_links: "https://github.com/DevCodeAL/Inventory-System",
         },
+
     ];
 
     return(

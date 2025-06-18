@@ -31,7 +31,7 @@ export default function Container({ index,  title, image, description,
                     src={image}
                     className="
                       relative 
-                      object-cover 
+                      object-fill 
                       w-full md:w-[384px] 
                       aspect-[16/9] 
                       z-20 
