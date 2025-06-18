@@ -6,10 +6,28 @@ export default function Testimonials(){
     const person = [
         {
             photo: '/testimonials/p1.jpg',
-            name: 'Mark Anthony Reyes',
+            name: 'Ralph Rainier Tablang',
             position: 'Teammate',
-            description: 'Leomar was proactive during our Capstone Connect project and made sure our frontend was user-friendly and responsive.”',
-            sub_position: '— Mark Anthony Reyes, Teammate',
+            description: 'Leomar was proactive during our Capstone project and made sure our frontend was user-friendly and responsive.”',
+            sub_position: '— Teammate',
+            stars: [
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                    <IoStarSharp/>,
+                ]
+        },
+
+            {
+            photo: '/testimonials/pic-3.jpg',
+            name: 'Dr. Erwin Pangan Millado',
+            position: 'School Head, Guimba East District',
+            description: '“Guimba East EduLink has made school management and access to learning resources so much easier. As a client, I appreciate how organized, user-friendly, and reliable the system is. It truly supports the needs of our district.”',
+            sub_position: '- School Head, Guimba East District',
             stars: [
                     <IoStarSharp/>,
                     <IoStarSharp/>,
@@ -24,26 +42,8 @@ export default function Testimonials(){
 
             {
             photo: '/testimonials/p2.jpg',
-            name: 'Mr. John Dela Vega',
-            position: 'Owner, Armando’s Resort Website Project',
-            description: '“Leomar delivered our resort website on time and exactly how we envisioned it. Highly recommended!”',
-            sub_position: '-Owner, Armando’s Resort Website Project',
-            stars: [
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                    <IoStarSharp/>,
-                ]
-        },
-
-            {
-            photo: '/testimonials/p3.jpg',
-            name: 'Engr. Roberto Cruz',
-            position: 'Capstone Project Adviser',
+            name: 'Mr. Joshua Robert Gamis', // check
+            position: 'Instructor',
             description: '“As the adviser for Leomar’s capstone project, I witnessed his strong leadership and problem-solving abilities. He guided his team well and ensured their system was functional, user-friendly, and delivered on time.”',
             sub_position: ' — Capstone Project Adviser',
             stars: [
@@ -58,11 +58,11 @@ export default function Testimonials(){
         },
 
         {
-           photo: '/testimonials/p4.jpg',
-            name: 'Angelo Ramos',
+           photo: '/testimonials/p4.jpg', // check
+            name: 'Santos Garcia III',
             position: 'Teamate',
             description: '“Leomar was very dedicated and detail-oriented in our group project. He contributed great ideas, handled coding challenges efficiently, and was always ready to help the team.”',
-            sub_position: '— Teammate, Barangay Information System Project',
+            sub_position: '— Teammate',
             stars: [
                     <IoStarSharp/>,
                     <IoStarSharp/>,
@@ -76,11 +76,11 @@ export default function Testimonials(){
         },
 
             {
-            photo: '/testimonials/p5.jpg',
-            name: 'Prof. Maria Santos',
-            position: 'Instructor',
-            description: '“Leomar consistently demonstrated excellent coding skills and creativity in developing web applications. He was always eager to learn new technologies and apply them effectively in his projects.”',
-            sub_position: '— Instructor, Advanced Web Development',
+            photo: '/testimonials/pic-5.jpg',
+            name: 'Danica Binondo Sinohin',
+            position: 'IT Student',
+            description: '“Working with Leomar Abad was a great experience. He developed the Cuyapo Armandos Hotel and Resort Management System as our capstone project. He was very professional, easy to communicate with, and delivered everything on time. Highly recommended!”',
+            sub_position: '— IT Student',
             stars: [
                     <IoStarSharp/>,
                     <IoStarSharp/>,
@@ -95,11 +95,11 @@ export default function Testimonials(){
         },
 
         {
-           photo: '/testimonials/p6.jpg',
-            name: ' Mr. Andre Villanueva',
-            position: 'Vice President , LGU Cuyapo Municipal',
-            description: '“Leomar developed a tracking system for us that improved our workflow. He communicated clearly, understood our needs, and provided excellent technical support even after the project was completed.”',
-            sub_position: '-Vice President , LGU Cuyapo Municipal',
+           photo: '/testimonials/pic-6.jpg',
+            name: ' Mr. Ryan Calso, LPT',
+            position: 'Local Legislative Staff Assistant III',
+            description: '“Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nemo magni ex in nobis ipsa delectus nisi, rerum neque. Delectus!”',
+            sub_position: '- Local Legislative Staff Assistant III',
             stars: [
                     <IoStarSharp/>,
                     <IoStarSharp/>,

@@ -43,7 +43,7 @@ export default function About({ id, setActiveSection }) {
           {/* Image Container */}
            {inView && (
             <div className={`relative max-w-lg  p-3 pt-16 mb-6 animate-fade-up text-center animate-delay-300`}>
-              <div className="absolute  bottom-0 left-16 w-[70%] h-[60%] bg-[#1ed760] opacity-45 blur-3xl"></div>
+              <div className="absolute  bottom-11 left-16 w-[70%] h-[60%] bg-[#1ed760] opacity-45 blur-3xl"></div>
                 <div className="group">
                   <img 
                   src="/png/laptop.png" 
