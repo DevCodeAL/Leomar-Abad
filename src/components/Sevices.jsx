@@ -85,7 +85,6 @@ const services = [
                     <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
                     <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
                     <p className="text-[#b3b3b3] text-sm">{service.description}</p>
-                    <span className="absolute bottom-0 left-0 h-1 w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
                   </div>
                 ))}
                 </div>

@@ -19,7 +19,7 @@ export default function About({ id, setActiveSection }) {
   return (
     <section
       id={id}
-      className="flex justify-center items-center w-full min-h-screen bg-[#121212] px-4 py-10"
+      className="flex justify-center items-center w-full min-h-screen bg-[#121212] px-4 py-10 overflow-hidden"
     >
       <div ref={ref} className="w-full max-w-6xl flex flex-col gap-10">
         {/* About Header */}

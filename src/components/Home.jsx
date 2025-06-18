@@ -66,7 +66,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
     return(
         <> 
           <section ref={ref}
-            className="flex justify-center items-center w-full  bg-[#121212] z-10 min-h-screen px-4 py-10"
+            className="flex justify-center items-center w-full  bg-[#121212] z-10 min-h-screen px-4 py-10 overflow-hidden"
             id={id}>
 
             <div style={{ width: '100%', height: '600px', position: 'absolute', overflow: 'hidden' }}>
