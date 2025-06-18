@@ -19,13 +19,13 @@ const services = [
   {
     title: "Fullstack Web App Development",
     emoji: "🖥️",
-    description: "I can code my own designs or use the customer's design as a base. My focus is on writing clean, well-structured code for reliability. I specialize in end-to-end development of robust, scalable web applications using the MERN stack.",
+    description: "I build robust, scalable web applications with clean, reliable code, using my own designs or yours. I specialize in end-to-end development with the MERN stack.",
     style: 'animate-fade-down animate-delay-[150ms]',
   },
   {
-    title: "Basic SEO",
-    emoji: "🔍",
-    description: "I can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money.",
+    title: "Cross-Browser Compatibility",
+    emoji: "🌐",
+    description: "I make sure your website works flawlessly on all major browsers for a consistent user experience.",
     style: 'animate-fade-down animate-delay-[350ms]',
   },
   {
