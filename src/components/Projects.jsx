@@ -32,7 +32,7 @@ export default function Projects({id , setActiveSection}){
         {
             title: "Image Compressor App",
             image: "/projects-images/image-compressor.png",
-            description: "I built this image file size adjuster for my personal use to easily resize and compress images for my projects.",
+            description: "I developed this image file size adjuster for my personal use to easily resize and compress images for my projects.",
             technologies: ["React Js", "Tailwind Css"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -43,7 +43,7 @@ export default function Projects({id , setActiveSection}){
         {
             title: "QR-Code Generator",
             image: "/projects-images/QR-Code.png",
-            description: "I created this QR Code Generator as a personal project to help me quickly generate and download QR codes for my future work and projects.",
+            description: "I developed this QR Code Generator as a personal project to help me quickly generate and download QR codes for my future work and projects.",
             technologies: ["React Js", "Tailwind Css", "Lucid React"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -54,7 +54,7 @@ export default function Projects({id , setActiveSection}){
         {
             title: "Simple Website Portfolio Builder",
             image: "/projects-images/portfolio-builder.png",
-            description: "I created the Simple Website Portfolio Builder to help students, freelancers, and non-tech folks build a clean, responsive portfolio in just a few minutes — no coding needed. It’s an easy way for anyone to showcase their work and have a professional online presence without the hassle.",
+            description: "I developed this Simple Website Portfolio Builder to help students, freelancers, and non-tech folks build a clean, responsive portfolio in just a few minutes — no coding needed. It’s an easy way for anyone to showcase their work and have a professional online presence without the hassle.",
             technologies: ["React Js", "Tailwind Css", "Lucid React"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
@@ -76,7 +76,7 @@ export default function Projects({id , setActiveSection}){
          {
             title: "Inventory System",
             image: "/projects-images/inventory-system.png",
-            description: "I created this inventory system to practice building practical business tools and to manage my products efficiently. It serves as a foundation for my future business plans.",
+            description: "I developed this inventory system to practice building practical business tools and to manage my products efficiently. It serves as a foundation for my future business plans.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
