@@ -69,7 +69,7 @@ export default function Projects({id , setActiveSection}){
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos:  "Sorry not available for live demo",
+            links_demos:  "#",
             github_links: "https://github.com/DevCodeAL/Cuyapo-Armandos-Hotel-and-Resort-Management-System",
         },
 
@@ -80,7 +80,7 @@ export default function Projects({id , setActiveSection}){
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
             githubLinks: <FaGithub/>,
-            links_demos: "Sorry not available for live demo",
+            links_demos: "#",
             github_links: "https://github.com/DevCodeAL/Inventory-System",
         },
 
