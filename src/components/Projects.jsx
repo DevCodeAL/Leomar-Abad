@@ -74,7 +74,7 @@ export default function Projects({id , setActiveSection}){
         },
 
          {
-            title: "Inventory System",
+            title: "Inventory Management System",
             image: "/projects-images/png/inventory-system.png",
             description: "I developed this inventory system to practice building practical business tools and to manage my products efficiently. It serves as a foundation for my future business plans.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
