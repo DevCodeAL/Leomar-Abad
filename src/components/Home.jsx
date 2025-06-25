@@ -82,7 +82,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
             />
             </div>
 
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-20 max-w-6xl w-full mt-6">
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 max-w-6xl w-full mt-6 p-6">
                 {/* Text Content */}
                {inView && (
                  <div className="w-full lg:w-1/2 text-white animate-fade-right animate-delay-300'} text-center lg:text-left">

@@ -31,7 +31,7 @@ export default function Skills({id , setActiveSection}) {
           </p>
 
         {/* Skills Container */}
-        <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* FRONT END */}
           <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
             <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
@@ -87,7 +87,7 @@ export default function Skills({id , setActiveSection}) {
           </div>
 
                  {/* OTHER TOOLS */}
-          <div className={`max-w-sm mx-auto bg-gradient-to-r from-[#212121]  to-[#121212] p-2`}>
+          <div className={`mx-auto bg-gradient-to-r from-[#212121]  to-[#121212] p-2`}>
             <div className="flex flex-row justify-center">
               <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
                 <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
@@ -95,7 +95,7 @@ export default function Skills({id , setActiveSection}) {
               </div>
             </div>
 
-              <div className={`flex justify-center items-center flex-wrap max-w-xl mx-auto gap-6 p-6 ${inView && 'animate-fade-left animate-delay-700'}`}>
+              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-6 p-6 ${inView && 'animate-fade-left animate-delay-700'}`}>
               {[
                 { src: "/image/VSC.png", label: "Visual Studio Code", w: "w-10" },
                 { src: "/image/git_github.png", label: "Git & Github", w: "w-12" },

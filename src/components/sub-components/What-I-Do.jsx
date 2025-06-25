@@ -22,7 +22,7 @@ export default function WhatIDo(){
 
                 {/* Cards */}
                 {inView && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-10 px-4 md:px-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-10 sm:gap-20 md:gap-20 lg:gap-20 px-4">
                     {/* Card Item */}
                     <ServiceCard
                     icon={<MdDevices />}
