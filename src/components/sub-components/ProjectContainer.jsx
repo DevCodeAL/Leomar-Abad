@@ -5,7 +5,7 @@ export default function Container({ index,  title, image, description,
     github_link_icon, tech }){
       
        const { ref, inView } = useInView({
-       // triggerOnce: true,
+       triggerOnce: true,
         threshold: 0,
       });
 
@@ -15,27 +15,16 @@ export default function Container({ index,  title, image, description,
         {/* This area are for projects */}
           <div className={`flex flex-wrap gap-10 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 {inView && (
-                  <div className="relative bg-gradient-to-r from-[#212121]  to-[#121212] rounded p-4 md:p-8 animate-fade-right animate-delay-300">
-                  <div
-                    className="
-                      absolute 
-                      border-4 
-                      top-2 left-2 md:top-4 md:left-4 
-                      border-[#1ed760] 
-                      w-[90%] md:w-[350px] 
-                      aspect-[16/9] 
-                      z-10
-                    "
-                  ></div>
+                  <div className="animate-fade-right animate-delay-300">
                   <img 
                     src={image}
                     className="
-                      relative 
-                      object-fill 
-                      w-full md:w-[384px] 
-                      aspect-[16/9] 
-                      z-20 
-                    "
+                      relative
+                      -top-12
+                      object-cover
+                      w-full md:w-[384px]
+                      transition-all ease-in-out duration-300 hover:scale-110
+                      "
                     alt="Projects" 
                   />
                 </div>

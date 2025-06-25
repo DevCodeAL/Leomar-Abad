@@ -20,7 +20,7 @@ export default function Projects({id , setActiveSection}){
     const projects = [
         {   
             title: "Guimba East EduLink",
-            image: "/projects-images/guimba-east.png",
+            image: "/projects-images/png/guimba-east.png",
             description: "Guimba EastEdulink is a web-based system for the Guimba East District that streamlines school management and learning resources for school heads, teachers, and administrators. As my first major client project, it strengthened my skills in full-stack development, client communication, and real-world deployment.",
             technologies: ["React Js", "Tailwind Css", "Node Js", "Express Js", "MongoDb", "Supabase"],
             external_links: <FaExternalLinkAlt/>,
@@ -31,7 +31,7 @@ export default function Projects({id , setActiveSection}){
 
         {
             title: "Image Compressor App",
-            image: "/projects-images/image-compressor.png",
+            image: "/projects-images/png/image-compressor.png",
             description: "I developed this image file size adjuster for my personal use to easily resize and compress images for my projects.",
             technologies: ["React Js", "Tailwind Css"],
             external_links: <FaExternalLinkAlt/>,
@@ -42,7 +42,7 @@ export default function Projects({id , setActiveSection}){
 
         {
             title: "QR-Code Generator",
-            image: "/projects-images/QR-Code.png",
+            image: "/projects-images/png/qr-code1.png",
             description: "I developed this QR Code Generator as a personal project to help me quickly generate and download QR codes for my future work and projects.",
             technologies: ["React Js", "Tailwind Css", "Lucid React"],
             external_links: <FaExternalLinkAlt/>,
@@ -53,7 +53,7 @@ export default function Projects({id , setActiveSection}){
 
         {
             title: "Simple Website Portfolio Builder",
-            image: "/projects-images/portfolio-builder.png",
+            image: "/projects-images/png/portbuilder1.png",
             description: "I developed this Simple Website Portfolio Builder to help students, freelancers, and non-tech folks build a clean, responsive portfolio in just a few minutes — no coding needed. It’s an easy way for anyone to showcase their work and have a professional online presence without the hassle.",
             technologies: ["React Js", "Tailwind Css", "Lucid React"],
             external_links: <FaExternalLinkAlt/>,
@@ -64,7 +64,7 @@ export default function Projects({id , setActiveSection}){
 
            {
             title: "Hotel and Resort Management System",
-            image: "/projects-images/Armandos.png",
+            image: "/projects-images/png/armandos.png",
             description: "Cuyapo Armandos Resort Management System is a custom web application developed as a commissioned project for student clients. The system helps manage resort reservations, customer inquiries, room availability, and booking schedules, streamlining daily operations and improving customer service.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
@@ -75,7 +75,7 @@ export default function Projects({id , setActiveSection}){
 
          {
             title: "Inventory System",
-            image: "/projects-images/inventory-system.png",
+            image: "/projects-images/png/inventory-system.png",
             description: "I developed this inventory system to practice building practical business tools and to manage my products efficiently. It serves as a foundation for my future business plans.",
             technologies: ["Html", "Css", "Javascript", "Bootstrap 5", "Php", "MySql"],
             external_links: <FaExternalLinkAlt/>,
