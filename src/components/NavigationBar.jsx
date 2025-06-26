@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
+import { FaGreaterThan } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 
 export default function NavigationBar({activeSection, sections}){
@@ -85,21 +85,22 @@ export default function NavigationBar({activeSection, sections}){
                     </div>
 
                     {isSideBarShow && (
-                        <div className={`fixed w-full right-0 top-0 text-white h-auto z-20 p-4 bg-[rgba(0,0,0,0.8)] animate-fade-down`}>
+                        <div className={`fixed right-0 top-0 rounded-xl text-white h-auto z-20 p-1
+                         bg-[rgba(0,0,0,0.8)] animate-fade-left`}>
                             {/* Close Button */}
-                           <div className="text-right">
-                                 <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
-                                <IoClose/></button>
+                           <div className="text-center p-2">
+                                 <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-xl">
+                                <FaGreaterThan/></button>
                            </div>
                 
                             {/* SideBar Links */}
                      {sections.map((sec)=> (
-                    <div key={sec.id} className="p-6">
+                    <div key={sec.id} className="p-3">
                          <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
                             <li>
                                 <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
                                 <a href={`#${sec.id}`} className="relative inline-block">
-                                    {sec.label}
+                                    {sec.icon}
                                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
 
                                 {activeSection === sec.id && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}

@@ -9,17 +9,26 @@ import Footer from "./Footer";
 import { useState } from "react";
 import WhatIDo from "./sub-components/What-I-Do";
 import Testimonials from "./sub-components/Testimonials";
+import {
+  FaHome,
+  FaUser,
+  FaCogs,
+  FaTools,
+  FaProjectDiagram,
+  FaEnvelope
+} from "react-icons/fa";
+
 
 export default function Root() {
   const [activeSection, setActiveSection] = useState("");
 
   const sections = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "services", label: "Services" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: "Home", icon: <FaHome/> },
+    { id: "about", label: "About", icon: <FaUser/> },
+    { id: "services", label: "Services", icon: <FaCogs/> },
+    { id: "skills", label: "Skills", icon: <FaTools/> },
+    { id: "projects", label: "Projects", icon: <FaProjectDiagram/> },
+    { id: "contact", label: "Contact", icon: <FaEnvelope/> },
   ];
 
   return (
