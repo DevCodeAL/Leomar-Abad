@@ -13,9 +13,9 @@ export default function Container({ index,  title, image, description,
     <>
         <div ref={ref}>
         {/* This area are for projects */}
-          <div className={`flex flex-wrap gap-20 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+          <div className={`flex flex-wrap gap-10 md:gap-20 my-10  ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 {inView && (
-                  <div className="animate-fade-right animate-delay-300">
+                  <div className="animate-fade-right animate-delay-300 border">
                   <img 
                     src={image}
                     className="
@@ -29,7 +29,7 @@ export default function Container({ index,  title, image, description,
                 )}
                
                {inView && (
-                 <div className={`flex flex-col gap-3 p-12 animate-fade-left animate-delay-700`}>
+                 <div className={`flex flex-col gap-3 animate-fade-left animate-delay-700 p-3 border`}>
                       <div>
                         <h1 className="text-[#1ed760] text-3xl font-bold">{title}</h1>
                       </div>
