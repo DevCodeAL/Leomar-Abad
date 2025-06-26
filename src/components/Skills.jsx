@@ -46,7 +46,7 @@ function SkillsCard(){
          )}
 
         {/* Skills Container */}
-        <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {/* FRONT END */}
           <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
            {inView && (
