@@ -18,7 +18,7 @@ export default function Contact({id, setActiveSection}){
     const [formData, setFormData] = useState({name: "", email: "", message: ""});
     const [isSuccess, setIsSuccess] = useState(false);
     const [count, setCount] = useState('0');
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
          threshold: 0,
     });
 
@@ -76,8 +76,55 @@ export default function Contact({id, setActiveSection}){
 
     return(
         <>
-            <section className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
-             <div ref={ref} className="flex flex-col gap-6 w-full">
+            <section ref={ref} className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
+            <ContactCard
+             formData={formData}
+             onSubmit={sendEmail}
+             HandleChange={HandleChange}
+             form={form}
+             count={count}
+             />
+
+              {/* Successfully Modal Alert */}
+                {isSuccess && (
+                    <div className="fixed inset-0 w-full bg-black bg-opacity-70 flex items-center justify-center z-50">
+                    <div className="relative bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center mx-6">
+                         {/* Close */}
+                    <button
+                        onClick={()=> setIsSuccess(false)}
+                        className="absolute top-0 right-0 m-3 text-[#1DB954] text-2xl hover:text-[#212121] hover:bg-[#1ed760] 
+                         rounded-md transition duration-300"
+                    >
+                       <IoClose/>
+                    </button>
+                        <div className="flex flex-col items-center">
+                        <FaCheckCircle className="text-[#1DB954] text-6xl mb-4" />
+                        <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
+                        <p className="text-sm mb-6">
+                            Thank you for reaching out. I'll get back to you as soon as possible.
+                        </p>
+                        
+                        {/* Loading animation */}
+                         <span className={`absolute my-7 left-0  bottom-0 
+                          ${count === 'full' ? 'bg-[#1ed760]' : ''} p-1
+                         transition-all duration-1000 ease-in w-${count}`}></span>
+                        </div>
+                    </div>
+                    </div>
+                )}
+            </section>
+            </>
+    );
+};
+
+function ContactCard({formData, HandleChange, onSubmit, form}){
+     const { ref, inView} = useInView({
+        triggerOnce: true,
+         threshold: 0,
+    });
+    return(
+        <>
+         <div ref={ref} className="flex flex-col gap-6 w-full">
                {inView && (
                 <div className={`flex flex-row justify-center gap-5
                  animate-fade-down animate-delay-200`}>
@@ -103,7 +150,7 @@ export default function Contact({id, setActiveSection}){
                      {inView && (
                         <div className={`text-white bg-[#212121] p-10 w-[330px] 
                      sm:w-[350px] md:w-[450px] lg:w-[500px] rounded-md animate-fade-right animate-delay-500`}>
-                        <form onSubmit={sendEmail} ref={form} className="flex flex-col gap-3">
+                        <form onSubmit={onSubmit} ref={form} className="flex flex-col gap-3">
 
                         <label className="font-semibold" htmlFor="name">Your Name</label>
                         <input type="text" name="name" id="name" value={formData.name} 
@@ -119,39 +166,15 @@ export default function Contact({id, setActiveSection}){
                         <textarea name="message" id="message" value={formData.message}
                         onChange={HandleChange} className="w-full h-28 p-1 bg-[#121212] focus:outline-none focus:ring-2 focus:ring-[#1db954] rounded-lg" placeholder="Type your message....." required></textarea>
 
-
-                        <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 rounded-md">
-                            Send</button> 
+                        <div className="flex justify-center items-center">
+                            <div>
+                                 <button type="submit" className="bg-[#1db954] hover:bg-[#08c44b] p-2 w-40 rounded-md mt-3">
+                                Send</button> 
+                            </div>
+                        </div>
                     </form>
                 </div>
                      )}
-                {/* Successfully Modal Alert */}
-                {isSuccess && (
-                    <div className="fixed inset-0 mx-3 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                    <div className="relative bg-[#121212] text-white p-8 rounded-xl shadow-lg max-w-md text-center">
-                         {/* Close */}
-                    <button
-                        onClick={()=> setIsSuccess(false)}
-                        className="absolute top-0 right-0 m-3 text-[#1DB954] text-2xl hover:text-[#212121] hover:bg-[#1ed760] 
-                         rounded-md transition duration-300"
-                    >
-                       <IoClose/>
-                    </button>
-                        <div className="flex flex-col items-center">
-                        <FaCheckCircle className="text-[#1DB954] text-6xl mb-4" />
-                        <h2 className="text-2xl font-bold mb-2">Message Sent!</h2>
-                        <p className="text-sm mb-6">
-                            Thank you for reaching out. I'll get back to you as soon as possible.
-                        </p>
-                        
-                        {/* Loading animation */}
-                         <span className={`absolute my-7 left-0  bottom-0 
-                          ${count === 'full' ? 'bg-[#1ed760]' : ''} p-1
-                         transition-all duration-1000 ease-in w-${count}`}></span>
-                        </div>
-                    </div>
-                    </div>
-                )}
 
                     {/* Contact Details */}
                     <div className="flex flex-col items-center w-[500px] text-white">
@@ -235,7 +258,6 @@ export default function Contact({id, setActiveSection}){
                 </div>
             </div>
         </div>
-    </section>
- </>
-    );
-};
+        </>
+    )
+}

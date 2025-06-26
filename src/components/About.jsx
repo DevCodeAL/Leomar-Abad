@@ -18,19 +18,32 @@ export default function About({ id, setActiveSection }) {
 
   return (
     <section
-      id={id}
+      id={id} ref={ref}
       className="flex justify-center items-center w-full min-h-screen bg-[#121212] px-4 py-10 overflow-hidden"
     >
-      <div ref={ref} className="w-full max-w-6xl flex flex-col gap-10">
-        {/* About Header */}
+      <div className="w-full max-w-6xl flex flex-col gap-10">
+        <AboutCard/>
+      </div>
+    </section>
+  );
+}
+
+function AboutCard(){
+    const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
+
+return(
+    <>
+     {/* About Header */}
         {inView && (
           <div className="flex flex-row justify-center items-center gap-3 animate-fade-down animate-delay-100">
             <FaInfoCircle className="text-[#1ed760] text-4xl" />
             <h1 className="text-3xl font-bold text-white">About</h1>
           </div>
-        )}
-
-        {/* About Paragraph */}
+    )}
+    {/* About Paragraph */}
         {inView && (
           <div className="animate-fade-down animate-delay-300 md:text-center text-justify p-2">
             <p className="text-white sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed">
@@ -39,7 +52,7 @@ export default function About({ id, setActiveSection }) {
           </div>
         )}
 
-        <div className="flex justify-evenly flex-wrap">
+         <div ref={ref} className="flex justify-evenly flex-wrap">
           {/* Image Container */}
            {inView && (
             <div className={`relative max-w-lg  p-3 pt-16 mb-6 animate-fade-up text-center animate-delay-300`}>
@@ -129,7 +142,6 @@ export default function About({ id, setActiveSection }) {
                    <div>
                      Collaborated with cross-functional teams.
                    </div>
-                {/* <div className="text-xs pt-3 pl-3">Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines</div> */}
                 </li>
                 <li className="flex items-center gap-6">
                   <div className="text-[#1ed760]">
@@ -144,8 +156,6 @@ export default function About({ id, setActiveSection }) {
           </div>
           )}
         </div>
-      </div>
-    </section>
-  );
-}
-
+    </>
+   
+)}

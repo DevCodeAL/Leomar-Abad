@@ -3,8 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
   
 export default function Services({id , setActiveSection}){
-  const { ref, inView, entry } = useInView({
-    // triggerOnce: true,
+  const { ref, inView } = useInView({
      threshold: 0,
   });
 
@@ -57,46 +56,66 @@ const services = [
 
     return(
         <>
-           <section ref={ref} className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
+          <section ref={ref} className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-24 z-10" id={id}>
              <div  className="w-full max-w-6xl flex flex-col justify-center items-center gap-10">
-                <div>
-                      <div className={`flex flex-row justify-center text-center gap-5 ${inView && 'animate-fade-down animate-delay-100'}`}>
-                      <div className="inline-block text-[#1ed760] text-5xl">
-                          <MdMiscellaneousServices/>
-                      </div>
-                          
-                      <div>
-                          <h1 className="text-3xl font-bold text-white">Services</h1>
-                      </div>
-                </div>
-                    <div>
-                    <p className={`text-[#b3b3b3] text-sm md:text-base text-center mt-4 mb-4 
-                     ${inView && 'animate-fade-down animate-delay-200'}`}>
-                        What I offer based on my skills and experience.</p>
-                </div>
-              </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-10">
-                {services.map((service, index) => (
-                   <div
-                    key={index}
-                    className={`relative p-[2px] rounded-2xl overflow-hidden group h-full ${inView && service.style}`}
-                  >
-                    {/* Spinning border */}
-                    <div className="absolute inset-0 rounded-2xl animate-rotate bg-[conic-gradient(#036325_20deg,transparent_120deg)]"></div>
-
-                    {/* Actual card */}
-                    <div className="relative z-10 bg-gradient-to-r from-[#212121] to-[#121212] rounded-2xl shadow p-6 text-left hover:shadow-md transition overflow-hidden h-full">
-                      <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
-                      <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
-                      <p className="text-[#b3b3b3] text-sm mt-auto">{service.description}</p>
-                    </div>
-                  </div>
-
-                ))}
-                </div>
+               <ServiceCard services={services}/>
             </div>
          </section>
         </>
     );
 };
+
+function ServiceCard({services}){
+   const { ref, inView } = useInView({
+    triggerOnce: true,
+     threshold: 0,
+  });
+
+  return(
+    <>
+      <div ref={ref}>
+         <div>
+          {inView && (
+            <div className={`flex flex-row justify-center text-center gap-5 animate-fade-down animate-delay-100`}>
+          <div className="inline-block text-[#1ed760] text-5xl">
+              <MdMiscellaneousServices/>
+          </div>
+                
+        <div>
+            <h1 className="text-3xl font-bold text-white">Services</h1>
+        </div>
+        </div>
+          )}
+
+          {inView && (
+            <div>
+            <p className={`text-[#b3b3b3] text-sm md:text-base text-center mt-4 mb-4 
+              animate-fade-down animate-delay-200`}>
+              What I offer based on my skills and experience.</p>
+         </div>
+          )}
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mr-6 ml-6 gap-10">
+    {services.map((service, index) => (
+      inView && (
+        <div
+        key={index}
+        className={`relative p-[2px] rounded-2xl overflow-hidden group h-full ${inView && service.style}`}>
+        {/* Spinning border */}
+        <div className="absolute inset-0 rounded-2xl animate-rotate bg-[conic-gradient(#036325_20deg,transparent_120deg)]"></div>
+
+        {/* Actual card */}
+        <div className="relative z-10 bg-gradient-to-r from-[#212121] to-[#121212] rounded-2xl shadow p-6 text-left hover:shadow-md transition overflow-hidden h-full">
+          <div className="text-4xl mb-4 group-hover:animate-shake">{service.emoji}</div>
+          <h3 className="text-xl font-semibold mb-2 text-[#1ed760]">{service.title}</h3>
+          <p className="text-[#b3b3b3] text-sm mt-auto">{service.description}</p>
+        </div>
+      </div>
+      )
+    ))}
+    </div>
+      </div>
+    </>
+  )
+}

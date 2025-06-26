@@ -6,7 +6,6 @@ import { useEffect } from "react";
 
 export default function Projects({id , setActiveSection}){
   const { ref, inView } = useInView({
-    // triggerOnce: true,
     threshold: 0,
   });
 
@@ -90,17 +89,7 @@ export default function Projects({id , setActiveSection}){
         <>
             <section ref={ref} className="flex items-center w-full bg-[#121212] min-h-screen py-24  z-10 overflow-hidden" id={id}>
            <div  className="max-w-7xl mx-auto text-center">
-                 {inView && (
-                    <div className={`flex flex-row justify-center mb-6 gap-5 animate-fade-down animate-delay-200`}>
-                    <div className="text-[#1ed760] text-5xl">
-                       <FaFolderOpen/>
-                    </div>
-                    <div>
-                        <h1 className="text-3xl font-bold text-white">Projects</h1>
-                    </div>
-                 </div>
-                 )}
-
+                <Header/>
                  {/* Grid Containers for all my Projects */}
                  <div ref={ref} className="relative grid grid-cols-1 gap-12 z-0 p-5">
                        {projects.map((item,  index)=> (
@@ -124,3 +113,27 @@ export default function Projects({id , setActiveSection}){
     </>
     );
 };
+
+function Header(){
+ const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
+
+    return(
+    <>
+    <div ref={ref}>
+        {inView && (
+        <div className={`flex flex-row justify-center mb-6 gap-5 animate-fade-down animate-delay-200`}>
+        <div className="text-[#1ed760] text-5xl">
+            <FaFolderOpen/>
+        </div>
+        <div>
+            <h1 className="text-3xl font-bold text-white">Projects</h1>
+        </div>
+        </div>
+        )}
+    </div>
+    </>
+    )
+}

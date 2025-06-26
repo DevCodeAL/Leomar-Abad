@@ -16,31 +16,49 @@ export default function Skills({id , setActiveSection}) {
 
   return (
     <section ref={ref} className="flex justify-center items-center w-full  bg-[#121212] min-h-screen z-10 py-24 overflow-hidden" id={id}>
-      <div  className="text-center">
+      <SkillsCard/>
+    </section>
+  );
+}
+
+function SkillsCard(){
+   const { ref, inView } = useInView({
+     triggerOnce: true,
+     threshold: 0,
+  });
+  return(
+    <div ref={ref} className="text-center">
         {/* Section Title */}
-          <div className={`flex justify-center items-center gap-5 ${inView && 'animate-fade-down animate-delay-200'}`}>
+        {inView && (
+          <div className={`flex justify-center items-center gap-5 animate-fade-down animate-delay-200`}>
           <div className="text-[#1ed760] text-5xl">
             <FaUserCog />
           </div>
           <h1 className="text-3xl font-bold text-white">Skills</h1>
         </div>
+        )}
 
         {/* Section Description */}
-          <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 ${inView && 'animate-fade-down animate-delay-300'}`}>
+         {inView && (
+           <p className={`text-[#b3b3b3] text-sm md:text-base mt-4 mb-12 animate-fade-down animate-delay-300`}>
             Proficiencies in full-stack web development, encompassing both front-end and back-end technologies.
           </p>
+         )}
 
         {/* Skills Container */}
         <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* FRONT END */}
           <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
-            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-right animate-delay-200'}`}>
+           {inView && (
+             <div className={`relative flex justify-center items-center animate-fade-right animate-delay-200`}>
               <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
+           )}
          
+            {inView && (
               <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
-              ${inView && 'animate-fade-right animate-delay-700'}`}>
+              animate-fade-right animate-delay-700`}>
                 {[
                   { src: "/image/html.png", label: "HTML5", w: "w-10" },
                   { src: "/image/CSS3.png", label: "CSS3", w: "w-10" },
@@ -57,17 +75,21 @@ export default function Skills({id , setActiveSection}) {
                   </div>
                 ))}
               </div>
+            )}
           </div>
 
           {/* BACKEND */}
           <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
-            <div className={`relative flex justify-center items-center ${inView && 'animate-fade-up animate-delay-200'}`}>
+          {inView && (
+              <div className={`relative flex justify-center items-center animate-fade-up animate-delay-200`}>
               <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
               <div className="absolute bottom-0 border-t-2 w-[40%] sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
             </div>
+          )}
          
-              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
-              ${inView && 'animate-fade-up animate-delay-700'}`}>
+          {inView && (
+            <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
+              animate-fade-up animate-delay-700`}>
                 {[
                   { src: "/image/nodejs.png", label: "Node Js", w: "w-16" },
                   { src: "/image/express-js.png", label: "Express Js", w: "w-10" },
@@ -84,18 +106,22 @@ export default function Skills({id , setActiveSection}) {
                   </div>
                 ))}
               </div>
+          )}
           </div>
 
                  {/* OTHER TOOLS */}
           <div className={`mx-auto bg-gradient-to-r from-[#212121]  to-[#121212] p-2`}>
             <div className="flex flex-row justify-center">
-              <div className={`relative flex justify-center items-center ${inView && 'animate-fade-left animate-delay-200'}`}>
+             {inView && (
+               <div className={`relative flex justify-center items-center animate-fade-left animate-delay-200`}>
                 <h1 className="text-white text-xl font-bold mb-2">OTHER TOOLS</h1>
                 <div className="absolute bottom-0 border-t-2 w-full sm:w-[130px] md:w-[180px] lg:w-[240px] border-[#1ed760]"></div>
               </div>
+             )}
             </div>
 
-              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-6 p-6 ${inView && 'animate-fade-left animate-delay-700'}`}>
+           {inView && (
+            <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-6 p-6 animate-fade-left animate-delay-700`}>
               {[
                 { src: "/image/VSC.png", label: "Visual Studio Code", w: "w-10" },
                 { src: "/image/git_github.png", label: "Git & Github", w: "w-12" },
@@ -114,9 +140,9 @@ export default function Skills({id , setActiveSection}) {
                 </div>
               ))}
             </div>
+           )}
           </div>
         </div>
       </div>
-    </section>
-  );
+  )
 }

@@ -5,13 +5,13 @@ import { useInView } from "react-intersection-observer";
 
 export default function WhatIDo(){
     const { ref, inView } = useInView({
-    // triggerOnce: true,
+    triggerOnce: true,
     threshold: 0,
   });
 
     return(
-        <section  className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-10">
-            <div ref={ref} className="w-full max-w-6xl flex flex-col justify-center items-center gap-10">
+        <section ref={ref} className="flex justify-center items-center w-full min-h-screen bg-[#121212] py-10">
+            <div className="w-full max-w-6xl flex flex-col justify-center items-center gap-10">
              {/* What I Do Header */}
                 {inView && (
                 <div className="flex flex-row justify-center items-center gap-3 animate-fade-down animate-delay-100">
