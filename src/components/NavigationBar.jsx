@@ -47,19 +47,17 @@ export default function NavigationBar({activeSection, sections}){
             ) : (<>
 
                 {isShow <= 562  && (
-                    <div className={`fixed flex justify-evenly items-center  bottom-0 text-white h-auto z-20 p-1 text-2xl w-full bg-[rgba(0,0,0,0.8)] animate-fade-up`}>
+                    <div className={`fixed flex justify-evenly items-center  bottom-0 text-white h-auto z-20 p-1 text-2xl w-full bg-black animate-fade-up`}>
                 
                             {/* SideBar Links */}
                      {sections.map((sec)=> (
                     <div key={sec.id} className="p-3">
                          <ul className="flex items-center justify-center gap-5 flex-col text-white font-bold">
                             <li>
-                                <div className="group relative inline-block text-[#FFFFFF] hover:text-[#1ed760]">
+                                <div className="group relative inline-block text-[#1ed760] hover:text-[#1ed760]">
                                 <a href={`#${sec.id}`} className="relative inline-block">
                                     {sec.icon}
-                                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#1ed760] transition-all duration-500 ease-in-out group-hover:w-full"></span>
-
-                                {activeSection === sec.id && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#1ed760]"></span>)}
+                                {activeSection === sec.id && ( <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-gray-500"></span>)}
                                 </a>
                                 </div>
                             </li>
