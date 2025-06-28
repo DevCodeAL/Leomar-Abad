@@ -85,7 +85,7 @@ export default function NavigationBar({activeSection, sections}){
                     </div>
 
                     {isSideBarShow && (
-                        <div className={`flex justify-evenly items-center w-full fixed bottom-0 text-white  h-auto z-20 animate-fade-left bg-black`}>
+                        <div className={`flex justify-evenly items-center w-full fixed bottom-0 text-white p-2 h-auto z-20 animate-fade-left bg-black`}>
                 
                             {/* SideBar Links */}
                             {sections.map((sec)=> (
