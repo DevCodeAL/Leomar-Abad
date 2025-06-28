@@ -85,22 +85,16 @@ export default function NavigationBar({activeSection, sections}){
                     </div>
 
                     {isSideBarShow && (
-                        <div className={`fixed right-0 top-0 rounded-xl text-white  h-auto z-20 p-1
-                          animate-fade-left`}>
-                            {/* Close Button */}
-                           <div className="text-center p-2 rotate-90">
-                                 <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
-                               <FaArrowTurnUp/></button>
-                           </div>
+                        <div className={`flex justify-center w-full fixed bottom-0 rounded-xl text-white  h-auto z-20 animate-fade-left bg-black`}>
                 
                             {/* SideBar Links */}
                             {sections.map((sec)=> (
                             <div key={sec.id} className="p-1">
-                                <ul className="flex items-center justify-center gap-5 flex-col text-[#b3b3b3] font-bold text-xl">
+                                <ul className="text-[#b3b3b3] font-bold text-xl">
                                     <li>
                                         <div className={`group relative inline-block
                                             ${activeSection === sec.id && 'text-[#1ed760]'}`}>
-                                        <a href={`#${sec.id}`} className="relative inline-block bg-black p-3 rounded-full">
+                                        <a href={`#${sec.id}`} className="relative inline-block p-3 rounded-full">
                                             {sec.icon}
                                         </a>
                                         </div>
@@ -108,6 +102,11 @@ export default function NavigationBar({activeSection, sections}){
                                 </ul>
                             </div>
                              ))}
+                              {/* Close Button */}
+                           <div className="text-center p-2 rotate-90">
+                                 <button onClick={HandleSideBarEvent} className="text-[#1ed760] text-2xl">
+                               <FaArrowTurnUp/></button>
+                           </div>
                     </div>
                     )}
                </>)}
