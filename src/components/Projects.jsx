@@ -124,7 +124,7 @@ function Header(){
     <>
     <div ref={ref}>
         {inView && (
-        <div className={`flex flex-row justify-center mb-6 gap-5 animate-fade-down animate-delay-200`}>
+        <div className={`flex flex-row justify-center gap-5 animate-fade-down animate-delay-200`}>
         <div className="text-[#1ed760] text-5xl">
             <FaFolderOpen/>
         </div>

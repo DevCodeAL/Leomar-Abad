@@ -13,15 +13,12 @@ export default function Container({ index,  title, image, description,
     <>
         <div ref={ref}>
         {/* This area are for projects */}
-          <div className={`flex flex-wrap gap-10 md:gap-20 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+          <div className={`flex justify-center flex-wrap md:flex-nowrap gap-0 md:gap-10 lg:gap-20 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                 {inView && (
                   <div className="animate-fade-right animate-delay-300">
                   <img 
                     src={image}
                     className="
-                      relative
-                      -bottom-16
-                      md:bottom-0
                       object-cover
                       w-full md:w-[384px]
                       transition-all ease-in-out duration-300 hover:scale-110
