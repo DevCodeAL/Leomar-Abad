@@ -2,7 +2,6 @@ import { IoStarSharp } from "react-icons/io5";
 import { FaCommentDots } from "react-icons/fa";
 
 export default function Testimonials(){
-    
     const person = [
         {
             photo: '/testimonials/p1.jpg',
@@ -58,7 +57,7 @@ export default function Testimonials(){
             stars: 8,
         },
     ];
-
+   
     return(
        <section className="flex flex-col items-center w-full bg-[#121212] min-h-screen py-24 z-10 overflow-hidden">
         
@@ -75,7 +74,7 @@ export default function Testimonials(){
   <div className="relative overflow-hidden">
     <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
       {/* First loop */}
-      {person.map((item, index) => (
+      {[...person, ...person].map((item, index)=> (
         <div
           key={index}
           className="flex flex-col gap-3 mx-4
@@ -100,34 +99,6 @@ export default function Testimonials(){
             </div>
           </div>
 
-          </div>
-        </div>
-      ))}
-      {/* Duplicate loop for seamless effect */}
-      {person.map((item, index) => (
-        <div
-          key={`duplicate-${index}`}
-          className="flex flex-col gap-3 mx-4
-            bg-gradient-to-r from-[#212121] to-[#121212]
-            transition-all duration-300 ease-in-out hover:scale-105 rounded-md p-4 w-[300px]"
-        >
-          <img src={item.photo} className="object-cover rounded-full w-16 h-16" alt="Photo" />
-          <div className="text-[#b3b3b3]">{item.name}</div>
-          <div className="text-[#b3b3b3] text-xs">{item.position}</div>
-          <div className="text-sm">
-            <i className="text-[#b3b3b3]">{item.description}</i>
-            <div className="mt-3">
-              <i className="text-[#b3b3b3]">{item.sub_position}</i>
-            </div>
-          </div>
-          <div className="py-4">
-           <div className="py-4">
-            <div className="flex justify-center gap-1 text-yellow-400">
-              {Array.from({ length: item.stars }, (_, i) => (
-                <IoStarSharp key={i} />
-              ))}
-            </div>
-          </div>
           </div>
         </div>
       ))}

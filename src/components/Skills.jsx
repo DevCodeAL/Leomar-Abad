@@ -1,4 +1,4 @@
-import { FaUserCog, FaTools } from "react-icons/fa";
+import { FaUserCog } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
