@@ -56,7 +56,7 @@ function SkillsCard(){
             </div>
            )}
          
-            {inView && (
+            {/* {inView && (
               <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
               animate-fade-right animate-delay-700`}>
                 {[
@@ -76,7 +76,7 @@ function SkillsCard(){
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
 
           {/* BACKEND */}
