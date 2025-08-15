@@ -22,7 +22,7 @@ export default function Skills({id , setActiveSection}) {
 }
 
 function SkillsCard(){
-   const { ref, inView } = useInView({
+   const { ref, inView } = useInView( {
      triggerOnce: true,
      threshold: 0,
   });
@@ -48,7 +48,7 @@ function SkillsCard(){
         {/* Skills Container */}
         <div className="grid justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {/* FRONT END */}
-          <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
+          <div>
            {inView && (
              <div className={`relative flex justify-center items-center animate-fade-right animate-delay-200`}>
               <h1 className="text-white text-xl font-bold mb-2">FRONT END</h1>
@@ -57,7 +57,7 @@ function SkillsCard(){
            )}
          
             {inView && (
-              <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
+              <div className={`grid grid-cols-3 max-w-xs mx-auto p-6 
               animate-fade-right animate-delay-700`}>
                 {[
                   { src: "/image/html.png", label: "HTML5", w: "w-10" },
@@ -68,10 +68,13 @@ function SkillsCard(){
                   { src: "/image/Tailwind_CSS.png", label: "Tailwind CSS", w: "w-12" },
                   { src: "/image/bootstrap.png", label: "Bootstrap 5", w: "w-10" },
                 ].map(({ src, label, w }, i) => (
-                  <div key={i} className="flex flex-col justify-center">
+                  // Update this part
+                  <div key={i} className="flex flex-col border border-opacity-25 p-4 rounded justify-center
+                h-full w-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10  border-gray-100
+                ">
                     <div className={`relative ${w}`}>
-                      <img src={src} alt={label} />
-                      <span className="text-white text-sm md:text-base">{label}</span>
+                        <img src={src} alt={label} />
+                      <span className="text-white text-sm md:text-sm">{label}</span>
                     </div>
                   </div>
                 ))}
@@ -80,7 +83,7 @@ function SkillsCard(){
           </div>
 
           {/* BACKEND */}
-          <div className="bg-gradient-to-r from-[#212121]  to-[#121212] p-2">
+          <div>
           {inView && (
               <div className={`relative flex justify-center items-center animate-fade-up animate-delay-200`}>
               <h1 className="text-white text-xl font-bold mb-2">BACKEND</h1>
@@ -89,7 +92,7 @@ function SkillsCard(){
           )}
          
           {inView && (
-            <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-12 p-6 
+            <div className={`grid grid-cols-3 max-w-xs mx-auto p-6 
               animate-fade-up animate-delay-700`}>
                 {[
                   { src: "/image/nodejs.png", label: "Node Js", w: "w-16" },
@@ -99,10 +102,12 @@ function SkillsCard(){
                   { src: "/image/Mysql_logo.png", label: "MySQL", w: "w-14" },
                   { src: "/image/supabase.png", label: "Supabase", w: "w-14" },
                 ].map(({ src, label, w }, i) => (
-                  <div key={i} className="flex flex-col justify-center">
+                  <div key={i} className="flex flex-col border border-opacity-25 p-4 rounded justify-center
+                h-full w-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10  border-gray-100
+                ">
                     <div className={`relative ${w}`}>
                       <img src={src} alt={label} />
-                      <span className="text-white text-sm md:text-base">{label}</span>
+                      <span className="text-white text-sm md:text-sm">{label}</span>
                     </div>
                   </div>
                 ))}
@@ -111,7 +116,7 @@ function SkillsCard(){
           </div>
 
                  {/* OTHER TOOLS */}
-          <div className={`mx-auto bg-gradient-to-r from-[#212121]  to-[#121212] p-2`}>
+          <div className={`mx-auto p-2`}>
             <div className="flex flex-row justify-center">
              {inView && (
                <div className={`relative flex justify-center items-center animate-fade-left animate-delay-200`}>
@@ -122,7 +127,7 @@ function SkillsCard(){
             </div>
 
            {inView && (
-            <div className={`flex justify-center items-center flex-wrap max-w-xs mx-auto gap-6 p-6 animate-fade-left animate-delay-700`}>
+            <div className={`grid grid-cols-3 max-w-xs mx-auto p-6 animate-fade-left animate-delay-700`}>
               {[
                 { src: "/image/VSC.png", label: "Visual Studio Code", w: "w-10" },
                 { src: "/image/git_github.png", label: "Git & Github", w: "w-12" },
@@ -132,12 +137,15 @@ function SkillsCard(){
                 { src: "/image/xammp.png", label: "Xammp", w: "w-12" },
                 { src: "/image/render.jpg", label: "Render", w: "w-12" },
                 { src: "/image/vercel.jpg", label: "Vercel", w: "w-12" },
+                {src: "/image/figma.png", label: "Figma", w: "w-20"}
               ].map(({ src, label, w }, i) => (
-                <div key={i}>
+                <div key={i} className="flex flex-col border border-opacity-25 p-4 rounded justify-center
+                h-full w-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10  border-gray-100
+                ">
                   <div>
                     <img src={src} className={`ml-auto mr-auto ${w}`} alt={label} />
                   </div>
-                  <span className="text-white text-sm md:text-base text-nowrap">{label}</span>
+                  <span className="text-white text-sm md:text-sm">{label}</span>
                 </div>
               ))}
             </div>
