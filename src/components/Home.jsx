@@ -134,7 +134,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
 
                 <div className="mt-6">
                     <button className="transition duration-200 ease-in hover:scale-105">
-                        <a href="/file/Leomar-Abad-CV-2025.pdf" className="border-2 border-[#1ed760] bg-[#212121] py-2 px-4 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" download>Download CV</a>
+                        <a href="/file/Leomar-Abad-2025.pdf" className="border-2 border-[#1ed760] bg-[#212121] py-2 px-4 rounded-full shadow-[#1ed760] shadow-[0_0_10px_rgba(0,0,0,0.25)] font-semibold" download>Download CV</a>
                     </button>
                 </div>
 
