@@ -18,6 +18,17 @@ export default function Projects({id , setActiveSection}){
 
     const projects = [
         {   
+            title: "AI Math Generator",
+            image: "/projects-images/png/AI-Math-Generator.png",
+            description: "This is my assessment task for Ottodot. The goal was to implement a generated math problem feature using the Gemini Google AI Studio, Next.js, Tailwind CSS, and Supabase. I learned a lot from this project, especially because it was my first time integrating an AI model. I’m excited to continue improving and applying AI in more personal projects and future client work.",
+            technologies: ["Next Js", "Tailwind Css", "Supabase"],
+            external_links: <FaExternalLinkAlt/>,
+            githubLinks: <FaGithub/>,
+            links_demos: "https://ai-math-generator-lake.vercel.app/",
+            github_links: "https://github.com/DevCodeAL/AI-Math-Generator",
+        },
+
+        {   
             title: "Guimba East EduLink",
             image: "/projects-images/png/guimba-east.png",
             description: "Guimba EastEdulink is a web-based system for the Guimba East District that streamlines school management and learning resources for school heads, teachers, and administrators. As my first major client project, it strengthened my skills in full-stack development, client communication, and real-world deployment.",

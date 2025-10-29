@@ -65,6 +65,7 @@ function SkillsCard(){
                   { src: "/image/javascript.png", label: "Javascript ES6+", w: "w-12" },
                   { src: "/image/Typescript.png", label: "TypeScript", w: "w-11" },
                   { src: "/image/React.png", label: "React Js", w: "w-12" },
+                  { src: "/image/nextjs.jpg", label: "Next Js", w: "w-12" },
                   { src: "/image/Tailwind_CSS.png", label: "Tailwind CSS", w: "w-12" },
                   { src: "/image/bootstrap.png", label: "Bootstrap 5", w: "w-10" },
                 ].map(({ src, label, w }, i) => (
