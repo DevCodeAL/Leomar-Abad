@@ -93,7 +93,7 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
                 </h1>
 
                 <p className="pt-5 leading-6 max-w-lg mx-auto font-semibold lg:mx-0">
-                    <span className="text-[#1ed760] font-semibold">{`<p>`}</span>I’m a Fullstack Web Developer specializing in building modern, responsive web applications using the MERN stack. I turn ideas into fast, scalable, and user-friendly digital experiences.<span className="text-[#1ed760] font-semibold">{`</p>`}</span>
+                    <span className="text-[#1ed760] font-semibold">{`<p>`}</span>I’m a Fullstack Web Developer passionate about building modern, responsive, and user-focused web applications. I turn ideas into fast, scalable, and engaging digital experiences that make an impact.<span className="text-[#1ed760] font-semibold">{`</p>`}</span>
                 </p>
                 
                 {/* Social Icons */}

@@ -47,7 +47,7 @@ return(
         {inView && (
           <div className="animate-fade-down animate-delay-300 md:text-center text-justify p-2">
             <p className="text-white sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed">
-             I’m a passionate web developer skilled in the MERN stack and Tailwind CSS, with experience building dynamic, responsive applications and intuitive user interfaces. I’m committed to delivering high-quality, creative solutions and aim to design and develop digital products that solve real-world problems with strong UI/UX. I thrive on continuous learning and collaborating on innovative projects.
+              I’m a passionate web developer skilled in building dynamic, responsive applications and intuitive user experiences. I’m committed to delivering high-quality, creative solutions that solve real-world problems through thoughtful design and clean development practices. I love learning new technologies, improving my craft, and collaborating on innovative projects that make a meaningful impact.
             </p>
           </div>
         )}
