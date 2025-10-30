@@ -4,7 +4,6 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import Particles from "./StyleComponents/Particles";
 import ScrollVelocity from "./StyleComponents/ScrollVelocity";
 import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
@@ -16,6 +15,11 @@ import { SiExpress } from "react-icons/si";
 import { SiPhp } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
+import ParticlesUI from "./StyleComponents/Particles";
+
+
+
+
 
 export default function Home({id, setActiveSection, velocity}){
     const [currentText, setCurrentText] = useState('Fullstack Web Developer');
@@ -70,16 +74,8 @@ const items = ['Fullstack Web Developer', 'Frontend Developer', 'Backend Develop
             id={id}>
 
             <div style={{ width: '100%', height: '600px', position: 'absolute', overflow: 'hidden' }}>
-            <Particles
-                particleColors={['#1ed760']}
-                particleCount={200}
-                particleSpread={10}
-                speed={0.1}
-                particleBaseSize={100}
-                moveParticlesOnHover={true}
-                alphaParticles={false}
-                disableRotation={false}
-            />
+            <ParticlesUI/>
+            {/*  */}
             </div>
 
             <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 max-w-6xl w-full mt-6 p-6">
