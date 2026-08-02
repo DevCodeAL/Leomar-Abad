@@ -1,10 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-palette="default">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo/DevCode.png" />
+    <link rel="icon" type="image/png" href="/logo/DevCode.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Leomar Abad</title>
+
+    <title>Leomar Abad — Fullstack Web Developer</title>
+    <meta
+      name="description"
+      content="Leomar Abad is a fullstack web developer from Nueva Ecija, Philippines, building modern, responsive and user-focused web applications with React, Node.js and the MERN stack."
+    />
+    <meta name="author" content="Leomar Abad" />
+    <meta name="theme-color" content="#121212" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Leomar Abad — Fullstack Web Developer" />
+    <meta
+      property="og:description"
+      content="Fullstack web developer building modern, responsive, user-focused web applications."
+    />
+    <meta property="og:image" content="/picture/Leomar-Abad.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Restores the saved theme / palette / sidebar state before first paint so
+      there is never a flash of the wrong colours. Inline and dependency-free
+      on purpose — it has to run before the bundle loads.
+    -->
+    <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var theme = localStorage.getItem("portfolio-theme");
+          var palette = localStorage.getItem("portfolio-palette");
+
+          if (theme !== "light" && theme !== "dark") {
+            theme = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+          }
+          root.setAttribute("data-theme", theme);
+          root.setAttribute("data-palette", palette || "default");
+          if (localStorage.getItem("portfolio-sidebar") === "collapsed") {
+            root.setAttribute("data-sidebar", "collapsed");
+          }
+        } catch (e) {
+          /* storage blocked — fall back to the markup defaults */
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

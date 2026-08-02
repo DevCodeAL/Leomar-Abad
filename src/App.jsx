@@ -1,20 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-import Root from "./components/Root";
-import CursorFollower from "./components/StyleComponents/CursorFollower";
+import { ThemeProvider } from "@/theme/ThemeProvider";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { Dashboard } from "@/components/dashboard/Dashboard";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-     <Router>
-      <CursorFollower/>
-        <Routes>
-          <Route path="/" element={<Root/>}/>
-      </Routes> 
-    </Router>
-
-    </>
-  )
+    <ThemeProvider>
+      <DashboardLayout>
+        <Dashboard />
+      </DashboardLayout>
+    </ThemeProvider>
+  );
 }
-
-export default App;

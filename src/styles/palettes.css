@@ -1,0 +1,181 @@
+/*
+ * Palette tokens — 5 palettes x 2 modes.
+ *
+ * Every colour in the UI resolves through one of these variables; no component
+ * hardcodes a hex value. Values are bare HSL triplets so Tailwind can apply
+ * opacity modifiers, e.g. `bg-primary/10` -> hsl(var(--primary) / 0.1).
+ *
+ * Palette 1 "default" preserves the original portfolio identity:
+ * #1ed760 accent on #121212 / #212121 surfaces.
+ */
+
+/* ── Palette 1 — Default (original brand) ─────────────────────────── */
+
+:root,
+[data-palette="default"][data-theme="dark"] {
+  --canvas: 0 0% 7%; /* #121212 */
+  --canvas-deep: 0 0% 4.5%;
+  --surface: 0 0% 13%; /* #212121 */
+  --elevated: 0 0% 16.5%;
+  --line: 0 0% 20%;
+  --line-strong: 0 0% 29%;
+  --ink: 0 0% 98%;
+  --ink-muted: 0 0% 70%; /* #b3b3b3 */
+  --ink-subtle: 0 0% 52%;
+  --primary: 141 76% 48%; /* #1ed760 */
+  --primary-strong: 141 72% 41%; /* #1db954 */
+  --primary-fg: 0 0% 7%;
+  --accent: 162 80% 45%;
+}
+
+[data-palette="default"][data-theme="light"] {
+  --canvas: 150 20% 97.5%;
+  --canvas-deep: 150 24% 94%;
+  --surface: 0 0% 100%;
+  --elevated: 150 20% 96.5%;
+  --line: 150 12% 88%;
+  --line-strong: 150 10% 76%;
+  --ink: 160 22% 10%;
+  --ink-muted: 155 8% 36%;
+  --ink-subtle: 155 7% 48%;
+  --primary: 141 70% 29%;
+  --primary-strong: 141 74% 23%;
+  --primary-fg: 0 0% 100%;
+  --accent: 168 72% 27%;
+}
+
+/* ── Palette 2 — Ocean ────────────────────────────────────────────── */
+
+[data-palette="ocean"][data-theme="dark"] {
+  --canvas: 213 30% 7%;
+  --canvas-deep: 213 34% 4.5%;
+  --surface: 214 26% 11%;
+  --elevated: 214 24% 14.5%;
+  --line: 214 20% 20%;
+  --line-strong: 214 18% 29%;
+  --ink: 210 30% 98%;
+  --ink-muted: 214 15% 70%;
+  --ink-subtle: 214 12% 52%;
+  --primary: 199 89% 52%;
+  --primary-strong: 201 90% 44%;
+  --primary-fg: 213 40% 8%;
+  --accent: 187 85% 50%;
+}
+
+[data-palette="ocean"][data-theme="light"] {
+  --canvas: 210 40% 97.5%;
+  --canvas-deep: 210 44% 94%;
+  --surface: 0 0% 100%;
+  --elevated: 210 35% 96.5%;
+  --line: 213 25% 88%;
+  --line-strong: 213 20% 76%;
+  --ink: 215 35% 12%;
+  --ink-muted: 215 16% 38%;
+  --ink-subtle: 215 13% 50%;
+  --primary: 205 90% 36%;
+  --primary-strong: 207 92% 29%;
+  --primary-fg: 0 0% 100%;
+  --accent: 191 88% 29%;
+}
+
+/* ── Palette 3 — Emerald ──────────────────────────────────────────── */
+
+[data-palette="emerald"][data-theme="dark"] {
+  --canvas: 170 24% 6%;
+  --canvas-deep: 170 28% 4%;
+  --surface: 170 20% 10%;
+  --elevated: 170 18% 13.5%;
+  --line: 170 15% 19%;
+  --line-strong: 170 14% 28%;
+  --ink: 160 25% 98%;
+  --ink-muted: 165 12% 70%;
+  --ink-subtle: 165 10% 52%;
+  --primary: 160 84% 42%;
+  --primary-strong: 161 86% 34%;
+  --primary-fg: 170 45% 6%;
+  --accent: 176 72% 46%;
+}
+
+[data-palette="emerald"][data-theme="light"] {
+  --canvas: 160 30% 97.5%;
+  --canvas-deep: 160 34% 94%;
+  --surface: 0 0% 100%;
+  --elevated: 160 25% 96.5%;
+  --line: 160 18% 87%;
+  --line-strong: 160 15% 75%;
+  --ink: 168 30% 11%;
+  --ink-muted: 165 13% 36%;
+  --ink-subtle: 165 11% 48%;
+  --primary: 162 88% 26%;
+  --primary-strong: 163 90% 20%;
+  --primary-fg: 0 0% 100%;
+  --accent: 178 78% 25%;
+}
+
+/* ── Palette 4 — Violet ───────────────────────────────────────────── */
+
+[data-palette="violet"][data-theme="dark"] {
+  --canvas: 258 24% 8%;
+  --canvas-deep: 258 30% 5%;
+  --surface: 258 20% 12%;
+  --elevated: 258 19% 15.5%;
+  --line: 258 16% 21%;
+  --line-strong: 258 15% 30%;
+  --ink: 260 30% 98%;
+  --ink-muted: 258 13% 72%;
+  --ink-subtle: 258 11% 54%;
+  --primary: 258 88% 68%;
+  --primary-strong: 259 80% 60%;
+  --primary-fg: 258 45% 8%;
+  --accent: 291 80% 68%;
+}
+
+[data-palette="violet"][data-theme="light"] {
+  --canvas: 265 40% 98%;
+  --canvas-deep: 265 44% 95%;
+  --surface: 0 0% 100%;
+  --elevated: 265 32% 96.5%;
+  --line: 265 22% 89%;
+  --line-strong: 265 18% 77%;
+  --ink: 262 30% 13%;
+  --ink-muted: 262 13% 38%;
+  --ink-subtle: 262 11% 50%;
+  --primary: 262 72% 47%;
+  --primary-strong: 263 74% 39%;
+  --primary-fg: 0 0% 100%;
+  --accent: 291 62% 43%;
+}
+
+/* ── Palette 5 — Sunset ───────────────────────────────────────────── */
+
+[data-palette="sunset"][data-theme="dark"] {
+  --canvas: 20 18% 7%;
+  --canvas-deep: 20 22% 4.5%;
+  --surface: 20 15% 11%;
+  --elevated: 20 14% 14.5%;
+  --line: 20 13% 20%;
+  --line-strong: 20 12% 29%;
+  --ink: 25 30% 98%;
+  --ink-muted: 24 13% 71%;
+  --ink-subtle: 24 11% 53%;
+  --primary: 20 90% 58%;
+  --primary-strong: 16 84% 50%;
+  --primary-fg: 20 45% 8%;
+  --accent: 340 82% 62%;
+}
+
+[data-palette="sunset"][data-theme="light"] {
+  --canvas: 30 45% 97.5%;
+  --canvas-deep: 30 48% 94%;
+  --surface: 0 0% 100%;
+  --elevated: 28 40% 96.5%;
+  --line: 28 25% 89%;
+  --line-strong: 28 20% 77%;
+  --ink: 20 30% 13%;
+  --ink-muted: 20 13% 37%;
+  --ink-subtle: 20 11% 49%;
+  --primary: 18 82% 42%;
+  --primary-strong: 14 84% 36%;
+  --primary-fg: 0 0% 100%;
+  --accent: 340 70% 43%;
+}
