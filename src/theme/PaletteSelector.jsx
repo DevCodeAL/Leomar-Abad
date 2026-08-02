@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Tooltip } from "@/components/ui/Tooltip";
 import { palettes } from "./palettes";
 import { useTheme } from "./useTheme";
+import { originFromEvent } from "./view-transition";
 
 /**
  * Circular swatch picker. Each dot previews the palette's accent for the
@@ -28,7 +29,7 @@ export function PaletteSelector({ className, tooltipSide = "top" }) {
                 role="radio"
                 aria-checked={selected}
                 aria-label={`${item.name} palette — ${item.description}`}
-                onClick={() => setPalette(item.id)}
+                onClick={(event) => setPalette(item.id, originFromEvent(event))}
                 className={cn(
                   "relative flex h-7 w-7 items-center justify-center rounded-full",
                   "ring-offset-2 ring-offset-canvas transition-[transform,box-shadow] duration-200 ease-smooth",

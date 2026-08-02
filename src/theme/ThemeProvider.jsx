@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { flushSync } from "react-dom";
 import { DEFAULT_PALETTE, DEFAULT_THEME, paletteIds } from "./palettes";
 import { ThemeContext } from "./theme-context";
+import { runThemeTransition } from "./view-transition";
 
 const THEME_KEY = "portfolio-theme";
 const PALETTE_KEY = "portfolio-palette";
@@ -12,6 +14,22 @@ function readInitial(attribute, fallback, allowed) {
   return allowed.includes(value) ? value : fallback;
 }
 
+/**
+ * Writes the tokens to <html>. Called synchronously inside the transition
+ * commit so the browser captures the old and new frames around one mutation,
+ * and again from the effect below — it is idempotent by design.
+ */
+function applyDom(theme, palette) {
+  const root = document.documentElement;
+  root.setAttribute("data-theme", theme);
+  root.setAttribute("data-palette", palette);
+
+  // Keep the browser chrome (mobile address bar) in sync with the canvas.
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const canvas = getComputedStyle(root).getPropertyValue("--canvas").trim();
+  if (meta && canvas) meta.setAttribute("content", `hsl(${canvas})`);
+}
+
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() =>
     readInitial("data-theme", DEFAULT_THEME, ["dark", "light"]),
@@ -19,37 +37,30 @@ export function ThemeProvider({ children }) {
   const [palette, setPaletteState] = useState(() =>
     readInitial("data-palette", DEFAULT_PALETTE, paletteIds),
   );
-  const transitionTimer = useRef(null);
 
   /**
-   * Colour tokens change on <html>, so a blanket transition class is added for
-   * the duration of the swap and removed again. Keeping it temporary avoids
-   * paying transition cost on every unrelated hover.
+   * Commits both the React state and the DOM attributes in one synchronous
+   * block, wrapped in whatever animation the browser supports. `flushSync`
+   * matters here: components that branch on `theme` (the toggle pill, the
+   * palette swatches) must be painted before the browser snapshots the new
+   * frame, otherwise they pop a frame after everything else settles.
    */
-  const animateSwap = useCallback(() => {
-    const root = document.documentElement;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    root.classList.add("theme-transition");
-    window.clearTimeout(transitionTimer.current);
-    transitionTimer.current = window.setTimeout(
-      () => root.classList.remove("theme-transition"),
-      320,
+  const commit = useCallback((nextTheme, nextPalette, kind, origin) => {
+    runThemeTransition(
+      () => {
+        flushSync(() => {
+          setThemeState(nextTheme);
+          setPaletteState(nextPalette);
+        });
+        applyDom(nextTheme, nextPalette);
+      },
+      { kind, origin },
     );
   }, []);
 
-  useEffect(() => () => window.clearTimeout(transitionTimer.current), []);
-
+  // Persistence, plus the initial mount write.
   useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute("data-theme", theme);
-    root.setAttribute("data-palette", palette);
-
-    // Keep the browser chrome (mobile address bar) in sync with the canvas.
-    const meta = document.querySelector('meta[name="theme-color"]');
-    const canvas = getComputedStyle(root).getPropertyValue("--canvas").trim();
-    if (meta && canvas) meta.setAttribute("content", `hsl(${canvas})`);
-
+    applyDom(theme, palette);
     try {
       localStorage.setItem(THEME_KEY, theme);
       localStorage.setItem(PALETTE_KEY, palette);
@@ -59,23 +70,23 @@ export function ThemeProvider({ children }) {
   }, [theme, palette]);
 
   const setTheme = useCallback(
-    (next) => {
-      animateSwap();
-      setThemeState(next);
+    (next, origin) => {
+      if (next === theme) return;
+      commit(next, palette, "theme", origin);
     },
-    [animateSwap],
+    [commit, palette, theme],
   );
 
   const setPalette = useCallback(
-    (next) => {
-      animateSwap();
-      setPaletteState(next);
+    (next, origin) => {
+      if (next === palette) return;
+      commit(theme, next, "palette", origin);
     },
-    [animateSwap],
+    [commit, palette, theme],
   );
 
   const toggleTheme = useCallback(
-    () => setTheme(theme === "dark" ? "light" : "dark"),
+    (origin) => setTheme(theme === "dark" ? "light" : "dark", origin),
     [setTheme, theme],
   );
 

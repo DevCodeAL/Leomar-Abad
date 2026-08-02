@@ -1,6 +1,7 @@
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "./useTheme";
+import { originFromEvent } from "./view-transition";
 
 const OPTIONS = [
   { value: "light", label: "Light", Icon: Sun },
@@ -39,7 +40,7 @@ export function ThemeToggle({ className }) {
             type="button"
             role="radio"
             aria-checked={active}
-            onClick={() => setTheme(value)}
+            onClick={(event) => setTheme(value, originFromEvent(event))}
             className={cn(
               "relative z-10 flex h-8 items-center justify-center gap-1.5 rounded-full text-xs font-semibold",
               "transition-colors duration-200",
@@ -63,7 +64,7 @@ export function ThemeToggleIcon({ className }) {
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={(event) => toggleTheme(originFromEvent(event))}
       aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
       className={cn(
         "relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl",
