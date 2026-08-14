@@ -1,17 +1,23 @@
+import { Workflow } from "lucide-react";
 import {
   SiBootstrap,
+  SiClaude,
   SiCss3,
+  SiDigitalocean,
   SiExpress,
   SiFigma,
   SiGit,
   SiGithub,
+  SiGooglegemini,
   SiHtml5,
   SiJavascript,
   SiMongodb,
   SiMysql,
+  SiN8N,
   SiNextdotjs,
   SiNodedotjs,
   SiNpm,
+  SiOpenai,
   SiPhp,
   SiPostman,
   SiReact,
@@ -74,9 +80,44 @@ export const skillGroups = [
       { name: "Vite", Icon: SiVite, brand: "#A259FF" },
       { name: "Postman", Icon: SiPostman, brand: "#FF6C37" },
       { name: "XAMPP", Icon: SiXampp, brand: "#FB7A24" },
+      { name: "Figma", Icon: SiFigma, brand: "#F24E1E" },
+    ],
+  },
+  {
+    id: "hosting",
+    label: "Hosting & Cloud",
+    caption: "Deployment and infrastructure",
+    skills: [
+      { name: "DigitalOcean", Icon: SiDigitalocean, brand: "#0080FF" },
       { name: "Render", Icon: SiRender },
       { name: "Vercel", Icon: SiVercel },
-      { name: "Figma", Icon: SiFigma, brand: "#F24E1E" },
+    ],
+  },
+  {
+    id: "ai",
+    label: "AI Assistants",
+    caption: "Coding assistants and AI automation",
+    skills: [
+      { name: "Claude Code", Icon: SiClaude, brand: "#D97757" },
+      {
+        name: "Gemini (Google AI Studio)",
+        Icon: SiGooglegemini,
+        brand: "#8E75B2",
+      },
+      /* OpenAI's #412991 is too dark to read against the dark canvas, so this
+         falls back to the ink token like the other low-contrast logos. */
+      { name: "ChatGPT", Icon: SiOpenai },
+    ],
+  },
+  {
+    id: "automation",
+    label: "Automation",
+    caption: "Workflow and CRM automation",
+    skills: [
+      { name: "n8n", Icon: SiN8N, brand: "#EA4B71" },
+      /* GoHighLevel has no simple-icons entry, so this uses a generic workflow
+         glyph rather than an invented logo. The tint is approximate. */
+      { name: "GoHighLevel", Icon: Workflow, brand: "#2F97FF" },
     ],
   },
 ];
