@@ -15,7 +15,7 @@ export function Services() {
         description="What I offer based on my skills and experience."
         action={
           <Button href="#contact" variant="outline" size="sm">
-            Start a project
+            Book a Call
             <ArrowUpRight
               className="h-3.5 w-3.5 transition-transform duration-300 ease-smooth group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
               aria-hidden="true"

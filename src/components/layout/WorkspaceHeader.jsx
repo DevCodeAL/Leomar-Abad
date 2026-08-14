@@ -39,7 +39,7 @@ export function WorkspaceHeader({ activeId }) {
           </p>
 
           <Button {...sectionLink("contact")} size="sm" variant="outline">
-            Let&apos;s work together
+            Book a Call
             <ArrowUpRight
               className="h-3.5 w-3.5 transition-transform duration-300 ease-smooth group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
               aria-hidden="true"

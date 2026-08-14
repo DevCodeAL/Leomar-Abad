@@ -1,9 +1,9 @@
 import {
   Briefcase,
+  CalendarCheck,
   FolderGit2,
   LayoutDashboard,
   Layers,
-  Mail,
   MessageSquareQuote,
   Newspaper,
   User,
@@ -37,7 +37,9 @@ export const navGroups = [
       { id: "services", label: "Services", icon: Wrench },
       { id: "testimonials", label: "Testimonials", icon: MessageSquareQuote },
       { to: "/blog", label: "Blog", icon: Newspaper },
-      { id: "contact", label: "Contact", icon: Mail },
+      /* The section id stays `contact` so every existing anchor, CTA and the
+         scroll-spy keep working; only the label and icon change. */
+      { id: "contact", label: "Book a Call", icon: CalendarCheck },
     ],
   },
 ];

@@ -9,10 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "check:blog": "node scripts/check-blog-logic.mjs",
-    "generate:blog": "node scripts/generate-blog-local.mjs"
+    "generate:blog": "node scripts/generate-blog-local.mjs",
+    "check:booking": "node scripts/check-booking-logic.mjs",
+    "google:auth": "node scripts/google-auth.mjs"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@google/genai": "^2.17.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

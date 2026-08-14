@@ -65,7 +65,7 @@ function IntroPanel() {
               />
             </Button>
             <Button href="#contact" variant="outline" size="lg">
-              Let&apos;s work together
+              Book a Call
               <ArrowUpRight
                 className="h-4 w-4 transition-transform duration-300 ease-smooth group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
                 aria-hidden="true"

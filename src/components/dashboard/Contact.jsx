@@ -6,7 +6,7 @@ import { CopyButton } from "@/components/ui/CopyButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { Section, SectionHeader } from "@/components/ui/SectionHeader";
-import { ContactForm } from "./ContactForm";
+import { BookACall } from "@/components/booking/BookACall";
 
 const details = [
   {
@@ -39,21 +39,21 @@ export function Contact() {
   return (
     <Section id="contact" className="pb-4">
       <SectionHeader
-        index="07"
-        eyebrow="Contact"
-        title="Have a project in mind?"
-        description="Let's build something useful, beautiful and scalable. Whether you have a project in mind, need help bringing your vision to life, or just want to connect — feel free to reach out."
+        index="08"
+        eyebrow="Book a Call"
+        title="Let's talk about your project"
+        description="Pick a time that suits you and we'll talk it through on a 30-minute call. You'll get a Google Meet link straight away — no back-and-forth email needed."
       />
 
       <div className="grid gap-4 lg:grid-cols-5">
         <Reveal className="lg:col-span-3" direction="left">
           <Card glow className="h-full">
             <CardHeader>
-              <CardTitle>Start a conversation</CardTitle>
-              <Badge mono>message.form</Badge>
+              <CardTitle>Book a call</CardTitle>
+              <Badge mono>30 min · Google Meet</Badge>
             </CardHeader>
             <CardBody>
-              <ContactForm />
+              <BookACall />
             </CardBody>
           </Card>
         </Reveal>

@@ -14,17 +14,10 @@ npm run lint
 
 ## Environment
 
-The contact form posts through EmailJS. Create a `.env` with:
+All secrets are server-side. Nothing in the booking or blog systems uses a
+`VITE_` variable, so none of it can reach the browser.
 
-```
-VITE_EMAILJS_SERVICE_ID=…
-VITE_EMAILJS_TEMPLATE_ID=…
-VITE_EMAILJS_PUBLIC_KEY=…
-```
-
-The EmailJS template expects the fields `name`, `email` and `message`.
-Without these keys the form degrades gracefully: it shows an inline error
-pointing the visitor at the email address instead of failing silently.
+See **Book a Call** and **Blog** below for the variables each feature needs.
 
 ## Structure
 
@@ -54,6 +47,120 @@ src/
 
 Content lives in `src/data`. To add a project, skill or timeline entry, edit
 the relevant data file — nothing in `components/` needs to change.
+
+## Book a Call
+
+The contact form was replaced by a booking flow that reads real Google
+Calendar availability, creates the event, generates a Google Meet link and
+lets Google send the invitations.
+
+```
+Visitor  →  #contact (Book a Call)
+             │
+             ├─ GET  /api/booking/availability   free/busy → open slots
+             └─ POST /api/booking/create         re-check, then create
+                        │
+                        ├─ Google Calendar  freebusy.query
+                        ├─ Google Calendar  events.insert
+                        │     conferenceDataVersion=1  → unique Meet link
+                        │     sendUpdates=all          → invitations sent
+                        └─ visitor + owner both receive the invite
+```
+
+### Why not n8n
+
+n8n was considered and rejected. Self-hosting it free is not realistic: free
+tiers that sleep would time out a booking webhook and lose workflow state, and
+a VM you keep patched is a lot of operational surface for one linear workflow
+that a single serverless function already handles. Vercel Functions were
+already in the project and working, so the booking runs there — no extra
+service, no second dashboard, no recurring cost.
+
+Zoom can be added later behind `MEETING_PROVIDER` without touching the UI.
+
+### Files
+
+```
+lib/booking/config.js       rules from env, with defaults
+lib/booking/timezone.js     Intl-based zoned <-> UTC conversion
+lib/booking/slots.js        slot generation, buffers, notice, busy filtering
+lib/booking/google.js       token refresh, freebusy, event + Meet creation
+lib/booking/validation.js   server-side validation and sanitisation
+lib/booking/rate-limit.js   best-effort limiting, honeypot, timing check
+
+api/booking/availability.js GET  — public, exposes only free slots
+api/booking/create.js       POST — re-checks, then books
+
+src/components/booking/     BookACall (4 steps), DatePicker, useAvailability
+scripts/google-auth.mjs     one-time refresh-token helper
+scripts/check-booking-logic.mjs   35 offline checks
+```
+
+### Environment
+
+```env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REFRESH_TOKEN=
+GOOGLE_CALENDAR_ID=primary
+OWNER_EMAIL=you@example.com
+OWNER_NAME=Leomar Abad
+
+BOOKING_TIMEZONE=Asia/Manila
+BOOKING_DURATION_MINUTES=30
+BOOKING_BUFFER_MINUTES=15
+BOOKING_WINDOW_DAYS=30
+BOOKING_MIN_NOTICE_MINUTES=120
+BOOKING_WORKING_DAYS=1,2,3,4,5      # 1 = Monday
+BOOKING_WORK_START=09:00
+BOOKING_WORK_END=17:00
+BOOKING_TITLE=Intro call
+MEETING_PROVIDER=google_meet
+```
+
+Every value has a default, so the booking rules work unset — only the four
+`GOOGLE_*` values are actually required.
+
+### Google Cloud setup
+
+1. Create or pick a project at <https://console.cloud.google.com>.
+2. **APIs & Services → Library →** enable **Google Calendar API**.
+3. **OAuth consent screen →** External, add yourself as a test user. It can
+   stay in Testing; a refresh token issued to a test user still works, though
+   Google may expire it after a period of inactivity.
+4. **Credentials → Create credentials → OAuth client ID → Web application.**
+   Add `http://localhost:5273/callback` as an authorised redirect URI.
+5. Copy the client ID and secret into `.env`.
+6. Run `npm run google:auth`, sign in with the account owning the calendar,
+   and copy the printed `GOOGLE_REFRESH_TOKEN`.
+7. Add all four `GOOGLE_*` values to Vercel → Settings → Environment Variables.
+
+The refresh token grants calendar access — treat it like a password. To revoke
+it, remove the app at <https://myaccount.google.com/permissions>.
+
+### Booking rules and double-booking
+
+The month is not pre-partitioned: availability is computed per request from
+`freebusy.query`, which returns busy intervals only — never event titles,
+attendees or descriptions, so a visitor cannot learn anything about existing
+meetings.
+
+When **Confirm booking** is pressed the calendar is queried *again* and the
+slot re-validated before the event is written, so a slot taken in between is
+rejected with a clear message and a refreshed list. The event id is derived
+deterministically from the slot and the visitor's email, so a double-click,
+retry or network hiccup cannot create a second meeting.
+
+### Testing
+
+```bash
+npm run check:booking   # 35 offline checks, no credentials needed
+```
+
+Covers timezone conversion (including a US DST boundary), slot generation,
+working hours and days, minimum notice, the booking window, buffers, busy
+filtering, server-side re-validation, input validation, bot detection,
+deterministic ids and rate limiting.
 
 ## Blog
 
