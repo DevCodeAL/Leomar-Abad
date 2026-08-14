@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { sectionIds } from "@/data/navigation";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useSidebarCollapse } from "@/hooks/useSidebarCollapse";
@@ -9,12 +10,27 @@ import { WorkspaceHeader } from "./WorkspaceHeader";
 import { ScrollProgress } from "./ScrollProgress";
 import { Footer } from "./Footer";
 
+/** Stable identity so the scroll-spy effect does not re-run off route. */
+const NO_SECTIONS = [];
+
 /**
  * App shell: fixed rail on desktop, drawer on mobile, and a single scrolling
- * workspace column. Scroll-spy lives here so nav state has exactly one owner.
+ * workspace column. Nav state has exactly one owner — but two sources: the
+ * scroll-spy while the dashboard is on screen, and the route everywhere else.
  */
 export function DashboardLayout({ children }) {
-  const activeId = useActiveSection(sectionIds);
+  const { pathname } = useLocation();
+  const onDashboard = pathname === "/";
+
+  // Off the dashboard there are no sections to observe, so the spy stands down
+  // and the current route supplies the active key instead.
+  const activeSection = useActiveSection(
+    onDashboard ? sectionIds : NO_SECTIONS,
+  );
+  const activeId = onDashboard
+    ? activeSection
+    : `/${pathname.split("/").filter(Boolean)[0] ?? ""}`;
+
   const { collapsed, toggle } = useSidebarCollapse();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -26,7 +42,7 @@ export function DashboardLayout({ children }) {
       <ScrollProgress />
 
       <a
-        href="#overview"
+        href={onDashboard ? "#overview" : "#workspace"}
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-fg"
       >
         Skip to content

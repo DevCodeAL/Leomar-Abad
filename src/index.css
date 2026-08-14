@@ -105,6 +105,151 @@
     @apply bg-gradient-to-br from-primary via-primary to-accent bg-clip-text text-transparent;
   }
 
+  /* ── Article prose ──────────────────────────────────────────────────
+     Written against the palette tokens rather than @tailwindcss/typography,
+     so article text recolours with all 5 palettes × light/dark for free. */
+  .prose-blog {
+    @apply max-w-3xl text-[0.9375rem] leading-[1.75] text-ink-muted;
+  }
+
+  .prose-blog > * + * {
+    @apply mt-5;
+  }
+
+  .prose-blog h2 {
+    @apply mt-10 text-pretty text-xl font-bold tracking-tight text-ink sm:text-2xl;
+  }
+
+  .prose-blog h3 {
+    @apply mt-8 text-pretty text-base font-bold tracking-tight text-ink sm:text-lg;
+  }
+
+  .prose-blog h4 {
+    @apply mt-6 text-sm font-semibold text-ink;
+  }
+
+  .prose-blog strong {
+    @apply font-semibold text-ink;
+  }
+
+  .prose-blog a {
+    @apply font-medium text-primary underline decoration-primary/35 underline-offset-[3px] transition-colors duration-200 hover:decoration-primary;
+  }
+
+  .prose-blog ul,
+  .prose-blog ol {
+    @apply space-y-2 pl-5;
+  }
+
+  .prose-blog ul {
+    @apply list-disc marker:text-primary/60;
+  }
+
+  .prose-blog ol {
+    @apply list-decimal marker:font-mono marker:text-xs marker:text-ink-subtle;
+  }
+
+  .prose-blog li > ul,
+  .prose-blog li > ol {
+    @apply mt-2;
+  }
+
+  .prose-blog blockquote {
+    @apply border-l-2 border-primary/50 pl-4 italic text-ink-muted;
+  }
+
+  .prose-blog hr {
+    @apply my-10 border-line;
+  }
+
+  .prose-blog img {
+    @apply rounded-xl border border-line;
+  }
+
+  /* Inline code only — the :not() keeps it away from highlighted blocks. */
+  .prose-blog :not(pre) > code {
+    @apply rounded-md border border-line bg-elevated px-1.5 py-0.5 font-mono text-[0.8125em] text-ink;
+  }
+
+  .prose-blog pre {
+    @apply overflow-x-auto rounded-xl border border-line bg-canvas-deep p-4 font-mono text-[0.8125rem] leading-relaxed;
+  }
+
+  .prose-blog pre code {
+    @apply bg-transparent p-0 text-ink;
+  }
+
+  .prose-blog-table-scroll {
+    @apply overflow-x-auto rounded-xl border border-line;
+  }
+
+  .prose-blog table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .prose-blog th {
+    @apply border-b border-line bg-elevated px-3 py-2 text-2xs font-semibold uppercase tracking-[0.14em] text-ink-subtle;
+  }
+
+  .prose-blog td {
+    @apply border-b border-line px-3 py-2 align-top text-ink-muted;
+  }
+
+  .prose-blog tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Syntax highlighting mapped onto palette tokens, so code follows the
+     active theme instead of shipping a fixed highlight.js stylesheet. */
+  .prose-blog .hljs-comment,
+  .prose-blog .hljs-quote {
+    @apply italic text-ink-subtle;
+  }
+
+  .prose-blog .hljs-keyword,
+  .prose-blog .hljs-selector-tag,
+  .prose-blog .hljs-literal,
+  .prose-blog .hljs-doctag {
+    @apply font-medium text-primary;
+  }
+
+  .prose-blog .hljs-string,
+  .prose-blog .hljs-regexp,
+  .prose-blog .hljs-addition {
+    color: hsl(var(--accent));
+  }
+
+  .prose-blog .hljs-title,
+  .prose-blog .hljs-title.function_,
+  .prose-blog .hljs-section,
+  .prose-blog .hljs-name {
+    @apply font-semibold text-ink;
+  }
+
+  .prose-blog .hljs-number,
+  .prose-blog .hljs-symbol,
+  .prose-blog .hljs-bullet {
+    color: hsl(var(--primary-strong));
+  }
+
+  .prose-blog .hljs-attr,
+  .prose-blog .hljs-attribute,
+  .prose-blog .hljs-variable,
+  .prose-blog .hljs-template-variable,
+  .prose-blog .hljs-property {
+    @apply text-ink;
+  }
+
+  .prose-blog .hljs-built_in,
+  .prose-blog .hljs-type,
+  .prose-blog .hljs-class .hljs-title {
+    color: hsl(var(--accent));
+  }
+
+  .prose-blog .hljs-deletion {
+    @apply text-ink-subtle line-through;
+  }
+
   /* Fades a marquee/scroller out at both edges. */
   .edge-fade {
     -webkit-mask-image: linear-gradient(

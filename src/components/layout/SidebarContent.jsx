@@ -1,5 +1,7 @@
 import { Download, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { SectionLink } from "./SectionLink";
 import { navGroups } from "@/data/navigation";
 import { profile, socials } from "@/data/profile";
 import { Tooltip } from "@/components/ui/Tooltip";
@@ -44,11 +46,11 @@ export function SidebarContent({
 
             <ul className="space-y-1">
               {group.items.map((item) => (
-                <li key={item.id}>
+                <li key={item.id ?? item.to}>
                   <NavLink
                     item={item}
                     collapsed={collapsed}
-                    active={activeId === item.id}
+                    active={activeId === (item.id ?? item.to)}
                     onNavigate={onNavigate}
                   />
                 </li>
@@ -71,8 +73,8 @@ function SidebarBrand({ collapsed, onClose }) {
         collapsed && "justify-center px-2",
       )}
     >
-      <a
-        href="#overview"
+      <SectionLink
+        section="overview"
         className="relative shrink-0 rounded-full"
         aria-label={`${profile.name} — back to dashboard`}
       >
@@ -85,7 +87,7 @@ function SidebarBrand({ collapsed, onClose }) {
           className="relative h-11 w-11 rounded-full border-2 border-primary/70 object-cover object-top"
         />
         <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-surface bg-primary" />
-      </a>
+      </SectionLink>
 
       {!collapsed ? (
         <div className="min-w-0 flex-1 animate-fade-in">
@@ -113,11 +115,22 @@ function SidebarBrand({ collapsed, onClose }) {
 }
 
 function NavLink({ item, collapsed, active, onNavigate }) {
-  const { icon: Icon, label, id } = item;
+  const { icon: Icon, label, id, to } = item;
+  const onDashboard = useLocation().pathname === "/";
+
+  /* Three cases, one appearance: a route item is a router link; a section item
+     is a plain anchor on the dashboard, and a router link to `/#id` from
+     anywhere else, where a bare fragment would point at nothing. */
+  const Component = to || !onDashboard ? Link : "a";
+  const target = to
+    ? { to }
+    : onDashboard
+      ? { href: `#${id}` }
+      : { to: `/#${id}` };
 
   const link = (
-    <a
-      href={`#${id}`}
+    <Component
+      {...target}
       onClick={onNavigate}
       aria-current={active ? "true" : undefined}
       className={cn(
@@ -156,7 +169,7 @@ function NavLink({ item, collapsed, active, onNavigate }) {
           className="ml-auto h-1.5 w-1.5 rounded-full bg-primary"
         />
       ) : null}
-    </a>
+    </Component>
   );
 
   return collapsed ? (

@@ -35,4 +35,19 @@ export default [
       ],
     },
   },
+  {
+    // Server-only code: Vercel Functions, the generation pipeline and build
+    // scripts. These never reach the browser, so they get Node globals and
+    // none of the React rules.
+    files: ['api/**/*.js', 'lib/**/*.js', 'scripts/**/*.{js,mjs}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      parserOptions: { sourceType: 'module' },
+    },
+    rules: {
+      'react-hooks/rules-of-hooks': 'off',
+      'react-refresh/only-export-components': 'off',
+    },
+  },
 ]

@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { profile, socials } from "@/data/profile";
+import { SectionLink } from "./SectionLink";
 
 export function Footer() {
   return (
@@ -28,14 +29,14 @@ export function Footer() {
             </a>
           ))}
 
-          <a
-            href="#overview"
+          <SectionLink
+            section="overview"
             aria-label="Back to top"
             className="ml-2 flex h-9 items-center gap-1.5 rounded-lg border border-line px-3 text-xs font-medium text-ink-subtle transition-[color,border-color] duration-200 hover:border-primary/50 hover:text-primary"
           >
             <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" />
             Top
-          </a>
+          </SectionLink>
         </div>
       </div>
     </footer>

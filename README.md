@@ -55,6 +55,123 @@ src/
 Content lives in `src/data`. To add a project, skill or timeline entry, edit
 the relevant data file — nothing in `components/` needs to change.
 
+## Blog
+
+Two routes (`/blog`, `/blog/:slug`) served by the same shell as the dashboard,
+plus a generator that publishes roughly four AI-assisted articles a month.
+
+```
+content/blog/*.json      one file per post — this is the database
+content/blog/_log.json   every generation attempt, success or failure
+
+lib/ai/                  gemini.js · prompts.js · generate-blog.js
+lib/blog/                topics.js · quota.js · similarity.js
+                         schema.js · repository.js · run-generation.js
+lib/http/auth.js         constant-time secret comparison
+
+api/cron/generate-blog   scheduled publisher   (Bearer CRON_SECRET)
+api/admin/generate-blog  manual trigger        (Bearer/x-admin-secret ADMIN_SECRET)
+
+scripts/prerender-blog.mjs    per-article meta, sitemap.xml, rss.xml, robots.txt
+scripts/check-blog-logic.mjs  offline checks for pacing/dedupe/validation/auth
+scripts/generate-blog-local.mjs  run the pipeline from your machine
+```
+
+### Storage
+
+Posts are committed to `content/blog/` through the GitHub Contents API, and
+Vercel redeploys on the push. There is no database: publishing is a commit, so
+every post is versioned, reviewable and revertable, and survives deployments.
+The client reads posts through a build-time glob in `src/data/blog.js`.
+
+To edit or unpublish a post, edit its JSON — set `"status": "draft"` to hide it.
+
+### Environment
+
+```env
+GEMINI_API_KEY=          # Google AI Studio → Get API key
+GEMINI_MODEL=gemini-2.5-flash
+CRON_SECRET=             # any long random string; Vercel sends it as a Bearer token
+ADMIN_SECRET=            # separate secret for the manual endpoint
+GITHUB_TOKEN=            # fine-grained PAT, Contents: read and write, this repo only
+GITHUB_REPO=DevCodeAL/Leomar-Abad
+GITHUB_BRANCH=main
+SITE_URL=https://leomar-abad.vercel.app
+BLOG_POSTS_PER_MONTH=4
+```
+
+Everything except `SITE_URL` is server-only. None of it is prefixed `VITE_`,
+so none of it can reach the browser — Vite only exposes `VITE_*` to client
+code, and `lib/` and `api/` are outside `src/` and never imported by it.
+
+### Running generation manually
+
+```bash
+npm run check:blog                      # offline logic checks, no API key needed
+npm run generate:blog -- --dry-run      # full pipeline, commits nothing
+npm run generate:blog -- --force        # ignore pacing (monthly cap still applies)
+npm run generate:blog -- --topic ai-model-release
+npm run generate:blog -- --list-topics
+```
+
+In production:
+
+```bash
+curl -X POST https://leomar-abad.vercel.app/api/admin/generate-blog \
+  -H "x-admin-secret: $ADMIN_SECRET" \
+  -H "content-type: application/json" \
+  -d '{"dryRun": true}'
+```
+
+### How the schedule works
+
+The cron runs **daily** and usually does nothing. The month is divided into
+`BLOG_POSTS_PER_MONTH` equal windows; a run publishes only if fewer posts exist
+than windows have opened. With the default of 4 that puts posts around days 1,
+8, 16 and 24, one per run.
+
+Running daily rather than weekly is deliberate: a failed generation leaves its
+window unfilled, so the next day retries automatically instead of losing the
+slot. The monthly cap is enforced separately and cannot be exceeded, including
+by repeated admin calls.
+
+### How an article is generated
+
+1. **Quota** — is a window open and unfilled? If not, stop.
+2. **Topic** — pick from `lib/blog/topics.js`, avoiding recent categories and
+   recently attempted topics.
+3. **Research** — a Gemini call with Google Search grounding returns notes and
+   the URLs search actually surfaced. If it comes back thin, the topic is
+   abandoned rather than written from imagination.
+4. **Write** — a second Gemini call, schema-constrained, fed those notes. Two
+   calls because grounding and strict JSON schema output do not reliably
+   combine in one request.
+5. **Validate** — length, category, headings, tags, https-only sources, and a
+   check for stock AI phrasing. Failure moves to the next topic.
+6. **Deduplicate** — title-overlap and slug check against every existing post.
+7. **Commit** — if the write does not land, the run reports failure. A post is
+   never reported as published unless the commit succeeded.
+
+Sources are filtered to URLs that appeared in the grounded research, so a
+citation the model produced while writing is discarded rather than trusted.
+
+### Vercel setup
+
+`vercel.json` declares the cron and the SPA rewrite. After deploying, add every
+variable above under **Settings → Environment Variables** (Production). The
+cron only authenticates when `CRON_SECRET` is set — without it the endpoint
+rejects everything, including Vercel.
+
+Note that cron frequency is plan-limited on Vercel; the daily schedule here is
+chosen to fit comfortably within the Hobby allowance.
+
+### Editing the writing style
+
+`lib/ai/prompts.js` holds the voice rules, the research prompt, the article
+prompt and the response schema. Nothing else needs touching to change how the
+articles read. Topics live in `lib/blog/topics.js` — each is an angle plus what
+to search for, not a headline.
+
 ## Theming
 
 Colours are **never** hardcoded in components. Everything resolves through CSS
