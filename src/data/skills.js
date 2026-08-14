@@ -1,4 +1,4 @@
-import { Workflow } from "lucide-react";
+import { Plug, Workflow } from "lucide-react";
 import {
   SiBootstrap,
   SiClaude,
@@ -107,6 +107,9 @@ export const skillGroups = [
       /* OpenAI's #412991 is too dark to read against the dark canvas, so this
          falls back to the ink token like the other low-contrast logos. */
       { name: "ChatGPT", Icon: SiOpenai },
+      /* No MCP entry in simple-icons and the official mark is monochrome, so
+         this uses a generic plug glyph on the ink token. */
+      { name: "MCP", Icon: Plug },
     ],
   },
   {

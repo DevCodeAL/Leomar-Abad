@@ -1,4 +1,5 @@
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { SiClaude, SiGooglegemini, SiOpenai } from "react-icons/si";
 
 /**
  * Single source of truth for personal details.
@@ -56,6 +57,20 @@ export const focusAreas = [
     icon: "pen",
   },
 ];
+
+/**
+ * How the work actually gets done. This describes process, not a deliverable —
+ * the AI services offered to clients live in ./services.
+ */
+export const aiWorkflow = {
+  description:
+    "I build with AI assistants in the loop — Claude Code, ChatGPT and Gemini — to move faster without trading away quality. Every change still gets reviewed and tested before it ships.",
+  tools: [
+    { name: "Claude Code", Icon: SiClaude },
+    { name: "ChatGPT", Icon: SiOpenai },
+    { name: "Gemini", Icon: SiGooglegemini },
+  ],
+};
 
 export const socials = [
   {

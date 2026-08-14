@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeader } from "@/components/ui/SectionHeader";
@@ -253,6 +253,7 @@ function Slide({ person, active }) {
             <span className="block truncate text-xs text-ink-subtle">
               {person.position}
             </span>
+            <Rating value={person.rating} />
           </span>
         </figcaption>
 
@@ -267,6 +268,34 @@ function Slide({ person, active }) {
         />
       </figure>
     </div>
+  );
+}
+
+/**
+ * Filled stars out of five. Renders nothing without a `rating`, so a card can
+ * carry a quote with no score attached rather than an implied one.
+ */
+function Rating({ value, total = 5 }) {
+  if (!value) return null;
+
+  return (
+    <span
+      role="img"
+      aria-label={`Rated ${value} out of ${total}`}
+      className="mt-1.5 flex gap-0.5"
+    >
+      {Array.from({ length: total }, (_, index) => (
+        <Star
+          key={index}
+          className={
+            index < value
+              ? "h-3.5 w-3.5 fill-current text-amber-400"
+              : "h-3.5 w-3.5 text-line-strong"
+          }
+          aria-hidden="true"
+        />
+      ))}
+    </span>
   );
 }
 

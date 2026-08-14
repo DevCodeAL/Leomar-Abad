@@ -1,5 +1,13 @@
-import { Code2, GraduationCap, MapPin, MonitorSmartphone, PenTool, Quote } from "lucide-react";
-import { education, focusAreas, profile } from "@/data/profile";
+import {
+  Code2,
+  GraduationCap,
+  MapPin,
+  MonitorSmartphone,
+  PenTool,
+  Quote,
+  Sparkles,
+} from "lucide-react";
+import { aiWorkflow, education, focusAreas, profile } from "@/data/profile";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,6 +34,7 @@ export function About() {
         <WorkspaceCard />
         <EducationCard />
         <FocusGrid />
+        <AiWorkflowCard />
       </div>
     </Section>
   );
@@ -155,6 +164,43 @@ function EducationCard() {
             <p className="font-mono text-xs text-ink-muted">
               Graduated {education.graduated}
             </p>
+          </div>
+        </CardBody>
+      </Card>
+    </Reveal>
+  );
+}
+
+/** Full-width statement on process, spanning the whole grid as its own row. */
+function AiWorkflowCard() {
+  return (
+    <Reveal className="lg:col-span-5" direction="up" delay={120}>
+      <Card interactive className="group h-full">
+        <CardHeader>
+          <CardTitle>How I work</CardTitle>
+          <Badge mono>ai-assisted</Badge>
+        </CardHeader>
+
+        <CardBody className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-elevated text-primary transition-[transform,border-color] duration-300 ease-smooth group-hover:-translate-y-0.5 group-hover:border-primary/40">
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          </span>
+
+          <div className="space-y-3.5">
+            <p className="text-pretty text-sm leading-relaxed text-ink-muted sm:text-[0.9375rem]">
+              {aiWorkflow.description}
+            </p>
+
+            <ul className="flex flex-wrap gap-2">
+              {aiWorkflow.tools.map(({ name, Icon }) => (
+                <li key={name}>
+                  <Badge size="md">
+                    <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                    {name}
+                  </Badge>
+                </li>
+              ))}
+            </ul>
           </div>
         </CardBody>
       </Card>

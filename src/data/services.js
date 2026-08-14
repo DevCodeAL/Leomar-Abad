@@ -1,10 +1,13 @@
 import {
+  Bot,
   Globe,
   Gauge,
   Layers,
+  Network,
   PenTool,
   Server,
   Smartphone,
+  Workflow,
 } from "lucide-react";
 
 /** Services carried over from the original site, numbered for the card grid. */
@@ -44,5 +47,23 @@ export const services = [
     icon: PenTool,
     description:
       "Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth.",
+  },
+  {
+    title: "AI Feature Integration",
+    icon: Bot,
+    description:
+      "I build AI features into your product — chat assistants, content generation and smart automation, wired into your existing stack through LLM APIs.",
+  },
+  {
+    title: "Workflow Automation",
+    icon: Workflow,
+    description:
+      "Automated workflows with n8n — connecting your apps, syncing data between services, and running scheduled jobs so repetitive tasks handle themselves.",
+  },
+  {
+    title: "GoHighLevel Automation",
+    icon: Network,
+    description:
+      "CRM and pipeline setup in GoHighLevel, with automated workflows and campaigns, plus webhook and API integrations that connect it to the rest of your stack.",
   },
 ];
