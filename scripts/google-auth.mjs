@@ -59,6 +59,29 @@ const server = createServer(async (request, response) => {
 
   if (error || !code) {
     respond(response, `Authorisation failed: ${error ?? "no code returned"}`);
+
+    // access_denied here almost never means "the user clicked cancel" — it is
+    // Google refusing the account because the consent screen is still in
+    // Testing and the account is not a registered test user.
+    if (error === "access_denied") {
+      console.error(
+        [
+          "\nGoogle refused the account (access_denied).",
+          "",
+          "The consent screen is most likely still in Testing, which only lets",
+          "registered test users through. At console.cloud.google.com/auth/audience:",
+          "",
+          "  • add the calendar owner's address under Test users, or",
+          "  • click Publish app to push it to production",
+          "",
+          "Prefer publishing: while the app is in Testing, Google expires refresh",
+          "tokens after 7 days, so booking would break a week from now.",
+        ].join("\n"),
+      );
+    } else {
+      console.error(`\nAuthorisation failed: ${error ?? "no code returned"}`);
+    }
+
     server.close();
     process.exitCode = 1;
     return;
