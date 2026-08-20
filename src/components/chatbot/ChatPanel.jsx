@@ -331,7 +331,7 @@ function Header({ id, engine, collapsed, canClear, onClear, onMinimize, onClose 
           >
             {/* Inline rather than a flex row: as a flex child the sentence
                 wraps *around* the chip and the two lines stop lining up. */}
-            <Availability offline={engine === "offline"} />
+            <Availability offline={Boolean(engine) && engine !== "model"} />
             Ask me anything about Leomar, his work, and projects.
           </p>
         </div>
@@ -364,10 +364,16 @@ function Header({ id, engine, collapsed, canClear, onClear, onMinimize, onClose 
 }
 
 /**
- * "Offline" here means the model was unreachable and the built-in knowledge
- * engine answered. It is stated rather than hidden — the replies are narrower
- * in that mode, and a visitor is owed that context. The dot stops pulsing to
- * match, since the pulse reads as "live" everywhere else on the site.
+ * "Offline" means the knowledge engine answered rather than the model. That
+ * covers both of the modes where it can happen — `fallback`, the server
+ * answering because there is no API key or the model failed, and `offline`,
+ * the browser answering because it could not reach the endpoint at all. Only
+ * `model` is online. Before the first reply `engine` is null and the label is
+ * optimistic, because nothing has failed yet.
+ *
+ * It is stated rather than hidden: replies are narrower in that mode and a
+ * visitor is owed the context. The dot stops pulsing to match, since the pulse
+ * reads as "live" everywhere else on the site.
  */
 function Availability({ offline }) {
   return (
