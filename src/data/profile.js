@@ -1,100 +1,42 @@
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { SiClaude, SiGooglegemini, SiOpenai } from "react-icons/si";
+import {
+  aiWorkflow as aiWorkflowData,
+  socialLinks,
+} from "../../lib/portfolio/profile.js";
 
 /**
- * Single source of truth for personal details.
- * Every value here comes from the original portfolio — nothing invented.
+ * Personal details for the UI.
+ *
+ * The values live in `lib/portfolio/profile.js` — shared with the AI
+ * assistant's serverless function, which must not import an icon library.
+ * This module is the presentation layer: it attaches the icon components and
+ * keeps the export surface the dashboard has always consumed.
  */
-export const profile = {
-  name: "Leomar Abad",
-  brand: "DevCode",
-  role: "Fullstack Web Developer",
-  /** Cycled by the hero headline. */
-  roles: ["Fullstack Web Developer", "Frontend Developer", "Backend Developer"],
-  status: "Available for opportunities",
-  location: "Cuyapo, Nueva Ecija, Philippines",
-  email: "abadleomar875@gmail.com",
-  phone: "+639169232342",
-  avatar: "/picture/Leomar-Abad.png",
-  resume: "/file/Leomar-Abad-CV-2025-Updated.pdf",
-  resumeFileName: "Leomar-Abad-CV-2025-Updated.pdf",
+export { profile, education, focusAreas } from "../../lib/portfolio/profile.js";
 
-  intro:
-    "I'm a Fullstack Web Developer passionate about building modern, responsive, and user-focused web applications. I turn ideas into fast, scalable, and engaging digital experiences that make an impact.",
-
-  about:
-    "I'm a passionate web developer skilled in building dynamic, responsive applications and intuitive user experiences. I'm committed to delivering high-quality, creative solutions that solve real-world problems through thoughtful design and clean development practices. I love learning new technologies, improving my craft, and collaborating on innovative projects that make a meaningful impact.",
-
-  /** Shown as the "Currently" line in the dashboard status widget. */
-  currently: "Building web applications",
-
-  /** Primary stack, surfaced as monospace metadata. */
-  coreStack: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+const SOCIAL_ICONS = {
+  GitHub: FaGithub,
+  LinkedIn: FaLinkedin,
+  Facebook: FaFacebook,
+  Instagram: FaInstagramSquare,
 };
 
-export const education = {
-  degree: "Bachelor of Science in Information Technology",
-  school: "College for Research and Technology",
-  address: "Burgos Ave., Cabanatuan City, Nueva Ecija, Philippines",
-  graduated: "2025",
+const AI_TOOL_ICONS = {
+  "Claude Code": SiClaude,
+  ChatGPT: SiOpenai,
+  Gemini: SiGooglegemini,
 };
 
-/** The three "What I Do" pillars from the original site. */
-export const focusAreas = [
-  {
-    title: "Responsive Web Design",
-    description: "Mobile-first layouts that hold up on every screen size.",
-    icon: "devices",
-  },
-  {
-    title: "Web Development",
-    description: "End-to-end builds from interface down to database.",
-    icon: "code",
-  },
-  {
-    title: "Web Design",
-    description: "Clean, considered interfaces that are easy to use.",
-    icon: "pen",
-  },
-];
-
-/**
- * How the work actually gets done. This describes process, not a deliverable —
- * the AI services offered to clients live in ./services.
- */
 export const aiWorkflow = {
-  description:
-    "I build with AI assistants in the loop — Claude Code, ChatGPT and Gemini — to move faster without trading away quality. Every change still gets reviewed and tested before it ships.",
-  tools: [
-    { name: "Claude Code", Icon: SiClaude },
-    { name: "ChatGPT", Icon: SiOpenai },
-    { name: "Gemini", Icon: SiGooglegemini },
-  ],
+  ...aiWorkflowData,
+  tools: aiWorkflowData.tools.map((name) => ({
+    name,
+    Icon: AI_TOOL_ICONS[name],
+  })),
 };
 
-export const socials = [
-  {
-    label: "GitHub",
-    handle: "DevCodeAL",
-    href: "https://github.com/DevCodeAL",
-    Icon: FaGithub,
-  },
-  {
-    label: "LinkedIn",
-    handle: "leomar-abad",
-    href: "https://www.linkedin.com/in/leomar-abad-52381327b/",
-    Icon: FaLinkedin,
-  },
-  {
-    label: "Facebook",
-    handle: "abad.leomar",
-    href: "https://www.facebook.com/abad.leomar/",
-    Icon: FaFacebook,
-  },
-  {
-    label: "Instagram",
-    handle: "abadleomar875",
-    href: "https://www.instagram.com/abadleomar875/",
-    Icon: FaInstagramSquare,
-  },
-];
+export const socials = socialLinks.map((social) => ({
+  ...social,
+  Icon: SOCIAL_ICONS[social.label],
+}));
