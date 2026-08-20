@@ -123,6 +123,19 @@ export default {
           from: { transform: "translateX(-120%)" },
           to: { transform: "translateX(220%)" },
         },
+        /* Assistant panel: rises out of the launcher it was opened from. */
+        "panel-in": {
+          from: { opacity: "0", transform: "translateY(18px) scale(0.94)" },
+          to: { opacity: "1", transform: "none" },
+        },
+        "bubble-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "none" },
+        },
+        "typing-dot": {
+          "0%, 65%, 100%": { transform: "translateY(0)", opacity: ".4" },
+          "30%": { transform: "translateY(-3px)", opacity: "1" },
+        },
       },
       animation: {
         marquee: "marquee var(--marquee-duration, 48s) linear infinite",
@@ -136,6 +149,9 @@ export default {
         "pulse-ring": "pulse-ring 2.4s cubic-bezier(0.4,0,0.6,1) infinite",
         "caret-blink": "caret-blink 1.1s step-end infinite",
         shimmer: "shimmer 2.2s ease-in-out infinite",
+        "panel-in": "panel-in 340ms cubic-bezier(0.22,1,0.36,1) both",
+        "bubble-in": "bubble-in 320ms cubic-bezier(0.22,1,0.36,1) both",
+        "typing-dot": "typing-dot 1.3s ease-in-out infinite",
       },
     },
   },

@@ -11,6 +11,7 @@
     "check:blog": "node scripts/check-blog-logic.mjs",
     "generate:blog": "node scripts/generate-blog-local.mjs",
     "check:booking": "node scripts/check-booking-logic.mjs",
+    "check:chat": "node scripts/check-chat-logic.mjs",
     "google:auth": "node scripts/google-auth.mjs"
   },
   "dependencies": {

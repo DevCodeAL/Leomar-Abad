@@ -10,27 +10,37 @@ npm run dev      # http://localhost:5173
 npm run build
 npm run preview
 npm run lint
+
+npm run check:booking   # logic checks — no key, no network
+npm run check:blog
+npm run check:chat
 ```
 
 ## Environment
 
-All secrets are server-side. Nothing in the booking or blog systems uses a
-`VITE_` variable, so none of it can reach the browser.
+All secrets are server-side. Nothing in the booking, blog or assistant systems
+uses a `VITE_` variable, so none of it can reach the browser.
 
-See **Book a Call** and **Blog** below for the variables each feature needs.
+See **Book a Call**, **Blog** and **AI Assistant** below for the variables each
+feature needs. Every one of the three degrades gracefully without them: the
+assistant falls back to its built-in knowledge engine, and booking and blog
+generation report themselves unavailable rather than failing obscurely.
 
 ## Structure
 
 ```
-src/
-├── data/            content only — no JSX layout decisions
+lib/portfolio/       the content itself — plain data, no imports
 │   ├── profile.js       name, role, socials, education, focus areas
-│   ├── navigation.js    section registry (drives sidebar + scroll-spy)
 │   ├── projects.js      projects + bento grid spans
 │   ├── skills.js        toolkit, grouped
 │   ├── experience.js    timeline entries
 │   ├── services.js      services
 │   ├── testimonials.js  recommendations
+│   └── knowledge.js     the above, flattened for the AI assistant
+
+src/
+├── data/            the same content, with icon components attached
+│   ├── navigation.js    section registry (drives sidebar + scroll-spy)
 │   └── stats.js         figures COUNTED from the data above
 │
 ├── styles/palettes.css  every colour token, 5 palettes × 2 modes
@@ -41,12 +51,21 @@ src/
     ├── layout/      DashboardLayout, Sidebar, MobileNavigation, Footer, …
     ├── ui/          Button, Card, Badge, Reveal, Tooltip, SectionHeader, …
     ├── projects/    FeaturedProject, ProjectCard, ProjectGrid
+    ├── chatbot/     the AI assistant — see below
     └── dashboard/   Hero, Stats, About, Experience, Skills, Projects,
                      Services, Testimonials, Contact
 ```
 
-Content lives in `src/data`. To add a project, skill or timeline entry, edit
-the relevant data file — nothing in `components/` needs to change.
+**Content lives in `lib/portfolio`.** To add a project, skill or timeline
+entry, edit the relevant file there — nothing in `components/` needs to change,
+and the AI assistant picks the change up on its next reply.
+
+The split exists because the assistant's serverless function needs the same
+content the dashboard renders, and `src/data` decorates every record with a
+React icon component. Importing that into a function would drag an icon library
+into the bundle for no reason. So `lib/portfolio` holds the values and
+`src/data` attaches the icons — the modules there re-export the same names the
+components have always imported, so no component knows the difference.
 
 ## Book a Call
 
@@ -279,6 +298,103 @@ prompt and the response schema. Nothing else needs touching to change how the
 articles read. Topics live in `lib/blog/topics.js` — each is an angle plus what
 to search for, not a headline.
 
+## AI Assistant
+
+A floating assistant that answers questions about Leomar from the portfolio's
+own content — who he is, what he has built, what he can build, and how to hire
+him. It is not a support widget: every answer ends in something to look at or
+someone to contact.
+
+```
+Browser ──► /api/chat ──► Gemini ──► SSE ──► streamed reply
+              │
+              └── no key / model failure ──► built-in knowledge engine
+```
+
+### Files
+
+```
+lib/portfolio/knowledge.js   every fact the assistant may state
+lib/chat/system-prompt.js    persona, rules, prompt-injection guard
+lib/chat/actions.js          the [[project:…]] / [[cta:…]] vocabulary
+lib/chat/fallback.js         answers with no model behind them
+lib/chat/suggestions.js      opening chips + follow-ups per intent
+lib/chat/validate.js         input limits and sanitising
+lib/chat/rate-limit.js       per-IP budget, separate from booking's
+api/chat.js                  POST -> text/event-stream
+
+src/components/chatbot/
+  Chatbot.jsx        launcher + lazy boundary (the only part always loaded)
+  ChatPanel.jsx      the window: docked on desktop, a sheet on mobile
+  ChatMessage.jsx    one turn, with copy and regenerate
+  ChatActions.jsx    project cards, skill badges, CTA buttons
+  ChatComposer.jsx   auto-growing input
+  useChat.js         conversation state
+  transport.js       SSE reader, with the offline path behind it
+```
+
+### Environment
+
+```env
+GEMINI_API_KEY=              # shared with the blog generator
+GEMINI_CHAT_MODEL=gemini-2.5-flash   # optional; defaults to GEMINI_MODEL
+```
+
+**The assistant works with no key at all.** Without one — and in `npm run dev`,
+where there is no serverless runtime — `lib/chat/fallback.js` answers instead,
+scoring the question against weighted keyword sets and replying from the same
+portfolio data. The header says `OFFLINE` when that happens. Replies are
+narrower in that mode, never less accurate.
+
+### Rich replies
+
+Replies are prose with directives appended, which the browser turns into UI:
+
+| Directive | Renders |
+| --- | --- |
+| `[[project:guimba-east-edulink]]` | that project's card, image and live link |
+| `[[skills:frontend]]` | that skill group as badges |
+| `[[cta:contact]]` | a call-to-action button |
+
+Directives are validated against the real data before anything renders, so a
+slug the model invents produces nothing at all rather than a broken card. This
+is also why replies stream: JSON output cannot be typed out a token at a time.
+
+### Not inventing things
+
+The system prompt pins `buildKnowledgeContext()` — assembled fresh from the
+data modules on every request, so it cannot lag behind an edit — and states
+that it is the only source of facts. The assistant is told to decline rather
+than guess, and never to quote a rate or a timeline. `npm run check:chat`
+asserts that behaviour, along with intent routing, directive parsing, input
+sanitising and the endpoint's own responses.
+
+### Security
+
+- The API key never leaves the server; no `VITE_` variable is involved.
+- Messages are length-clamped and stripped of control and zero-width
+  characters — the usual way instructions get smuggled past a guard.
+- History is filtered to `user`/`assistant` turns, so a forged `system` turn in
+  the payload is dropped rather than replayed.
+- Rendering goes through `react-markdown` with no `rehype-raw`, so reply HTML
+  is escaped and `javascript:` URLs are dropped. Visitor messages are rendered
+  as plain text, never as markdown.
+- Per-IP rate limiting, with the same in-memory caveat as the booking limiter.
+- Failures return a generic message; the model, the prompt and the reason are
+  never sent to the browser.
+
+### Performance
+
+The launcher and its lazy boundary are the only parts in the main bundle —
+about 1.4 kB gzipped of JS, plus roughly the same again in CSS. The panel, its
+markdown renderer, the transport and the knowledge engine are one lazy chunk
+(~15 kB gzipped) fetched on first open, and prefetched on hover so the click
+feels instant. A visitor who never opens the assistant pays for neither.
+
+Splitting the markdown renderer out of the blog route into a chunk the two now
+share made `BlogArticle` smaller by about the same amount, so the blog reader's
+total is unchanged.
+
 ## Theming
 
 Colours are **never** hardcoded in components. Everything resolves through CSS
@@ -318,6 +434,11 @@ paint, so there is no flash of the wrong colours.
   the count-up figures and the rotating job title.
 - Semantic landmarks, a skip link, visible focus rings, `aria-current` on the
   active nav item, and `inert` on the closed mobile drawer.
+- The assistant is a `dialog` — modal, scroll-locked and focus-trapped as a
+  mobile sheet, deliberately non-modal when docked on desktop so the page stays
+  usable behind it. Escape closes it and focus returns to the launcher. Turns
+  are announced through a dedicated live region rather than the transcript, so
+  a screen reader hears the finished reply instead of every streamed token.
 
 ## Content policy
 
@@ -325,5 +446,10 @@ Every fact on the page comes from the original portfolio. Dashboard figures in
 `src/data/stats.js` are counted from the real data at runtime rather than typed
 in, and there are no invented skill percentages, dates or metrics. The two
 academic timeline entries are labelled by programme phase because only the 2025
-graduation date is documented — add real dates in `src/data/experience.js` when
-you have them.
+graduation date is documented — add real dates in `lib/portfolio/experience.js`
+when you have them.
+
+The AI assistant is held to the same standard, which is why its knowledge block
+is derived from those files rather than written separately: it can only describe
+projects, skills and contact details the site actually shows. It is instructed
+to decline rather than guess, and `npm run check:chat` asserts that it does.

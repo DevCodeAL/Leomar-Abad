@@ -9,6 +9,7 @@ import { MobileDrawer, MobileHeader } from "./MobileNavigation";
 import { WorkspaceHeader } from "./WorkspaceHeader";
 import { ScrollProgress } from "./ScrollProgress";
 import { Footer } from "./Footer";
+import { Chatbot } from "@/components/chatbot/Chatbot";
 
 /** Stable identity so the scroll-spy effect does not re-run off route. */
 const NO_SECTIONS = [];
@@ -79,6 +80,10 @@ export function DashboardLayout({ children }) {
 
         <Footer />
       </div>
+
+      {/* Sits outside the padded column so it docks to the viewport corner on
+          every route, sidebar collapsed or not. */}
+      <Chatbot />
     </div>
   );
 }
